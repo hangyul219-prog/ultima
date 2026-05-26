@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#080B14">
+<meta name="color-scheme" content="dark">
 <title>Fabula Ultima — TRPG Rulebook</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
 <style>
   :root {
+    color-scheme: dark only;
     --gold: #D4AF52;
     --gold-light: #F2D88A;
     --gold-bright: #FFE9A8;
@@ -35,15 +37,21 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    background: #0B0F1C;
+    background-color: #0B0F1C;
+  }
 
   body {
+    background: #0B0F1C;
     background: var(--ink);
     color: var(--text-primary);
     font-family: 'Crimson Pro', 'EB Garamond', Georgia, serif;
     font-size: 18px;
     line-height: 1.85;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   body::before {
@@ -230,6 +238,8 @@
     min-height: 100vh;
     position: relative;
     z-index: 1;
+    background: #0B0F1C;
+    background: var(--ink);
   }
 
   /* ── COVER ── */
@@ -243,6 +253,8 @@
     padding: 80px 60px;
     position: relative;
     overflow: hidden;
+    background: #0B0F1C;
+    background: var(--ink);
   }
 
   .cover::before {
@@ -603,30 +615,63 @@
   .toc-entry {
     display: flex;
     align-items: baseline;
-    padding: 4px 0;
+    padding: 5px 8px;
+    margin: 0 -8px;
+    border-radius: 5px;
     font-family: 'Crimson Pro', serif;
     font-size: 16px;
     color: var(--text-secondary);
     gap: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease, padding 0.2s ease;
   }
+  .toc-entry:hover {
+    color: var(--gold-light);
+    background: linear-gradient(90deg, rgba(212,175,82,0.1), transparent);
+    text-shadow: 0 0 10px rgba(242,216,138,0.4);
+  }
+  .toc-entry:hover .toc-pg { color: var(--gold-light); }
+  .toc-entry:hover .toc-dots { border-bottom-color: rgba(212,175,82,0.5); }
 
   .toc-entry.sub {
-    padding-left: 20px;
+    padding-left: 28px;
     font-size: 14px;
     color: var(--text-muted);
   }
+  .toc-entry.sub:hover { color: var(--gold-light); }
 
   .toc-dots {
     flex: 1;
     border-bottom: 1px dotted rgba(138,122,90,0.25);
     margin: 0 8px 4px;
+    transition: border-color 0.2s ease;
   }
 
   .toc-pg {
     font-family: 'Cinzel', serif;
     font-size: 12px;
     color: var(--text-muted);
+    transition: color 0.2s ease;
     flex-shrink: 0;
+  }
+
+  /* untranslated entries: dimmed, not clickable */
+  .toc-entry.toc-disabled,
+  .toc-part-title.toc-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: auto;
+  }
+  .toc-entry.toc-disabled:hover {
+    color: var(--text-muted);
+    background: none;
+    text-shadow: none;
+  }
+  .toc-entry.toc-disabled .toc-pg::after,
+  .toc-part-title.toc-disabled::after {
+    content: ' ⌛';
+    font-size: 0.85em;
+    opacity: 0.7;
   }
 
   /* ── TWO COLUMN ── */
@@ -984,7 +1029,7 @@
     .box p { font-size: 15px; }
 
     /* slightly smaller base reading size on phones */
-    body { font-size: 16.5px; line-height: 1.75; overflow-x: hidden; }
+    body { font-size: 16.5px; line-height: 1.75; overflow-x: hidden; background: #0B0F1C; }
     .cover-divider { width: min(280px, 80%); }
     p { word-break: keep-all; overflow-wrap: break-word; }
   }
@@ -1012,12 +1057,118 @@
     .cover-inspirations { gap: 6px; }
     .insp-chip { font-size: 9px; padding: 4px 8px; }
   }
+  /* ═══════════════════════════════════════════════════ */
+  /* PAGE CROSS-REFERENCE LINKS                            */
+  /* ═══════════════════════════════════════════════════ */
+  .pageref-link {
+    color: var(--gold-light);
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(212,175,82,0.5);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    padding: 0 1px;
+  }
+  .pageref-link:hover {
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold-light);
+    text-shadow: 0 0 10px rgba(242,216,138,0.6);
+  }
+  .pageref-link::before {
+    content: '↗';
+    font-size: 0.78em;
+    opacity: 0.65;
+    margin-right: 1px;
+    vertical-align: 0.05em;
+  }
+
+  /* flash highlight on the section we jumped to */
+  @keyframes jumpFlash {
+    0%   { box-shadow: inset 0 0 0 9999px rgba(212,175,82,0.16); }
+    100% { box-shadow: inset 0 0 0 9999px rgba(212,175,82,0); }
+  }
+  .jump-flash { animation: jumpFlash 1.3s ease-out; }
+
+  /* ── "RETURN" floating button ── */
+  .back-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 26px;
+    z-index: 250;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 18px 12px 15px;
+    background: linear-gradient(160deg, rgba(26,20,8,0.97), rgba(12,9,20,0.97));
+    border: 1px solid var(--border-strong);
+    border-radius: 30px;
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.55), 0 0 22px rgba(212,175,82,0.22);
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .back-btn.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .back-btn:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.6), 0 0 30px rgba(242,216,138,0.4);
+    color: var(--gold-bright);
+  }
+  .back-btn .back-rune {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--gold-bright);
+    background: linear-gradient(180deg, #FFF1C4 0%, var(--gold-light) 45%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(242,216,138,0.85));
+    animation: runeGlow 2s ease-in-out infinite;
+  }
+  @keyframes runeGlow {
+    0%,100% { filter: drop-shadow(0 0 6px rgba(242,216,138,0.6)); transform: scale(1) rotate(0deg); }
+    50% { filter: drop-shadow(0 0 16px rgba(255,233,168,0.95)) drop-shadow(0 0 26px rgba(212,175,82,0.5)); transform: scale(1.12) rotate(-3deg); }
+  }
+  .back-btn .back-sub {
+    display: block;
+    font-size: 8.5px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-top: 1px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 480px) {
+    .back-btn { right: 14px; bottom: 16px; padding: 10px 15px 10px 13px; font-size: 11px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .back-btn { transition: opacity 0.2s ease; }
+    .back-btn .back-rune { animation: none; }
+    .jump-flash { animation: none; }
+  }
 </style>
 </head>
 <body>
 
 <!-- ═══════════════════════════ ARCANE PARTICLES ═══════════════════════════ -->
 <div class="particles" id="particles" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════ RETURN BUTTON ═══════════════════════════ -->
+<button class="back-btn" id="backBtn" aria-label="이전 위치로 돌아가기">
+  <span class="back-rune">R</span>
+  <span>돌아가기<span class="back-sub" id="backSub">이전 위치</span></span>
+</button>
 
 <!-- ═══════════════════════════ MOBILE NAV TOGGLE ═══════════════════════════ -->
 <button class="menu-toggle" id="menuToggle" aria-label="목차 열기/닫기" aria-expanded="false">
@@ -1162,148 +1313,148 @@
   <!-- ═══════════════════════════════════════════════════ -->
   <section class="chapter" id="toc">
     <div class="chapter-header">
-      <span class="chapter-number">목차 · Table of Contents</span>
+      <span class="chapter-number">목차</span>
       <h2 class="chapter-title">차례</h2>
       <div class="chapter-rule"><div class="chapter-rule-line"></div><span class="chapter-rule-gem">◆◆◆</span></div>
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-title"><span class="toc-part-num">서문</span> Introduction · 소개</div>
+      <div class="toc-part-title"><span class="toc-part-num">서문</span> 소개</div>
 
       <div class="toc-part">
-        <div class="toc-part-title"><span class="toc-part-num">1.</span> Introduction · 소개</div>
-        <div class="toc-entry"><span>The Eight Pillars · 여덟 기둥</span><span class="toc-dots"></span><span class="toc-pg">14</span></div>
-        <div class="toc-entry"><span>Game Materials · 게임 준비물</span><span class="toc-dots"></span><span class="toc-pg">22</span></div>
-        <div class="toc-entry"><span>The Players · 플레이어</span><span class="toc-dots"></span><span class="toc-pg">24</span></div>
-        <div class="toc-entry"><span>The Game Master · 게임 마스터</span><span class="toc-dots"></span><span class="toc-pg">26</span></div>
+        <div class="toc-part-title"><span class="toc-part-num">1.</span> 소개</div>
+        <div class="toc-entry"><span>여덟 기둥</span><span class="toc-dots"></span><span class="toc-pg">14</span></div>
+        <div class="toc-entry"><span>게임 준비물</span><span class="toc-dots"></span><span class="toc-pg">22</span></div>
+        <div class="toc-entry"><span>플레이어</span><span class="toc-dots"></span><span class="toc-pg">24</span></div>
+        <div class="toc-entry"><span>게임 마스터</span><span class="toc-dots"></span><span class="toc-pg">26</span></div>
       </div>
 
       <div class="toc-part">
-        <div class="toc-part-title"><span class="toc-part-num">2.</span> Game Rules · 게임 규칙</div>
-        <div class="toc-entry"><span>Scenes · 씬</span><span class="toc-dots"></span><span class="toc-pg">30</span></div>
-        <div class="toc-entry sub"><span>Interlude Scenes · 막간 씬</span><span class="toc-dots"></span><span class="toc-pg">31</span></div>
-        <div class="toc-entry sub"><span>Game Master Scenes · GM 씬</span><span class="toc-dots"></span><span class="toc-pg">31</span></div>
-        <div class="toc-entry"><span>Sessions and Campaigns · 세션과 캠페인</span><span class="toc-dots"></span><span class="toc-pg">32</span></div>
-        <div class="toc-entry"><span>Important Rules · 중요 규칙</span><span class="toc-dots"></span><span class="toc-pg">33</span></div>
-        <div class="toc-entry"><span>Anatomy of a Character · 캐릭터 해부학</span><span class="toc-dots"></span><span class="toc-pg">34</span></div>
-        <div class="toc-entry"><span>Checks · 판정</span><span class="toc-dots"></span><span class="toc-pg">38</span></div>
-        <div class="toc-entry sub"><span>Critical Success · 대성공</span><span class="toc-dots"></span><span class="toc-pg">40</span></div>
-        <div class="toc-entry sub"><span>Fumble · 실패</span><span class="toc-dots"></span><span class="toc-pg">40</span></div>
-        <div class="toc-entry sub"><span>Opportunities · 기회</span><span class="toc-dots"></span><span class="toc-pg">41</span></div>
-        <div class="toc-entry sub"><span>Performing an Attribute Check · 능력치 판정</span><span class="toc-dots"></span><span class="toc-pg">42</span></div>
-        <div class="toc-entry sub"><span>Difficulty Levels · 난이도</span><span class="toc-dots"></span><span class="toc-pg">43</span></div>
-        <div class="toc-entry sub"><span>Invoking a Trait · 특기 발동</span><span class="toc-dots"></span><span class="toc-pg">46</span></div>
-        <div class="toc-entry sub"><span>Invoking a Bond · 유대 발동</span><span class="toc-dots"></span><span class="toc-pg">47</span></div>
-        <div class="toc-entry sub"><span>Opposed Checks · 대립 판정</span><span class="toc-dots"></span><span class="toc-pg">48</span></div>
-        <div class="toc-entry sub"><span>Open Checks · 개방 판정</span><span class="toc-dots"></span><span class="toc-pg">49</span></div>
-        <div class="toc-entry sub"><span>Situational Modifiers · 상황 수정자</span><span class="toc-dots"></span><span class="toc-pg">49</span></div>
-        <div class="toc-entry sub"><span>Group Checks · 집단 판정</span><span class="toc-dots"></span><span class="toc-pg">50</span></div>
-        <div class="toc-entry sub"><span>Frequently Used Checks · 자주 쓰이는 판정</span><span class="toc-dots"></span><span class="toc-pg">51</span></div>
-        <div class="toc-entry"><span>Clocks · 시계</span><span class="toc-dots"></span><span class="toc-pg">52</span></div>
-        <div class="toc-entry"><span>Bonds · 유대</span><span class="toc-dots"></span><span class="toc-pg">56</span></div>
-        <div class="toc-entry"><span>Conflict Scenes · 전투 씬</span><span class="toc-dots"></span><span class="toc-pg">58</span></div>
-        <div class="toc-entry sub"><span>The Structure of a Conflict · 전투 구조</span><span class="toc-dots"></span><span class="toc-pg">58</span></div>
-        <div class="toc-entry sub"><span>Initiative · 선제권</span><span class="toc-dots"></span><span class="toc-pg">61</span></div>
-        <div class="toc-entry sub"><span>Rounds and Turns · 라운드와 턴</span><span class="toc-dots"></span><span class="toc-pg">62</span></div>
-        <div class="toc-entry sub"><span>Space and Distances · 공간과 거리</span><span class="toc-dots"></span><span class="toc-pg">64</span></div>
-        <div class="toc-entry sub"><span>Actions · 행동</span><span class="toc-dots"></span><span class="toc-pg">66</span></div>
-        <div class="toc-entry sub"><span>Teamwork · 팀워크</span><span class="toc-dots"></span><span class="toc-pg">76</span></div>
-        <div class="toc-entry sub"><span>Sample Goal Clocks · 목표 시계 예시</span><span class="toc-dots"></span><span class="toc-pg">78</span></div>
-        <div class="toc-entry sub"><span>Optional Conflict Rules · 선택 전투 규칙</span><span class="toc-dots"></span><span class="toc-pg">82</span></div>
-        <div class="toc-entry"><span>Hit Points and Mind Points · HP와 MP</span><span class="toc-dots"></span><span class="toc-pg">84</span></div>
-        <div class="toc-entry sub"><span>0 Hit Points · 0 HP</span><span class="toc-dots"></span><span class="toc-pg">86</span></div>
-        <div class="toc-entry sub"><span>Sacrifice · 희생</span><span class="toc-dots"></span><span class="toc-pg">88</span></div>
-        <div class="toc-entry sub"><span>Surrendering · 항복</span><span class="toc-dots"></span><span class="toc-pg">89</span></div>
-        <div class="toc-entry"><span>Resting · 휴식</span><span class="toc-dots"></span><span class="toc-pg">90</span></div>
-        <div class="toc-entry"><span>Damage · 피해</span><span class="toc-dots"></span><span class="toc-pg">92</span></div>
-        <div class="toc-entry sub"><span>Improvising Damage · 즉흥 피해</span><span class="toc-dots"></span><span class="toc-pg">93</span></div>
-        <div class="toc-entry"><span>Status Effects · 상태 이상</span><span class="toc-dots"></span><span class="toc-pg">94</span></div>
-        <div class="toc-entry"><span>Fabula Points · 파뷸라 포인트</span><span class="toc-dots"></span><span class="toc-pg">96</span></div>
-        <div class="toc-entry sub"><span>Altering the Story · 이야기 변경</span><span class="toc-dots"></span><span class="toc-pg">98</span></div>
-        <div class="toc-entry sub"><span>Villains · 악당</span><span class="toc-dots"></span><span class="toc-pg">100</span></div>
-        <div class="toc-entry sub"><span>Ultima Points · 울티마 포인트</span><span class="toc-dots"></span><span class="toc-pg">101</span></div>
-        <div class="toc-entry sub"><span>Escalation · 에스컬레이션</span><span class="toc-dots"></span><span class="toc-pg">102</span></div>
-        <div class="toc-entry"><span>Inventory Points · 인벤토리 포인트</span><span class="toc-dots"></span><span class="toc-pg">104</span></div>
-        <div class="toc-entry"><span>Journeys and Travels · 여정과 여행</span><span class="toc-dots"></span><span class="toc-pg">106</span></div>
-        <div class="toc-entry sub"><span>Dangers · 위험</span><span class="toc-dots"></span><span class="toc-pg">108</span></div>
-        <div class="toc-entry sub"><span>Discoveries · 발견</span><span class="toc-dots"></span><span class="toc-pg">109</span></div>
-        <div class="toc-entry"><span>Dungeons · 던전</span><span class="toc-dots"></span><span class="toc-pg">110</span></div>
-        <div class="toc-entry"><span>Magic · 마법</span><span class="toc-dots"></span><span class="toc-pg">112</span></div>
-        <div class="toc-entry"><span>Spells · 주문</span><span class="toc-dots"></span><span class="toc-pg">114</span></div>
-        <div class="toc-entry"><span>Rituals · 의식</span><span class="toc-dots"></span><span class="toc-pg">118</span></div>
-        <div class="toc-entry sub"><span>Rituals during Conflicts · 전투 중 의식</span><span class="toc-dots"></span><span class="toc-pg">120</span></div>
-        <div class="toc-entry"><span>Economy and Items · 경제와 아이템</span><span class="toc-dots"></span><span class="toc-pg">122</span></div>
-        <div class="toc-entry sub"><span>Services and Transports · 서비스와 이동수단</span><span class="toc-dots"></span><span class="toc-pg">124</span></div>
-        <div class="toc-entry sub"><span>Equipment · 장비</span><span class="toc-dots"></span><span class="toc-pg">126</span></div>
-        <div class="toc-entry sub"><span>Martial Items · 전투 장비</span><span class="toc-dots"></span><span class="toc-pg">126</span></div>
-        <div class="toc-entry sub"><span>Basic Weapons · 기본 무기</span><span class="toc-dots"></span><span class="toc-pg">130</span></div>
-        <div class="toc-entry sub"><span>Basic Armors and Shields · 기본 갑옷과 방패</span><span class="toc-dots"></span><span class="toc-pg">132</span></div>
-        <div class="toc-entry"><span>Projects · 프로젝트</span><span class="toc-dots"></span><span class="toc-pg">134</span></div>
-        <div class="toc-entry"><span>Group Dynamics · 그룹 역학</span><span class="toc-dots"></span><span class="toc-pg">140</span></div>
+        <div class="toc-part-title"><span class="toc-part-num">2.</span> 게임 규칙</div>
+        <div class="toc-entry"><span>씬</span><span class="toc-dots"></span><span class="toc-pg">30</span></div>
+        <div class="toc-entry sub"><span>막간 씬</span><span class="toc-dots"></span><span class="toc-pg">31</span></div>
+        <div class="toc-entry sub"><span>GM 씬</span><span class="toc-dots"></span><span class="toc-pg">31</span></div>
+        <div class="toc-entry"><span>세션과 캠페인</span><span class="toc-dots"></span><span class="toc-pg">32</span></div>
+        <div class="toc-entry"><span>중요 규칙</span><span class="toc-dots"></span><span class="toc-pg">33</span></div>
+        <div class="toc-entry"><span>캐릭터 해부학</span><span class="toc-dots"></span><span class="toc-pg">34</span></div>
+        <div class="toc-entry"><span>판정</span><span class="toc-dots"></span><span class="toc-pg">38</span></div>
+        <div class="toc-entry sub"><span>대성공</span><span class="toc-dots"></span><span class="toc-pg">40</span></div>
+        <div class="toc-entry sub"><span>실패</span><span class="toc-dots"></span><span class="toc-pg">40</span></div>
+        <div class="toc-entry sub"><span>기회</span><span class="toc-dots"></span><span class="toc-pg">41</span></div>
+        <div class="toc-entry sub"><span>능력치 판정</span><span class="toc-dots"></span><span class="toc-pg">42</span></div>
+        <div class="toc-entry sub"><span>난이도</span><span class="toc-dots"></span><span class="toc-pg">43</span></div>
+        <div class="toc-entry sub"><span>특기 발동</span><span class="toc-dots"></span><span class="toc-pg">46</span></div>
+        <div class="toc-entry sub"><span>유대 발동</span><span class="toc-dots"></span><span class="toc-pg">47</span></div>
+        <div class="toc-entry sub"><span>대립 판정</span><span class="toc-dots"></span><span class="toc-pg">48</span></div>
+        <div class="toc-entry sub"><span>개방 판정</span><span class="toc-dots"></span><span class="toc-pg">49</span></div>
+        <div class="toc-entry sub"><span>상황 수정자</span><span class="toc-dots"></span><span class="toc-pg">49</span></div>
+        <div class="toc-entry sub"><span>집단 판정</span><span class="toc-dots"></span><span class="toc-pg">50</span></div>
+        <div class="toc-entry sub"><span>자주 쓰이는 판정</span><span class="toc-dots"></span><span class="toc-pg">51</span></div>
+        <div class="toc-entry"><span>시계</span><span class="toc-dots"></span><span class="toc-pg">52</span></div>
+        <div class="toc-entry"><span>유대</span><span class="toc-dots"></span><span class="toc-pg">56</span></div>
+        <div class="toc-entry"><span>전투 씬</span><span class="toc-dots"></span><span class="toc-pg">58</span></div>
+        <div class="toc-entry sub"><span>전투 구조</span><span class="toc-dots"></span><span class="toc-pg">58</span></div>
+        <div class="toc-entry sub"><span>선제권</span><span class="toc-dots"></span><span class="toc-pg">61</span></div>
+        <div class="toc-entry sub"><span>라운드와 턴</span><span class="toc-dots"></span><span class="toc-pg">62</span></div>
+        <div class="toc-entry sub"><span>공간과 거리</span><span class="toc-dots"></span><span class="toc-pg">64</span></div>
+        <div class="toc-entry sub"><span>행동</span><span class="toc-dots"></span><span class="toc-pg">66</span></div>
+        <div class="toc-entry sub"><span>팀워크</span><span class="toc-dots"></span><span class="toc-pg">76</span></div>
+        <div class="toc-entry sub"><span>목표 시계 예시</span><span class="toc-dots"></span><span class="toc-pg">78</span></div>
+        <div class="toc-entry sub"><span>선택 전투 규칙</span><span class="toc-dots"></span><span class="toc-pg">82</span></div>
+        <div class="toc-entry"><span>HP와 MP</span><span class="toc-dots"></span><span class="toc-pg">84</span></div>
+        <div class="toc-entry sub"><span>0 HP</span><span class="toc-dots"></span><span class="toc-pg">86</span></div>
+        <div class="toc-entry sub"><span>희생</span><span class="toc-dots"></span><span class="toc-pg">88</span></div>
+        <div class="toc-entry sub"><span>항복</span><span class="toc-dots"></span><span class="toc-pg">89</span></div>
+        <div class="toc-entry"><span>휴식</span><span class="toc-dots"></span><span class="toc-pg">90</span></div>
+        <div class="toc-entry"><span>피해</span><span class="toc-dots"></span><span class="toc-pg">92</span></div>
+        <div class="toc-entry sub"><span>즉흥 피해</span><span class="toc-dots"></span><span class="toc-pg">93</span></div>
+        <div class="toc-entry"><span>상태 이상</span><span class="toc-dots"></span><span class="toc-pg">94</span></div>
+        <div class="toc-entry"><span>파뷸라 포인트</span><span class="toc-dots"></span><span class="toc-pg">96</span></div>
+        <div class="toc-entry sub"><span>이야기 변경</span><span class="toc-dots"></span><span class="toc-pg">98</span></div>
+        <div class="toc-entry sub"><span>악당</span><span class="toc-dots"></span><span class="toc-pg">100</span></div>
+        <div class="toc-entry sub"><span>울티마 포인트</span><span class="toc-dots"></span><span class="toc-pg">101</span></div>
+        <div class="toc-entry sub"><span>에스컬레이션</span><span class="toc-dots"></span><span class="toc-pg">102</span></div>
+        <div class="toc-entry"><span>인벤토리 포인트</span><span class="toc-dots"></span><span class="toc-pg">104</span></div>
+        <div class="toc-entry"><span>여정과 여행</span><span class="toc-dots"></span><span class="toc-pg">106</span></div>
+        <div class="toc-entry sub"><span>위험</span><span class="toc-dots"></span><span class="toc-pg">108</span></div>
+        <div class="toc-entry sub"><span>발견</span><span class="toc-dots"></span><span class="toc-pg">109</span></div>
+        <div class="toc-entry"><span>던전</span><span class="toc-dots"></span><span class="toc-pg">110</span></div>
+        <div class="toc-entry"><span>마법</span><span class="toc-dots"></span><span class="toc-pg">112</span></div>
+        <div class="toc-entry"><span>주문</span><span class="toc-dots"></span><span class="toc-pg">114</span></div>
+        <div class="toc-entry"><span>의식</span><span class="toc-dots"></span><span class="toc-pg">118</span></div>
+        <div class="toc-entry sub"><span>전투 중 의식</span><span class="toc-dots"></span><span class="toc-pg">120</span></div>
+        <div class="toc-entry"><span>경제와 아이템</span><span class="toc-dots"></span><span class="toc-pg">122</span></div>
+        <div class="toc-entry sub"><span>서비스와 이동수단</span><span class="toc-dots"></span><span class="toc-pg">124</span></div>
+        <div class="toc-entry sub"><span>장비</span><span class="toc-dots"></span><span class="toc-pg">126</span></div>
+        <div class="toc-entry sub"><span>전투 장비</span><span class="toc-dots"></span><span class="toc-pg">126</span></div>
+        <div class="toc-entry sub"><span>기본 무기</span><span class="toc-dots"></span><span class="toc-pg">130</span></div>
+        <div class="toc-entry sub"><span>기본 갑옷과 방패</span><span class="toc-dots"></span><span class="toc-pg">132</span></div>
+        <div class="toc-entry"><span>프로젝트</span><span class="toc-dots"></span><span class="toc-pg">134</span></div>
+        <div class="toc-entry"><span>그룹 역학</span><span class="toc-dots"></span><span class="toc-pg">140</span></div>
       </div>
 
       <div class="toc-part">
-        <div class="toc-part-title"><span class="toc-part-num">3.</span> Press Start · 시작하기</div>
-        <div class="toc-entry"><span>Before You Start · 시작 전에</span><span class="toc-dots"></span><span class="toc-pg">146</span></div>
-        <div class="toc-entry"><span>World Creation · 세계 창조</span><span class="toc-dots"></span><span class="toc-pg">148</span></div>
-        <div class="toc-entry"><span>Group Creation · 그룹 창조</span><span class="toc-dots"></span><span class="toc-pg">152</span></div>
-        <div class="toc-entry"><span>Character Creation · 캐릭터 생성</span><span class="toc-dots"></span><span class="toc-pg">154</span></div>
-        <div class="toc-entry"><span>Classic Characters · 클래식 캐릭터</span><span class="toc-dots"></span><span class="toc-pg">172</span></div>
-        <div class="toc-entry sub"><span>Arcanist · 마술사</span><span class="toc-dots"></span><span class="toc-pg">176</span></div>
-        <div class="toc-entry sub"><span>Chimerist · 키메리스트</span><span class="toc-dots"></span><span class="toc-pg">182</span></div>
-        <div class="toc-entry sub"><span>Darkblade · 다크블레이드</span><span class="toc-dots"></span><span class="toc-pg">184</span></div>
-        <div class="toc-entry sub"><span>Elementalist · 원소술사</span><span class="toc-dots"></span><span class="toc-pg">186</span></div>
-        <div class="toc-entry sub"><span>Entropist · 엔트로피스트</span><span class="toc-dots"></span><span class="toc-pg">190</span></div>
-        <div class="toc-entry sub"><span>Fury · 퓨리</span><span class="toc-dots"></span><span class="toc-pg">194</span></div>
-        <div class="toc-entry sub"><span>Guardian · 가디언</span><span class="toc-dots"></span><span class="toc-pg">196</span></div>
-        <div class="toc-entry sub"><span>Loremaster · 지식의 달인</span><span class="toc-dots"></span><span class="toc-pg">198</span></div>
-        <div class="toc-entry sub"><span>Orator · 연설가</span><span class="toc-dots"></span><span class="toc-pg">200</span></div>
-        <div class="toc-entry sub"><span>Rogue · 로그</span><span class="toc-dots"></span><span class="toc-pg">202</span></div>
-        <div class="toc-entry sub"><span>Sharpshooter · 명사수</span><span class="toc-dots"></span><span class="toc-pg">204</span></div>
-        <div class="toc-entry sub"><span>Spiritist · 영매</span><span class="toc-dots"></span><span class="toc-pg">206</span></div>
-        <div class="toc-entry sub"><span>Tinkerer · 발명가</span><span class="toc-dots"></span><span class="toc-pg">210</span></div>
-        <div class="toc-entry sub"><span>Wayfarer · 방랑자</span><span class="toc-dots"></span><span class="toc-pg">216</span></div>
-        <div class="toc-entry sub"><span>Weaponmaster · 무기의 달인</span><span class="toc-dots"></span><span class="toc-pg">218</span></div>
-        <div class="toc-entry"><span>Prologues · 프롤로그</span><span class="toc-dots"></span><span class="toc-pg">220</span></div>
-        <div class="toc-entry"><span>Experience and Levels · 경험과 레벨</span><span class="toc-dots"></span><span class="toc-pg">226</span></div>
-        <div class="toc-entry"><span>Creating High Level PCs · 고레벨 PC 생성</span><span class="toc-dots"></span><span class="toc-pg">229</span></div>
-        <div class="toc-entry"><span>Optional Advancement Rules · 선택 성장 규칙</span><span class="toc-dots"></span><span class="toc-pg">230</span></div>
-        <div class="toc-entry"><span>Heroic Skills · 영웅 기술</span><span class="toc-dots"></span><span class="toc-pg">232</span></div>
+        <div class="toc-part-title"><span class="toc-part-num">3.</span> 시작하기</div>
+        <div class="toc-entry"><span>시작 전에</span><span class="toc-dots"></span><span class="toc-pg">146</span></div>
+        <div class="toc-entry"><span>세계 창조</span><span class="toc-dots"></span><span class="toc-pg">148</span></div>
+        <div class="toc-entry"><span>그룹 창조</span><span class="toc-dots"></span><span class="toc-pg">152</span></div>
+        <div class="toc-entry"><span>캐릭터 생성</span><span class="toc-dots"></span><span class="toc-pg">154</span></div>
+        <div class="toc-entry"><span>클래식 캐릭터</span><span class="toc-dots"></span><span class="toc-pg">172</span></div>
+        <div class="toc-entry sub"><span>마술사</span><span class="toc-dots"></span><span class="toc-pg">176</span></div>
+        <div class="toc-entry sub"><span>키메리스트</span><span class="toc-dots"></span><span class="toc-pg">182</span></div>
+        <div class="toc-entry sub"><span>다크블레이드</span><span class="toc-dots"></span><span class="toc-pg">184</span></div>
+        <div class="toc-entry sub"><span>원소술사</span><span class="toc-dots"></span><span class="toc-pg">186</span></div>
+        <div class="toc-entry sub"><span>엔트로피스트</span><span class="toc-dots"></span><span class="toc-pg">190</span></div>
+        <div class="toc-entry sub"><span>퓨리</span><span class="toc-dots"></span><span class="toc-pg">194</span></div>
+        <div class="toc-entry sub"><span>가디언</span><span class="toc-dots"></span><span class="toc-pg">196</span></div>
+        <div class="toc-entry sub"><span>지식의 달인</span><span class="toc-dots"></span><span class="toc-pg">198</span></div>
+        <div class="toc-entry sub"><span>연설가</span><span class="toc-dots"></span><span class="toc-pg">200</span></div>
+        <div class="toc-entry sub"><span>로그</span><span class="toc-dots"></span><span class="toc-pg">202</span></div>
+        <div class="toc-entry sub"><span>명사수</span><span class="toc-dots"></span><span class="toc-pg">204</span></div>
+        <div class="toc-entry sub"><span>영매</span><span class="toc-dots"></span><span class="toc-pg">206</span></div>
+        <div class="toc-entry sub"><span>발명가</span><span class="toc-dots"></span><span class="toc-pg">210</span></div>
+        <div class="toc-entry sub"><span>방랑자</span><span class="toc-dots"></span><span class="toc-pg">216</span></div>
+        <div class="toc-entry sub"><span>무기의 달인</span><span class="toc-dots"></span><span class="toc-pg">218</span></div>
+        <div class="toc-entry"><span>프롤로그</span><span class="toc-dots"></span><span class="toc-pg">220</span></div>
+        <div class="toc-entry"><span>경험과 레벨</span><span class="toc-dots"></span><span class="toc-pg">226</span></div>
+        <div class="toc-entry"><span>고레벨 PC 생성</span><span class="toc-dots"></span><span class="toc-pg">229</span></div>
+        <div class="toc-entry"><span>선택 성장 규칙</span><span class="toc-dots"></span><span class="toc-pg">230</span></div>
+        <div class="toc-entry"><span>영웅 기술</span><span class="toc-dots"></span><span class="toc-pg">232</span></div>
       </div>
 
       <div class="toc-part">
-        <div class="toc-part-title"><span class="toc-part-num">4.</span> Game Master · GM 가이드</div>
-        <div class="toc-entry"><span>The Game Master's Role · GM의 역할</span><span class="toc-dots"></span><span class="toc-pg">244</span></div>
-        <div class="toc-entry"><span>Character Classes · 직업 클래스</span><span class="toc-dots"></span><span class="toc-pg">248</span></div>
-        <div class="toc-entry"><span>The Art of Villains · 악당의 기술</span><span class="toc-dots"></span><span class="toc-pg">254</span></div>
-        <div class="toc-entry"><span>Dungeons · 던전</span><span class="toc-dots"></span><span class="toc-pg">258</span></div>
-        <div class="toc-entry"><span>Rewards · 보상</span><span class="toc-dots"></span><span class="toc-pg">264</span></div>
-        <div class="toc-entry"><span>Designing Rare Items · 희귀 아이템 설계</span><span class="toc-dots"></span><span class="toc-pg">266</span></div>
-        <div class="toc-entry sub"><span>Designing Rare Weapons · 희귀 무기 설계</span><span class="toc-dots"></span><span class="toc-pg">268</span></div>
-        <div class="toc-entry sub"><span>Designing Rare Armors and Shields · 희귀 갑옷과 방패</span><span class="toc-dots"></span><span class="toc-pg">280</span></div>
-        <div class="toc-entry sub"><span>Designing Accessories · 악세서리 설계</span><span class="toc-dots"></span><span class="toc-pg">284</span></div>
-        <div class="toc-entry"><span>Artifacts · 유물</span><span class="toc-dots"></span><span class="toc-pg">288</span></div>
-        <div class="toc-entry"><span>Designing Battles · 전투 설계</span><span class="toc-dots"></span><span class="toc-pg">292</span></div>
-        <div class="toc-entry sub"><span>Elites and Champions · 엘리트와 챔피언</span><span class="toc-dots"></span><span class="toc-pg">295</span></div>
-        <div class="toc-entry sub"><span>Boss Battles · 보스 전투</span><span class="toc-dots"></span><span class="toc-pg">300</span></div>
-        <div class="toc-entry"><span>Designing NPCs · NPC 설계</span><span class="toc-dots"></span><span class="toc-pg">300</span></div>
-        <div class="toc-entry sub"><span>NPC Species · NPC 종족</span><span class="toc-dots"></span><span class="toc-pg">304</span></div>
-        <div class="toc-entry sub"><span>NPC Skills · NPC 기술</span><span class="toc-dots"></span><span class="toc-pg">306</span></div>
-        <div class="toc-entry sub"><span>NPC Spells · NPC 주문</span><span class="toc-dots"></span><span class="toc-pg">310</span></div>
-        <div class="toc-entry"><span>Sample Boss Designs · 보스 설계 예시</span><span class="toc-dots"></span><span class="toc-pg">312</span></div>
+        <div class="toc-part-title"><span class="toc-part-num">4.</span> GM 가이드</div>
+        <div class="toc-entry"><span>GM의 역할</span><span class="toc-dots"></span><span class="toc-pg">244</span></div>
+        <div class="toc-entry"><span>직업 클래스</span><span class="toc-dots"></span><span class="toc-pg">248</span></div>
+        <div class="toc-entry"><span>악당의 기술</span><span class="toc-dots"></span><span class="toc-pg">254</span></div>
+        <div class="toc-entry"><span>던전</span><span class="toc-dots"></span><span class="toc-pg">258</span></div>
+        <div class="toc-entry"><span>보상</span><span class="toc-dots"></span><span class="toc-pg">264</span></div>
+        <div class="toc-entry"><span>희귀 아이템 설계</span><span class="toc-dots"></span><span class="toc-pg">266</span></div>
+        <div class="toc-entry sub"><span>희귀 무기 설계</span><span class="toc-dots"></span><span class="toc-pg">268</span></div>
+        <div class="toc-entry sub"><span>희귀 갑옷과 방패</span><span class="toc-dots"></span><span class="toc-pg">280</span></div>
+        <div class="toc-entry sub"><span>악세서리 설계</span><span class="toc-dots"></span><span class="toc-pg">284</span></div>
+        <div class="toc-entry"><span>유물</span><span class="toc-dots"></span><span class="toc-pg">288</span></div>
+        <div class="toc-entry"><span>전투 설계</span><span class="toc-dots"></span><span class="toc-pg">292</span></div>
+        <div class="toc-entry sub"><span>엘리트와 챔피언</span><span class="toc-dots"></span><span class="toc-pg">295</span></div>
+        <div class="toc-entry sub"><span>보스 전투</span><span class="toc-dots"></span><span class="toc-pg">300</span></div>
+        <div class="toc-entry"><span>NPC 설계</span><span class="toc-dots"></span><span class="toc-pg">300</span></div>
+        <div class="toc-entry sub"><span>NPC 종족</span><span class="toc-dots"></span><span class="toc-pg">304</span></div>
+        <div class="toc-entry sub"><span>NPC 기술</span><span class="toc-dots"></span><span class="toc-pg">306</span></div>
+        <div class="toc-entry sub"><span>NPC 주문</span><span class="toc-dots"></span><span class="toc-pg">310</span></div>
+        <div class="toc-entry"><span>보스 설계 예시</span><span class="toc-dots"></span><span class="toc-pg">312</span></div>
       </div>
 
       <div class="toc-part">
-        <div class="toc-part-title"><span class="toc-part-num">5.</span> Bestiary · 몬스터 도감</div>
-        <div class="toc-entry"><span>Studying an NPC · NPC 연구</span><span class="toc-dots"></span><span class="toc-pg">319</span></div>
-        <div class="toc-entry"><span>Beasts · 야수</span><span class="toc-dots"></span><span class="toc-pg">324</span></div>
-        <div class="toc-entry"><span>Constructs · 구조물</span><span class="toc-dots"></span><span class="toc-pg">328</span></div>
-        <div class="toc-entry"><span>Demons · 악마</span><span class="toc-dots"></span><span class="toc-pg">332</span></div>
-        <div class="toc-entry"><span>Elementals · 정령</span><span class="toc-dots"></span><span class="toc-pg">334</span></div>
-        <div class="toc-entry"><span>Humanoids · 인간형</span><span class="toc-dots"></span><span class="toc-pg">338</span></div>
-        <div class="toc-entry"><span>Monsters · 몬스터</span><span class="toc-dots"></span><span class="toc-pg">342</span></div>
-        <div class="toc-entry"><span>Plants · 식물</span><span class="toc-dots"></span><span class="toc-pg">346</span></div>
-        <div class="toc-entry"><span>Undead · 언데드</span><span class="toc-dots"></span><span class="toc-pg">350</span></div>
+        <div class="toc-part-title"><span class="toc-part-num">5.</span> 몬스터 도감</div>
+        <div class="toc-entry"><span>NPC 연구</span><span class="toc-dots"></span><span class="toc-pg">319</span></div>
+        <div class="toc-entry"><span>야수</span><span class="toc-dots"></span><span class="toc-pg">324</span></div>
+        <div class="toc-entry"><span>구조물</span><span class="toc-dots"></span><span class="toc-pg">328</span></div>
+        <div class="toc-entry"><span>악마</span><span class="toc-dots"></span><span class="toc-pg">332</span></div>
+        <div class="toc-entry"><span>정령</span><span class="toc-dots"></span><span class="toc-pg">334</span></div>
+        <div class="toc-entry"><span>인간형</span><span class="toc-dots"></span><span class="toc-pg">338</span></div>
+        <div class="toc-entry"><span>몬스터</span><span class="toc-dots"></span><span class="toc-pg">342</span></div>
+        <div class="toc-entry"><span>식물</span><span class="toc-dots"></span><span class="toc-pg">346</span></div>
+        <div class="toc-entry"><span>언데드</span><span class="toc-dots"></span><span class="toc-pg">350</span></div>
       </div>
     </div>
   </section>
@@ -9398,6 +9549,198 @@
 
   const navItems = document.querySelectorAll('.nav-item');
   const sections = document.querySelectorAll('[id]');
+
+  /* ═══════════════════════════════════════════════ */
+  /* PAGE CROSS-REFERENCE: turn "176페이지" / "p.176" */
+  /* into clickable links that jump to the section.    */
+  /* ═══════════════════════════════════════════════ */
+  const PAGE_ANCHORS = [
+    [10,'introduction'],[11,'basics'],[14,'eight-pillars'],[16,'high-fantasy'],
+    [19,'natural-fantasy'],[20,'techno-fantasy'],[22,'materials'],[24,'players'],
+    [26,'gm-role'],[30,'scenes'],[33,'important-rules'],[34,'char-anatomy'],
+    [38,'checks'],[43,'difficulty'],[47,'bond-checks'],[52,'clocks'],[56,'bonds'],
+    [58,'conflict'],[60,'conflict-detail'],[64,'actions'],[68,'action-details'],
+    [72,'action-details-2'],[78,'goal-clocks'],[84,'hp-mp'],[88,'sacrifice-rest'],
+    [92,'damage-status'],[96,'fabula-pts'],[100,'villains'],[104,'inventory'],
+    [110,'dungeons-magic'],[114,'spells'],[118,'rituals'],[122,'economy'],
+    [126,'equipment-detail'],[130,'basic-items'],[134,'projects'],[140,'group-dynamics'],
+    [145,'press-start'],[146,'before-start'],[148,'world-creation'],[150,'world-tables'],
+    [152,'group-creation'],[154,'char-creation'],[155,'identity-theme-origin'],
+    [160,'classes-attributes'],[168,'equipment-shopping'],[170,'names-classic'],
+    [176,'arcanist'],[182,'chimerist-darkblade'],[186,'elementalist'],[190,'entropist'],
+    [194,'fury'],[196,'guardian'],[198,'loremaster'],[200,'orator'],[202,'rogue'],
+    [204,'sharpshooter'],[206,'spiritist'],[210,'tinkerer'],[214,'tinkerer-infusions'],
+    [216,'wayfarer'],[218,'weaponmaster'],[220,'prologues'],[226,'experience'],
+    [232,'heroic-skills'],[243,'game-master'],[244,'gm-role-detail'],[248,'gm-classes'],
+    [254,'gm-villains'],[258,'gm-dungeons'],[264,'gm-rewards'],[266,'gm-rare-items'],
+    [268,'gm-weapons'],[273,'gm-weapons-2'],[279,'gm-armor-shields']
+  ];
+
+  /* find which section a given page number lives in (last anchor <= page) */
+  /* pages beyond the last translated section (>= MAX) are left as plain text */
+  const MAX_LINKABLE_PAGE = 283; /* last content page currently in this document */
+  function sectionForPage(pg) {
+    if (pg > MAX_LINKABLE_PAGE) return null;
+    let target = null;
+    for (const [p, id] of PAGE_ANCHORS) {
+      if (p <= pg) target = id; else break;
+    }
+    return target;
+  }
+
+  const backBtn = document.getElementById('backBtn');
+  const backSub = document.getElementById('backSub');
+  let returnY = null;
+
+  function flashSection(el) {
+    if (!el) return;
+    el.classList.remove('jump-flash');
+    void el.offsetWidth; /* reflow to restart animation */
+    el.classList.add('jump-flash');
+    setTimeout(() => el.classList.remove('jump-flash'), 1400);
+  }
+
+  function jumpToPage(pg) {
+    const id = sectionForPage(pg);
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    /* remember where we were so we can come back */
+    returnY = window.scrollY;
+    backSub.textContent = 'p.' + pg + ' 으로 이동함';
+    backBtn.classList.add('visible');
+    el.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => flashSection(el), 450);
+  }
+
+  backBtn.addEventListener('click', () => {
+    if (returnY === null) return;
+    window.scrollTo({ top: returnY, behavior: 'smooth' });
+    backBtn.classList.remove('visible');
+    returnY = null;
+  });
+
+  /* auto-hide the button if the user manually scrolls back near the origin */
+  let hideTimer = null;
+  window.addEventListener('scroll', () => {
+    if (returnY === null) return;
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      if (returnY !== null && Math.abs(window.scrollY - returnY) < 120) {
+        backBtn.classList.remove('visible');
+        returnY = null;
+      }
+    }, 400);
+  }, { passive: true });
+
+  /* Walk text nodes and wrap page references in clickable spans.
+     Patterns: "176페이지", "p.176", "페이지 176". Skip nav/toc/script. */
+  (function linkifyPageRefs() {
+    const rx = /(?:p\.\s?(\d{1,3}))|(?:페이지\s?(\d{1,3}))|((\d{1,3})페이지)/g;
+    const skip = new Set(['SCRIPT','STYLE','A','BUTTON']);
+    const walker = document.createTreeWalker(
+      document.querySelector('main') || document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.nodeValue || !/\d/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+          let p = node.parentNode;
+          while (p && p !== document.body) {
+            if (skip.has(p.nodeName)) return NodeFilter.FILTER_REJECT;
+            if (p.classList && (p.classList.contains('nav-pg') || p.classList.contains('toc-pg') || p.classList.contains('pageref-link'))) return NodeFilter.FILTER_REJECT;
+            p = p.parentNode;
+          }
+          return /(?:p\.\s?\d{1,3})|(?:\d{1,3}페이지)|(?:페이지\s?\d{1,3})/.test(node.nodeValue)
+            ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+    const targets = [];
+    let n;
+    while ((n = walker.nextNode())) targets.push(n);
+
+    targets.forEach(node => {
+      const text = node.nodeValue;
+      rx.lastIndex = 0;
+      let last = 0, m;
+      const frag = document.createDocumentFragment();
+      while ((m = rx.exec(text)) !== null) {
+        const pg = parseInt(m[1] || m[2] || m[4], 10);
+        if (!pg || !sectionForPage(pg)) continue;
+        if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        const span = document.createElement('span');
+        span.className = 'pageref-link';
+        span.textContent = m[0];
+        span.setAttribute('role', 'link');
+        span.setAttribute('tabindex', '0');
+        span.title = pg + '페이지로 이동';
+        span.addEventListener('click', () => jumpToPage(pg));
+        span.addEventListener('keydown', e => { if (e.key === 'Enter') jumpToPage(pg); });
+        frag.appendChild(span);
+        last = m.index + m[0].length;
+      }
+      if (last > 0) {
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        node.parentNode.replaceChild(frag, node);
+      }
+    });
+  })();
+
+  /* ═══════════════════════════════════════════════ */
+  /* TABLE OF CONTENTS: make every entry clickable     */
+  /* ═══════════════════════════════════════════════ */
+  (function linkifyTOC() {
+    /* sub-entries & entries: use their own page number */
+    document.querySelectorAll('#toc .toc-entry').forEach(entry => {
+      const pgEl = entry.querySelector('.toc-pg');
+      if (!pgEl) return;
+      const pg = parseInt(pgEl.textContent.trim(), 10);
+      if (!pg) return;
+      /* pages beyond the translated range can't be navigated yet */
+      if (!sectionForPage(pg)) {
+        entry.classList.add('toc-disabled');
+        entry.title = '아직 번역되지 않은 부분입니다';
+        return;
+      }
+      entry.setAttribute('role', 'link');
+      entry.setAttribute('tabindex', '0');
+      entry.addEventListener('click', () => jumpToPageFromTOC(pg));
+      entry.addEventListener('keydown', e => { if (e.key === 'Enter') jumpToPageFromTOC(pg); });
+    });
+
+    /* part titles (chapters) have no page number → map to chapter start */
+    const partStart = { '서문':10, '1.':14, '2.':30, '3.':145, '4.':243, '5.':302 };
+    document.querySelectorAll('#toc .toc-part-title').forEach(title => {
+      const numEl = title.querySelector('.toc-part-num');
+      if (!numEl) return;
+      const key = numEl.textContent.trim();
+      const pg = partStart[key];
+      if (!pg) return;
+      if (!sectionForPage(pg)) {
+        title.classList.add('toc-disabled');
+        title.title = '아직 번역되지 않은 부분입니다';
+        return;
+      }
+      title.style.cursor = 'pointer';
+      title.setAttribute('role', 'link');
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('click', () => jumpToPageFromTOC(pg));
+      title.addEventListener('keydown', e => { if (e.key === 'Enter') jumpToPageFromTOC(pg); });
+    });
+  })();
+
+  /* TOC jump: like jumpToPage but remembers TOC so "돌아가기" returns here */
+  function jumpToPageFromTOC(pg) {
+    const id = sectionForPage(pg);
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    returnY = window.scrollY;
+    backSub.textContent = '목차로';
+    backBtn.classList.add('visible');
+    el.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => flashSection(el), 450);
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
