@@ -368,6 +368,17 @@
     margin-bottom: 48px;
     position: relative; z-index: 1;
   }
+  .cover-quote-attr {
+    display: block;
+    font-style: normal;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-top: 16px;
+    text-transform: uppercase;
+  }
 
   .cover-inspirations {
     display: flex;
@@ -672,6 +683,55 @@
     content: ' ⌛';
     font-size: 0.85em;
     opacity: 0.7;
+  }
+
+  /* ── TOC HOVER TOOLTIP ── */
+  .toc-has-tip { position: relative; }
+  .toc-has-tip .toc-tip {
+    position: absolute;
+    left: 50%;
+    bottom: 132%;
+    transform: translateX(-50%) translateY(6px);
+    width: max-content;
+    max-width: 340px;
+    background: linear-gradient(160deg, #1a2236, #0e1322);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+    text-transform: none;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.6), 0 0 20px rgba(212,175,82,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    z-index: 290;
+    pointer-events: none;
+    white-space: normal;
+    text-align: left;
+  }
+  .toc-has-tip .toc-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: #0e1322;
+  }
+  .toc-has-tip:hover .toc-tip,
+  .toc-has-tip:focus .toc-tip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  body.sepia .toc-has-tip .toc-tip { background: linear-gradient(160deg, #E4D5B0, #D8C8A0); color: #3A2E18; }
+  body.sepia .toc-has-tip .toc-tip::after { border-top-color: #D8C8A0; }
+  @media (max-width: 820px) {
+    .toc-has-tip .toc-tip { max-width: 220px; font-size: 12.5px; }
   }
 
   /* ── TWO COLUMN ── */
@@ -1568,9 +1628,9 @@
     <a href="#classes-attributes" class="nav-item sub">직업·능력치·수치 계산 <span class="nav-pg">160</span></a>
     <a href="#equipment-shopping" class="nav-item sub">장비 구매 실례 <span class="nav-pg">168</span></a>
     <a href="#names-classic" class="nav-item sub">이름·클래식 캐릭터 <span class="nav-pg">170</span></a>
-    <a href="#arcanist" class="nav-item sub">마술사 직업 <span class="nav-pg">176</span></a>
+    <a href="#arcanist" class="nav-item sub">아르카니스트 직업 <span class="nav-pg">176</span></a>
     <a href="#chimerist-darkblade" class="nav-item sub">키메리스트·다크블레이드 <span class="nav-pg">182</span></a>
-    <a href="#elementalist" class="nav-item sub">원소술사 <span class="nav-pg">186</span></a>
+    <a href="#elementalist" class="nav-item sub">엘리멘탈리스트 <span class="nav-pg">186</span></a>
     <a href="#entropist" class="nav-item sub">엔트로피스트 <span class="nav-pg">190</span></a>
     <a href="#fury" class="nav-item sub">퓨리 <span class="nav-pg">194</span></a>
     <a href="#guardian" class="nav-item sub">가디언 <span class="nav-pg">196</span></a>
@@ -1614,8 +1674,9 @@
     <p class="cover-subtitle">파뷸라 울티마 &nbsp;·&nbsp; Core Rulebook</p>
     <div class="cover-divider"></div>
     <p class="cover-tagline">
-      당신의 손에 쥔 것은 JRPG 비디오게임에서 영감을 받은<br>
-      테이블탑 롤플레잉 게임의 코어 룰북입니다.
+      &ldquo;모든 위대한 이야기는 펼쳐지기를 기다리는 한 권의 책으로 시작된다.<br>
+      그대의 손에 쥔 펜이 곧 영웅들의 운명을 써내려가리라.&rdquo;
+      <span class="cover-quote-attr">— 어느 이름 없는 현자의 기록에서</span>
     </p>
     <div class="cover-inspirations">
       <span class="insp-chip">Bravely Default</span>
@@ -1720,10 +1781,10 @@
         <div class="toc-entry"><span>그룹 창조</span><span class="toc-dots"></span><span class="toc-pg">152</span></div>
         <div class="toc-entry"><span>캐릭터 생성</span><span class="toc-dots"></span><span class="toc-pg">154</span></div>
         <div class="toc-entry"><span>클래식 캐릭터</span><span class="toc-dots"></span><span class="toc-pg">172</span></div>
-        <div class="toc-entry sub"><span>마술사</span><span class="toc-dots"></span><span class="toc-pg">176</span></div>
+        <div class="toc-entry sub"><span>아르카니스트</span><span class="toc-dots"></span><span class="toc-pg">176</span></div>
         <div class="toc-entry sub"><span>키메리스트</span><span class="toc-dots"></span><span class="toc-pg">182</span></div>
         <div class="toc-entry sub"><span>다크블레이드</span><span class="toc-dots"></span><span class="toc-pg">184</span></div>
-        <div class="toc-entry sub"><span>원소술사</span><span class="toc-dots"></span><span class="toc-pg">186</span></div>
+        <div class="toc-entry sub"><span>엘리멘탈리스트</span><span class="toc-dots"></span><span class="toc-pg">186</span></div>
         <div class="toc-entry sub"><span>엔트로피스트</span><span class="toc-dots"></span><span class="toc-pg">190</span></div>
         <div class="toc-entry sub"><span>퓨리</span><span class="toc-dots"></span><span class="toc-pg">194</span></div>
         <div class="toc-entry sub"><span>가디언</span><span class="toc-dots"></span><span class="toc-pg">196</span></div>
@@ -1811,14 +1872,14 @@
     </div>
 
     <!-- ROLEPLAYING GAME -->
-    <h3 class="section-title" id="roleplaying">롤플레잉 게임이란? — A Roleplaying Game</h3>
+    <h3 class="section-title" id="roleplaying">롤플레잉 게임이란?</h3>
 
     <p>롤플레잉 게임(RPG)은 특별한 종류의 게임입니다. 원래는 테이블탑 게임으로 시작되었지만, 오늘날에는 온라인으로도 자주 즐깁니다. 롤플레잉 게임에서는 한 그룹이 함께 이야기를 만들어 갑니다. 대화를 통해 이루어지며, 그 대화에는 규칙과 (일반적으로) 주사위 굴림이 수반됩니다. 이는 불확실한 상황의 결과를 결정하고, 만들어지는 이야기가 게임의 전제를 반영하도록 돕습니다. 공포 게임이라면 긴장과 두려움, 액션 게임이라면 아드레날린이 넘치는 장면, 로맨스 게임이라면 깊고 진심 어린 캐릭터 교류가 그 전제입니다.</p>
 
     <p>일본에서는 이 활동을 "테이블 토크 롤플레잉 게임(TTRPG)"이라고도 부르는데, 테이블에서의 대화에 크게 의존하기 때문입니다.</p>
 
     <!-- ROLES -->
-    <h3 class="section-title" id="roles">게임 내 역할 — Roles in the Game</h3>
+    <h3 class="section-title" id="roles">게임 내 역할</h3>
 
     <p>이 게임을 플레이하는 사람들은 서로 다른 역할을 수행합니다.</p>
 
@@ -1849,7 +1910,7 @@
     </div>
 
     <!-- CHAPTER 1 PREVIEW -->
-    <h3 class="section-title" id="eight-pillars">이 책의 구성 — How to Use This Book</h3>
+    <h3 class="section-title" id="eight-pillars">이 책의 구성</h3>
 
     <p>이 룰북은 크게 다섯 파트로 구성되어 있습니다.</p>
 
@@ -1879,13 +1940,13 @@
     </div>
 
     <!-- CLASS PREVIEW -->
-    <h3 class="section-title" id="classes">직업 목록 — Classic Characters</h3>
+    <h3 class="section-title" id="classes">직업 목록</h3>
 
     <p>파뷸라 울티마에는 15종의 클래식 직업이 수록되어 있습니다. 각 직업은 고유한 능력과 플레이 스타일을 제공합니다.</p>
 
     <div class="class-grid">
       <div class="class-entry">
-        <span class="class-name">Arcanist · 마술사</span>
+        <span class="class-name">Arcanist · 아르카니스트</span>
         <span class="class-pg">p. 176</span>
       </div>
       <div class="class-entry">
@@ -1897,7 +1958,7 @@
         <span class="class-pg">p. 184</span>
       </div>
       <div class="class-entry">
-        <span class="class-name">Elementalist · 원소술사</span>
+        <span class="class-name">Elementalist · 엘리멘탈리스트</span>
         <span class="class-pg">p. 186</span>
       </div>
       <div class="class-entry">
@@ -1947,7 +2008,7 @@
     </div>
 
     <!-- BESTIARY PREVIEW -->
-    <h3 class="section-title" id="bestiary">몬스터 도감 — Bestiary</h3>
+    <h3 class="section-title" id="bestiary">몬스터 도감</h3>
 
     <p>파뷸라 울티마의 몬스터 도감은 8종의 분류로 나뉩니다. 각 분류는 고유한 특성과 능력을 가지며, GM이 다양한 전투와 만남을 설계하는 데 활용됩니다.</p>
 
@@ -2026,7 +2087,7 @@
       <div class="chapter-rule"><div class="chapter-rule-line"></div><span class="chapter-rule-gem">◆◆◆</span></div>
     </div>
 
-    <h3 class="section-title" id="basics-play">플레이의 기초 — The Basics of Play</h3>
+    <h3 class="section-title" id="basics-play">플레이의 기초</h3>
 
     <p>대화 속에서 플레이어들은 자신의 캐릭터의 행동과 선택을 묘사합니다.</p>
 
@@ -2048,7 +2109,7 @@
 
     <p>이 모든 것을 합쳐 <em>롤플레잉</em>이라고 부르며, 이 사건들은 여러분의 상상 속에서 펼쳐집니다. 이 공간은 종종 "허구(the fiction)"라고 불립니다.</p>
 
-    <h3 class="section-title" id="the-rules">규칙 — The Rules</h3>
+    <h3 class="section-title" id="the-rules">규칙</h3>
 
     <p>이것은 또한 게임이기도 하며, 바로 여기서 규칙이 등장합니다. 비디오게임이나 보드게임처럼 캐릭터들은 자신의 강점과 약점을 나타내는 수치와 능력을 가지고 있으며, 상황의 결과를 긴장감 있고 예측 불가능하게 만들기 위해 주사위 굴림이 종종 사용됩니다.</p>
 
@@ -2058,7 +2119,7 @@
       이것은 영웅과 어둠의 이야기입니다. 위대한 희망의 이야기... 그리고 더욱 위대한 희생의 이야기입니다.
     </div>
 
-    <h3 class="section-title" id="what-is-this-game">이 게임은 무엇에 관한 것인가? — But What Is This Game About?</h3>
+    <h3 class="section-title" id="what-is-this-game">이 게임은 무엇에 관한 것인가?</h3>
 
     <p>세상에는 많은 롤플레잉 게임이 있으며, 우리는 각기 다른 이유로 그것들을 즐깁니다. 많은 게임이 우리에게 영웅이 된 기분을 선사하고, 일부는 어두운 수사와 비극적인 이야기에 우리를 몰아넣으며, 또 다른 게임들은 우리의 기술과 전술적 사고를 시험하고, 무거운 주제에 대한 성찰을 유도하기도 합니다.</p>
 
@@ -2424,7 +2485,7 @@
       <p>규칙에 익숙해질수록 일부를 바꾸거나 조정하고 싶어질 수 있으며, 그것은 완전히 괜찮습니다. 이 책의 어떤 내용도 절대불변의 것으로 쓰이지 않았습니다. 다만 변경 사항이 예상보다 더 많은 요소에 영향을 줄 수 있으니 신중하게 생각하세요. 플레이 경험을 안전하게 커스터마이징할 수 있는 다양한 선택 규칙도 수록되어 있습니다. 무언가를 변경하고 싶을 때는 반드시 그룹 전체와 먼저 의논하세요.</p>
     </div>
 
-    <h3 class="section-title" id="scenes-detail">씬 — Scenes</h3>
+    <h3 class="section-title" id="scenes-detail">씬</h3>
 
     <p>게임을 플레이하려면 먼저 씬의 개념을 이해해야 합니다.</p>
 
@@ -2457,7 +2518,7 @@
     <p>GM이 원한다면, 플레이어 캐릭터가 등장하지 않고 플레이어들이 단순한 관객이 되는 씬을 진행할 수 있습니다. 이 GM 씬은 앞으로 일어날 사건을 예고하거나, 미래의 위협을 소개하거나, 악당이 활동하는 모습을 보여주는 데 활용됩니다. 비디오게임의 컷씬, 또는 많은 영화나 TV 에피소드의 타이틀 전 장면과 동일한 방식으로 작동합니다.</p>
     <p>GM 씬은 적대자들에게 깊이를 더하고 서사적 긴장감을 조성하는 훌륭한 방법입니다.</p>
 
-    <h3 class="section-title" id="sessions-campaigns">세션과 캠페인 — Sessions and Campaigns</h3>
+    <h3 class="section-title" id="sessions-campaigns">세션과 캠페인</h3>
 
     <h4 class="subsection-title">세션</h4>
     <p>여러 씬이 모이면 하나의 세션이 됩니다. 간단히 말해, 세션은 플레이를 시작할 때 시작되고, 보통 시간이 다 되거나 "이야기를 잠시 멈추기에" 적절한 시점, 예를 들어 긴장감 넘치는 클리프행어 직후에 종료됩니다.</p>
@@ -3125,7 +3186,7 @@
       <p>이 선택 규칙을 사용하면, 플레이어들이 각 판정에 관련된 능력치 중 하나를 결정하고, GM이 나머지 하나를 결정합니다. 같은 능력치가 될 수도 있고 다른 능력치가 될 수도 있습니다. 이 규칙은 명중 판정처럼 규칙에 의해 이미 능력치가 정해진 판정에는 적용되지 않습니다.</p>
     </div>
 
-    <h3 class="section-title" id="clocks-detail">시계 — Clocks</h3>
+    <h3 class="section-title" id="clocks-detail">시계</h3>
 
     <p>타이머, 카운터, 추적기, 카운트다운이라고도 불리는 시계는 변화하는 상황, 다가오는 위험, 또는 특정 과제에 대한 캐릭터들의 진행 상황을 추적하는 유용한 도구입니다.</p>
 
@@ -3221,7 +3282,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="bonds-detail">유대 — Bonds</h3>
+    <h3 class="section-title" id="bonds-detail">유대</h3>
 
     <p class="lead">유대는 영웅들의 힘의 원천입니다. 유대가 판정 개선 <span class="page-ref">(47페이지)</span>이나 집단 판정에서 아군 지원 <span class="page-ref">(50페이지)</span>에 도움이 된다는 것은 이미 알고 있습니다. 일부 직업 기술과 장비 효과도 유대로부터 혜택을 받습니다.</p>
 
@@ -4070,7 +4131,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="resting">휴식 — Resting</h3>
+    <h3 class="section-title" id="resting">휴식</h3>
 
     <p>영웅적인 삶은 플레이어 캐릭터에게 큰 대가를 치르게 합니다. 그들은 종종 쉬며 기력을 회복해야 합니다.</p>
 
@@ -4250,7 +4311,7 @@
       <p><em>예시: 몽블랑이 용암 강으로 떨어져 HP가 0이 됩니다. 그는 항복하고 떠다니는 바위에 착지하는 데 성공하지만, 열기에 의식을 잃습니다. 물살이 그를 끌어당겨 그룹에서 멀어지게 합니다.</em></p>
     </div>
 
-    <h3 class="section-title" id="status">상태 이상 — Status Effects</h3>
+    <h3 class="section-title" id="status">상태 이상</h3>
 
     <p>PC든 NPC든 캐릭터들은 플레이 중에 상태 이상을 겪을 수 있습니다. 이는 종종 공격과 주문의 결과입니다.</p>
 
@@ -4374,7 +4435,7 @@
       <p>어떤 의미에서 파뷸라 포인트는 이야기 주인공들을 둘러싼 운명의 순환을 나타냅니다. 패배에서 결의를 모으고, 특기와 유대를 통해 그 결의를 채널링하며, 그로 인해 더 강해지고, 다시 더 큰 역경에 맞서게 됩니다. 이것이 진정한 끝없는 순환인지, 아니면 세계에 새로운 희망을 가져올 수 있는 나선인지는 오직 플레이를 통해서만 알 수 있습니다!</p>
     </div>
 
-    <h3 class="section-title" id="alter-story">이야기 변경 — Altering the Story</h3>
+    <h3 class="section-title" id="alter-story">이야기 변경</h3>
 
     <p>플레이어로서 파뷸라 포인트 1개를 소비해 이야기에 대한 진술을 할 수 있습니다. 세계의 일부, 그 사람들과 생명체를 형성하고, "회색 지대"를 채우거나 행동의 기회를 만들거나, 자신에게 유리하게 세부 사항을 조정하거나, 편리한 플롯 반전을 도입할 수도 있습니다!</p>
 
@@ -4611,7 +4672,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="journey">여정과 여행 — Journeys and Travels</h3>
+    <h3 class="section-title" id="journey">여정과 여행</h3>
 
     <p>전투가 게임 세션의 가장 기억에 남는 순간일 수 있지만, 게임 세계의 탐험 또한 파뷸라 울티마의 중요한 측면입니다. 게임 시작 시 함께 세계를 창조하지만 <span class="page-ref">(148페이지)</span>, 그렇다고 모든 것을 알게 되는 것은 아닙니다. 주요 지역과 도시는 알고 있을 수 있지만, 우리의 영웅들을 기다리는 발견과 위험이 넘쳐납니다.</p>
 
@@ -4699,7 +4760,7 @@
 
     <p>발견은 항상 <strong style="color: var(--gold-light);">좋은 것</strong>임을 기억하세요. 위험한 장소라 해도 그것이 감추고 있는 보상이 충분히 보상해야 합니다.</p>
 
-    <h3 class="section-title" id="dungeons-detail">던전 — Dungeons</h3>
+    <h3 class="section-title" id="dungeons-detail">던전</h3>
 
     <p>파뷸라 울티마에서 "던전"은 탐험할 가치가 있는 다소 복잡한 장소를 나타내는 데 사용됩니다. 산적 소굴이 된 버려진 방앗간, 마녀의 성, 또는 고대 골렘들이 지키는 수로망이 될 수 있습니다.</p>
 
@@ -4741,7 +4802,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="magic-detail">마법 — Magic</h3>
+    <h3 class="section-title" id="magic-detail">마법</h3>
 
     <p class="lead">파뷸라 울티마의 세계들은 본질적으로 마법적이며, 영원한 영혼의 흐름에 의해 원자 단위로 묶여 있습니다. 이 때문에 많은 생명체들이 마법을 사용할 수 있으며, 영혼 에너지를 조작하여 초자연적 효과를 만들어 냅니다.</p>
 
@@ -4770,7 +4831,7 @@
 
     <div class="box gold">
       <div class="box-title">비전술 · Arcanism</div>
-      <p><strong style="color: var(--gold-light);">마술사</strong>는 자신의 영혼 일부를 몸 밖으로 투영하여 아르카나라는 고대 신성 존재들이 남긴 힘과 공명시키고, 그 힘의 단편을 현현시킬 수 있습니다. 비전술은 주문이 아닌 고유한 시스템을 따릅니다. <span class="page-ref">(176페이지)</span></p>
+      <p><strong style="color: var(--gold-light);">아르카니스트</strong>는 자신의 영혼 일부를 몸 밖으로 투영하여 아르카나라는 고대 신성 존재들이 남긴 힘과 공명시키고, 그 힘의 단편을 현현시킬 수 있습니다. 비전술은 주문이 아닌 고유한 시스템을 따릅니다. <span class="page-ref">(176페이지)</span></p>
     </div>
 
     <div class="box gold">
@@ -4780,7 +4841,7 @@
 
     <div class="box gold">
       <div class="box-title">원소술 · Elementalism</div>
-      <p><strong style="color: var(--gold-light);">원소술사</strong>는 창조의 네 가지 핵심 원소인 공기, 대지, 화염, 물을 결합하는 영혼의 흐름을 제어할 수 있습니다. 마그마, 눈보라, 사막, 구름 같은 그 조합과 현현에도 영향을 줄 수 있습니다.</p>
+      <p><strong style="color: var(--gold-light);">엘리멘탈리스트</strong>는 창조의 네 가지 핵심 원소인 공기, 대지, 화염, 물을 결합하는 영혼의 흐름을 제어할 수 있습니다. 마그마, 눈보라, 사막, 구름 같은 그 조합과 현현에도 영향을 줄 수 있습니다.</p>
     </div>
 
     <div class="box gold">
@@ -5633,7 +5694,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="group-dynamics-detail">그룹 역학 — Group Dynamics</h3>
+    <h3 class="section-title" id="group-dynamics-detail">그룹 역학</h3>
 
     <h4 class="subsection-title">안전한 플레이 환경</h4>
 
@@ -6315,10 +6376,10 @@
         <tr><th>직업</th><th>설명</th></tr>
       </thead>
       <tbody>
-        <tr><td class="mono">마술사 · Arcanist</td><td>고대 신적 존재의 마법 아바타를 소환합니다.</td></tr>
+        <tr><td class="mono">아르카니스트 · Arcanist</td><td>고대 신적 존재의 마법 아바타를 소환합니다.</td></tr>
         <tr><td class="mono">키메리스트 · Chimerist</td><td>생명체에게서 주문을 배우고 야수와 대화합니다.</td></tr>
         <tr><td class="mono">다크블레이드 · Darkblade</td><td>어둠의 공격을 펼치고 유대에서 힘을 끌어냅니다. ♦ 전투 근접 무기 및 갑옷 장착 가능.</td></tr>
-        <tr><td class="mono">원소술사 · Elementalist</td><td>원소의 파괴적인 힘을 휘두릅니다.</td></tr>
+        <tr><td class="mono">엘리멘탈리스트 · Elementalist</td><td>원소의 파괴적인 힘을 휘두릅니다.</td></tr>
         <tr><td class="mono">엔트로피스트 · Entropist</td><td>우주의 어두운 에너지를 채널링합니다.</td></tr>
         <tr><td class="mono">퓨리 · Fury</td><td>적을 도발하고 피해를 입으면 더 강하게 공격합니다. ♦ 전투 근접 무기 및 갑옷 장착 가능.</td></tr>
         <tr><td class="mono">가디언 · Guardian</td><td>아군을 보호하고 중갑옷을 입고 싸웁니다. ♦ 전투 갑옷 및 방패 장착 가능.</td></tr>
@@ -6343,7 +6404,7 @@
       <p>· 해당 직업에 고유한 다섯 가지 <strong style="color: var(--gold-light);">직업 기술</strong> 세트. 직업에 레벨을 투자할 때마다 그 기술 중 하나를 습득합니다. <strong>(+)</strong> 표시가 있는 기술은 여러 번 습득할 수 있습니다. <strong>(+)</strong> 뒤의 숫자는 최대 습득 횟수를 나타냅니다. 기술 텍스트에 <strong>【SL】</strong>이 언급된다면, 그것은 기술 레벨, 즉 해당 기술을 몇 번 습득했는지를 나타냅니다.</p>
     </div>
 
-    <p>직업을 선택할 때, 이것들은 단순히 <strong>현재</strong> 능력을 나타낸다는 것을 기억하세요. 원하지 않는 한 서사에서 캐릭터의 역할에 영향을 미치지 않으며, 나중에 완전히 다른 방향으로 캐릭터를 이끌 수 있습니다. 예를 들어 기사가 전투 주문 몇 가지를 배우기 위해 원소술사 레벨에 투자하면서도, 반드시 원소 마법의 학생일 필요는 없습니다. 시간이나 아이디어가 부족하다면 172페이지의 <strong>클래식 캐릭터</strong>를 살펴보세요. 레벨 5 아키타입들이 플레이에서 탄탄하게 작동합니다.</p>
+    <p>직업을 선택할 때, 이것들은 단순히 <strong>현재</strong> 능력을 나타낸다는 것을 기억하세요. 원하지 않는 한 서사에서 캐릭터의 역할에 영향을 미치지 않으며, 나중에 완전히 다른 방향으로 캐릭터를 이끌 수 있습니다. 예를 들어 기사가 전투 주문 몇 가지를 배우기 위해 엘리멘탈리스트 레벨에 투자하면서도, 반드시 원소 마법의 학생일 필요는 없습니다. 시간이나 아이디어가 부족하다면 172페이지의 <strong>클래식 캐릭터</strong>를 살펴보세요. 레벨 5 아키타입들이 플레이에서 탄탄하게 작동합니다.</p>
 
     <div class="box arcane">
       <div class="box-title">예시 — 카밀라의 직업 선택</div>
@@ -6521,7 +6582,7 @@
       </p>
     </div>
 
-    <h3 class="section-title" id="classic-chars">클래식 캐릭터 — Classic Characters</h3>
+    <h3 class="section-title" id="classic-chars">클래식 캐릭터</h3>
 
     <p>다음은 레벨 5에서 탄탄하게 작동하는 아키타입 예시들입니다. 시간이나 아이디어가 부족할 때 참고하세요.</p>
 
@@ -6610,7 +6671,7 @@
           <td class="mono">해적</td>
           <td style="font-size:13px;">DEX d8, INS d6, MIG d10, WLP d8</td>
           <td style="font-size:13px;">
-            원소술사(1레벨): 원소 마법(천둥번개)<br>
+            엘리멘탈리스트(1레벨): 원소 마법(천둥번개)<br>
             퓨리(2레벨): 아드레날린, 도발<br>
             웨폰마스터(2레벨): 돌파(SL 2)<br>
             <em>전투 도끼, 실크 셔츠, 룬 방패, 70 z</em>
@@ -6638,7 +6699,7 @@
           <td class="mono">붉은 마법사</td>
           <td style="font-size:13px;">DEX d8, INS d10, MIG d8, WLP d6</td>
           <td style="font-size:13px;">
-            원소술사(3레벨): 원소 마법(빙산), 주문검(SL 2)<br>
+            엘리멘탈리스트(3레벨): 원소 마법(빙산), 주문검(SL 2)<br>
             스피리티스트(1레벨): 영적 마법(치유)<br>
             웨폰마스터(1레벨): 근접 무기 숙련<br>
             <em>레이피어, 전투 튜닉, 룬 방패, 70 z</em>
@@ -6648,7 +6709,7 @@
           <td class="mono">현자</td>
           <td style="font-size:13px;">DEX d6, INS d10, MIG d6, WLP d10</td>
           <td style="font-size:13px;">
-            원소술사(3레벨): 원소 마법(SL 3: 풀구르, 글라시에스, 이그니스)<br>
+            엘리멘탈리스트(3레벨): 원소 마법(SL 3: 풀구르, 글라시에스, 이그니스)<br>
             로어마스터(2레벨): 통찰의 섬광, 집중<br>
             <em>마도서, 세이지 로브, 270 z</em>
           </td>
@@ -6683,7 +6744,7 @@
   <section class="chapter" id="arcanist">
     <div class="chapter-header">
       <span class="chapter-number">제3장</span>
-      <h2 class="chapter-title">클래식 캐릭터(계속) · 마술사 직업</h2>
+      <h2 class="chapter-title">클래식 캐릭터(계속) · 아르카니스트 직업</h2>
       <div class="chapter-rule"><div class="chapter-rule-line"></div><span class="chapter-rule-gem">◆◆◆</span></div>
     </div>
 
@@ -6698,7 +6759,7 @@
           <td class="mono">주문 검사</td>
           <td style="font-size:13px;">DEX d10, INS d8, MIG d6, WLP d8</td>
           <td style="font-size:13px;">
-            원소술사(2레벨): 원소 마법(SL 2: 원소 장막, 원소 무기)<br>
+            엘리멘탈리스트(2레벨): 원소 마법(SL 2: 원소 장막, 원소 무기)<br>
             스피리티스트(1레벨): 영적 마법(오라)<br>
             웨폰마스터(2레벨): 블레이드스톰, 반격<br>
             <em>레이피어, 실크 셔츠, 룬 방패, 120 z</em>
@@ -6708,7 +6769,7 @@
           <td class="mono">소환사</td>
           <td style="font-size:13px;">DEX d8, INS d8, MIG d6, WLP d10</td>
           <td style="font-size:13px;">
-            마술사(3레벨): 비전 재생(SL 2), 결속과 소환(그리모아 또는 탑)<br>
+            아르카니스트(3레벨): 비전 재생(SL 2), 결속과 소환(그리모아 또는 탑)<br>
             스피리티스트(2레벨): 영적 마법(SL 2: 방벽, 자비)<br>
             <em>지팡이, 세이지 로브, 270 z</em>
           </td>
@@ -6736,7 +6797,7 @@
           <td class="mono">발키리</td>
           <td style="font-size:13px;">DEX d8, INS d6, MIG d10, WLP d8</td>
           <td style="font-size:13px;">
-            원소술사(2레벨): 원소 마법(SL 2: 솟구치는 타격, 소용돌이)<br>
+            엘리멘탈리스트(2레벨): 원소 마법(SL 2: 솟구치는 타격, 소용돌이)<br>
             가디언(1레벨): 요새<br>
             웨폰마스터(2레벨): 블레이드스톰, 근접 무기 숙련<br>
             <em>경 창, 브리간딘, 룬 방패, 70 z</em>
@@ -6747,25 +6808,25 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="arcanist-class">마술사 — Arcanist</h3>
+    <h3 class="section-title" id="arcanist-class">아르카니스트</h3>
     <p style="font-size:14px; color:var(--text-muted); font-style:italic; margin-bottom: 16px;">별칭: 아바타, 선택받은 자, 소환사</p>
 
-    <p><strong style="color: var(--gold-light);">마술사</strong>들은 깊은 황홀경에 빠져 영혼의 상당 부분을 몸 밖으로 일시적으로 투영하여 물리적 형태를 부여할 수 있습니다. 이 마법적 외피에 둘러싸여 마술사는 다양한 초자연적 능력을 얻습니다. 이 소환된 형태들은 아르카나라고 알려진 전설의 신화적 존재들에 속하는 조상 영혼의 현현이라고 합니다. 일부 세계에서 아르카나는 신으로 숭배받기도 합니다.</p>
+    <p><strong style="color: var(--gold-light);">아르카니스트</strong>들은 깊은 황홀경에 빠져 영혼의 상당 부분을 몸 밖으로 일시적으로 투영하여 물리적 형태를 부여할 수 있습니다. 이 마법적 외피에 둘러싸여 아르카니스트는 다양한 초자연적 능력을 얻습니다. 이 소환된 형태들은 아르카나라고 알려진 전설의 신화적 존재들에 속하는 조상 영혼의 현현이라고 합니다. 일부 세계에서 아르카나는 신으로 숭배받기도 합니다.</p>
 
     <div class="box gold">
-      <div class="box-title">마술사에 관한 질문들</div>
+      <div class="box-title">아르카니스트에 관한 질문들</div>
       <p>· 당신의 힘은 어디서 오나요? 혈통의 선물인가요?</p>
       <p>· 아르카눔과 소통한 적이 있나요, 아니면 조용하고 거리감이 있나요?</p>
       <p>· 사람들은 당신을 신비롭고 강력하거나 다른 세계의 존재로 보나요?</p>
       <p>· 당신의 기술을 연습하는 사람이 많은가요, 아니면 당신이 예외인가요?</p>
     </div>
 
-    <h4 class="subsection-title">마술사 무료 혜택</h4>
+    <h4 class="subsection-title">아르카니스트 무료 혜택</h4>
     <div class="box arcane">
       <p>· 최대 마력이 영구적으로 5 증가합니다.</p>
     </div>
 
-    <h4 class="subsection-title">마술사 기술</h4>
+    <h4 class="subsection-title">아르카니스트 기술</h4>
 
     <table class="stat-table">
       <thead>
@@ -6890,7 +6951,7 @@
       <div class="chapter-rule"><div class="chapter-rule-line"></div><span class="chapter-rule-gem">◆◆◆</span></div>
     </div>
 
-    <h3 class="section-title" id="chimerist">키메리스트 — Chimerist</h3>
+    <h3 class="section-title" id="chimerist">키메리스트</h3>
     <p style="font-size:14px; color:var(--text-muted); font-style:italic; margin-bottom: 16px;">별칭: 드루이드, 변신자, 야생 마법사</p>
 
     <p><strong style="color: var(--gold-light);">키메리스트</strong>들은 마주치는 몬스터와 야수들의 영혼에서 힘을 모읍니다. 내면의 야생 에너지를 조작함으로써 이 마법사들은 몬스터의 마법적 능력을 모방하고 야생 생명체에 대한 초자연적 이해에 도달할 수 있습니다. 키메리스트들은 마법 외에도 강인함과 신체적 능력에 자주 의존합니다. 그들은 희귀하고 마법에 걸린 생물을 찾아 세계를 여행하는 것으로 자주 목격됩니다.</p>
@@ -6941,7 +7002,7 @@
 
     <div class="ornament-divider">◆ ◆ ◆</div>
 
-    <h3 class="section-title" id="darkblade">다크블레이드 — Darkblade</h3>
+    <h3 class="section-title" id="darkblade">다크블레이드</h3>
     <p style="font-size:14px; color:var(--text-muted); font-style:italic; margin-bottom: 16px;">별칭: 복수자, 암흑 기사, 죽음의 기사</p>
 
     <p><strong style="color: var(--gold-light);">다크블레이드</strong>들은 슬픔으로 가득 찬 과거를 숨기는 침울하고 강력한 전사들입니다. 전장이나 개인적 삶에서의 비극적인 경험으로 인해 그들의 영혼은 고통과 그림자 에너지에 대한 친화성을 발전시켰습니다. 영웅이라고 하기엔 어울리지 않는 존재이지만, 다크블레이드는 이제 생명점을 희생하여 강력한 공격을 펼칠 수 있으며, 경험하는 고통에서 결의, 힘, 심지어 지식을 끌어낼 수 있습니다.</p>
@@ -6998,29 +7059,29 @@
   <section class="chapter" id="elementalist">
     <div class="chapter-header">
       <span class="chapter-number">제3장</span>
-      <h2 class="chapter-title">원소술사</h2>
+      <h2 class="chapter-title">엘리멘탈리스트</h2>
       <div class="chapter-rule"><div class="chapter-rule-line"></div><span class="chapter-rule-gem">◆◆◆</span></div>
     </div>
 
     <p style="font-size:14px; color:var(--text-muted); font-style:italic; margin-bottom: 16px;">별칭: 전투 마법사, 지형술사, 마법사</p>
 
-    <p><strong style="color: var(--gold-light);">원소술사</strong>는 창조의 기본 원소인 공기, 대지, 화염, 물로 흐르는 영혼을 채널링하는 법을 배웠습니다. 일부는 자연의 강력한 에너지를 담기 위한 복잡한 주문을 개발하고, 다른 이들은 조화와 공존 속에서 그 보호를 추구합니다. 원소 마법은 매우 파괴적일 수 있어 피해를 입히고 부정적인 상태 이상을 부여합니다. 이 때문에 많은 이들이 원소술사의 능력을 탐내지만, 종종 사악한 목적을 위해서입니다.</p>
+    <p><strong style="color: var(--gold-light);">엘리멘탈리스트</strong>는 창조의 기본 원소인 공기, 대지, 화염, 물로 흐르는 영혼을 채널링하는 법을 배웠습니다. 일부는 자연의 강력한 에너지를 담기 위한 복잡한 주문을 개발하고, 다른 이들은 조화와 공존 속에서 그 보호를 추구합니다. 원소 마법은 매우 파괴적일 수 있어 피해를 입히고 부정적인 상태 이상을 부여합니다. 이 때문에 많은 이들이 엘리멘탈리스트의 능력을 탐내지만, 종종 사악한 목적을 위해서입니다.</p>
 
     <div class="box gold">
-      <div class="box-title">원소술사에 관한 질문들</div>
+      <div class="box-title">엘리멘탈리스트에 관한 질문들</div>
       <p>· 원소의 방식을 누가 당신에게 가르쳐주었나요?</p>
       <p>· 당신의 마법은 파괴적일 수 있습니다... 자신이 두렵지 않나요?</p>
       <p>· 원소 마법은 전쟁에서 자주 쓰입니다. 군대에서 복무한 적이 있나요?</p>
       <p>· 당신의 마법은 어떻게 생겼나요?</p>
     </div>
 
-    <h4 class="subsection-title">원소술사 무료 혜택</h4>
+    <h4 class="subsection-title">엘리멘탈리스트 무료 혜택</h4>
     <div class="box arcane">
       <p>· 최대 마력이 영구적으로 5 증가합니다.</p>
       <p>· 의식술 분과 내의 효과를 가진 의식을 수행할 수 있습니다.</p>
     </div>
 
-    <h4 class="subsection-title">원소술사 기술</h4>
+    <h4 class="subsection-title">엘리멘탈리스트 기술</h4>
 
     <table class="stat-table">
       <thead>
@@ -7033,7 +7094,7 @@
         </tr>
         <tr>
           <td><strong style="color: var(--gold-light);">원소 마법 (+10)</strong></td>
-          <td>이 기술을 습득할 때마다 원소술사 주문을 하나 배웁니다(다음 두 페이지 참조). 공격형(🔥) 원소술사 주문의 마법 판정에는 【통찰 + 의지력】을 사용합니다.</td>
+          <td>이 기술을 습득할 때마다 엘리멘탈리스트 주문을 하나 배웁니다(다음 두 페이지 참조). 공격형(🔥) 엘리멘탈리스트 주문의 마법 판정에는 【통찰 + 의지력】을 사용합니다.</td>
         </tr>
         <tr>
           <td><strong style="color: var(--gold-light);">마법 포병 (+3)</strong></td>
@@ -7045,12 +7106,12 @@
         </tr>
         <tr>
           <td><strong style="color: var(--gold-light);">주문검 (+4)</strong></td>
-          <td>단일 생명체를 대상으로 하는 공격형(🔥) 주문을 시전할 때, 주문의 총 MP 비용이 【SL × 10】 이하이고 활, 격투, 단검, 도리깨, 창, 검 무기 중 하나 이상을 장착하고 있다면 그 중 하나를 선택할 수 있습니다. 그렇게 한다면 주문의 마법 판정에 선택한 무기의 명중 판정 공식을 사용합니다. 예를 들어 청동 검을 통해 시전된 원소술사 주문의 마법 판정은 【통찰 + 의지력】 대신 【민첩 + 근력】 +1이 됩니다.</td>
+          <td>단일 생명체를 대상으로 하는 공격형(🔥) 주문을 시전할 때, 주문의 총 MP 비용이 【SL × 10】 이하이고 활, 격투, 단검, 도리깨, 창, 검 무기 중 하나 이상을 장착하고 있다면 그 중 하나를 선택할 수 있습니다. 그렇게 한다면 주문의 마법 판정에 선택한 무기의 명중 판정 공식을 사용합니다. 예를 들어 청동 검을 통해 시전된 엘리멘탈리스트 주문의 마법 판정은 【통찰 + 의지력】 대신 【민첩 + 근력】 +1이 됩니다.</td>
         </tr>
       </tbody>
     </table>
 
-    <h3 class="section-title">원소술사 주문</h3>
+    <h3 class="section-title">엘리멘탈리스트 주문</h3>
 
     <table class="stat-table">
       <thead>
@@ -8127,7 +8188,7 @@
 
     <div class="box arcane">
       <div class="box-title">🔧 마법구 (상위)</div>
-      <p>마법구 원형을 세 가지 개발합니다. 각각은 다음 목록에서 선택한 주문을 복제할 수 있습니다: <strong>원소술사</strong>, <strong>엔트로피스트</strong>, <strong>스피리티스트</strong>. 선택한 주문은 같은 목록 또는 다른 목록에서 가져올 수 있습니다.</p>
+      <p>마법구 원형을 세 가지 개발합니다. 각각은 다음 목록에서 선택한 주문을 복제할 수 있습니다: <strong>엘리멘탈리스트</strong>, <strong>엔트로피스트</strong>, <strong>스피리티스트</strong>. 선택한 주문은 같은 목록 또는 다른 목록에서 가져올 수 있습니다.</p>
       <p><strong>레벨 20</strong> 달성 시 원형 두 가지를 추가로 개발하고, <strong>레벨 40</strong> 달성 시 두 가지를 더 개발합니다.</p>
       <p><strong>인벤토리</strong> 행동을 수행하고 인벤토리 포인트 2를 소비하여 <strong>마법구</strong>를 만들고 즉시 무료로 <strong>주문</strong> 행동을 수행할 수 있습니다. 원형 중 하나에 대한 주문을 시전하며 일반 규칙(MP 비용 및 마법 판정 포함)을 따릅니다. 마법구는 사용 후 파괴됩니다.</p>
     </div>
@@ -8541,7 +8602,7 @@
           <td colspan="3" style="font-family:'Cinzel',serif; font-size:11px; color:var(--gold); letter-spacing:2px; padding:10px 16px 6px; background:rgba(201,168,76,0.05);">직업 마스터 요건이 있는 영웅 기술</td>
         </tr>
         <tr><td><strong>역경</strong></td><td>다크블레이드</td><td>상태 이상이 오히려 강함을 줍니다.</td></tr>
-        <tr><td><strong>아르카나 메아리</strong></td><td>마술사</td><td>아르카나가 시계 조작에 도움을 줍니다.</td></tr>
+        <tr><td><strong>아르카나 메아리</strong></td><td>아르카니스트</td><td>아르카나가 시계 조작에 도움을 줍니다.</td></tr>
         <tr><td><strong>키메릭 숙달</strong></td><td>키메리스트</td><td>새로운 종족의 주문을 배우고 주문 한도를 늘립니다.</td></tr>
         <tr><td><strong>혜성</strong></td><td>엔트로피스트</td><td><strong>혜성</strong> 주문을 배웁니다.</td></tr>
         <tr><td><strong>깊은 주머니</strong></td><td>팅커러</td><td>인벤토리 포인트 소비를 줄입니다.</td></tr>
@@ -8554,18 +8615,18 @@
         <tr><td><strong>완벽한 조준</strong></td><td>샤프슈터</td><td><strong>경고 사격</strong> 사용 시 두 가지 옵션을 선택합니다.</td></tr>
         <tr><td><strong>약탈</strong></td><td>로그</td><td>여러 생명체에게서 훔칩니다.</td></tr>
         <tr><td><strong>강력한 사격</strong></td><td>샤프슈터</td><td>원거리에서 추가 피해를 입힙니다.</td></tr>
-        <tr><td><strong>강력한 주문</strong></td><td>키메리스트, 원소술사, 엔트로피스트 또는 스피리티스트</td><td>주문으로 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>강력한 주문</strong></td><td>키메리스트, 엘리멘탈리스트, 엔트로피스트 또는 스피리티스트</td><td>주문으로 추가 피해를 입힙니다.</td></tr>
         <tr><td><strong>강력한 타격</strong></td><td>퓨리 또는 웨폰마스터</td><td>근접에서 추가 피해를 입힙니다.</td></tr>
         <tr><td><strong>예측 가능!</strong></td><td>로어마스터</td><td>적이 특정 행동을 하도록 MP를 소비하게 강제합니다.</td></tr>
         <tr><td><strong>방루</strong></td><td>가디언</td><td>첫 라운드 동안 피해와 상태 이상에 저항합니다.</td></tr>
         <tr><td><strong>반복</strong></td><td>오레이터</td><td><strong>단죄</strong> 또는 <strong>고무</strong>를 두 번 사용합니다.</td></tr>
-        <tr><td><strong>계시</strong></td><td>마술사</td><td>미지의 아르카눔과 결속하고, 해제 효과를 향상합니다.</td></tr>
+        <tr><td><strong>계시</strong></td><td>아르카니스트</td><td>미지의 아르카눔과 결속하고, 해제 효과를 향상합니다.</td></tr>
         <tr><td><strong>상태 면역</strong></td><td>웨이페어러</td><td>상태 이상 하나를 무시합니다.</td></tr>
         <tr><td><strong>불굴</strong></td><td>가디언</td><td>씬당 한 번 치명타를 버팁니다.</td></tr>
         <tr><td><strong>업그레이드</strong></td><td>팅커러</td><td>장비의 능력을 수정합니다.</td></tr>
         <tr><td><strong>폭풍의 일격</strong></td><td>웨폰마스터</td><td>단일 대상에게 다중 공격을 집중합니다.</td></tr>
         <tr><td><strong>소멸</strong></td><td>로그</td><td>공격 후 사라집니다.</td></tr>
-        <tr><td><strong>화산</strong></td><td>원소술사</td><td><strong>화산</strong> 주문을 배웁니다.</td></tr>
+        <tr><td><strong>화산</strong></td><td>엘리멘탈리스트</td><td><strong>화산</strong> 주문을 배웁니다.</td></tr>
       </tbody>
     </table>
 
@@ -8583,7 +8644,7 @@
           <td>하나는 <strong>근접</strong> 무기이고 다른 하나는 <strong>원거리</strong> 무기일 경우처럼, 서로 다른 범주에 속하는 무기에도 <strong>양손 전투</strong> 혜택(69페이지)을 적용할 수 있습니다(예: 단검과 화기).</td>
         </tr>
         <tr>
-          <td><strong style="color:var(--gold-light);">아르카나 메아리</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 마술사 마스터</span></td>
+          <td><strong style="color:var(--gold-light);">아르카나 메아리</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 아르카니스트 마스터</span></td>
           <td>시계의 구간을 하나 이상 채우거나 지우는 판정에 성공했을 때, 결속한 아르카나 중 하나 이상의 <strong>영역</strong>이 해당 판정에 적용된다면, 추가로 시계의 구간 하나를 더 채우거나 지울 수 있습니다. GM이 특정 영역의 적용 여부에 대해 최종 결정권을 가집니다.</td>
         </tr>
         <tr>
@@ -8624,7 +8685,7 @@
         </tr>
         <tr>
           <td><strong style="color:var(--gold-light);">추가 주문</strong></td>
-          <td>이 기술을 습득할 때 <strong>원소술사</strong>, <strong>엔트로피스트</strong>, <strong>스피리티스트</strong> 목록 중 하나에서 주문 두 개를 배웁니다. 두 주문 모두 같은 목록에서 선택해야 하며, 해당 직업의 주문 시전 규칙을 따릅니다.</td>
+          <td>이 기술을 습득할 때 <strong>엘리멘탈리스트</strong>, <strong>엔트로피스트</strong>, <strong>스피리티스트</strong> 목록 중 하나에서 주문 두 개를 배웁니다. 두 주문 모두 같은 목록에서 선택해야 하며, 해당 직업의 주문 시전 규칙을 따릅니다.</td>
         </tr>
         <tr>
           <td><strong style="color:var(--gold-light);">심장 파괴자</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 다크블레이드 마스터</span></td>
@@ -8670,7 +8731,7 @@
           <td><strong>원거리</strong> 공격으로 하나 이상의 생명체를 맞히면, 해당 공격이 각 생명체에게 5 추가 피해를 입힙니다. <strong>레벨 40 이상</strong>이면 추가 피해가 10으로 증가합니다.</td>
         </tr>
         <tr>
-          <td><strong style="color:var(--gold-light);">강력한 주문</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 키메리스트, 원소술사, 엔트로피스트 또는 스피리티스트 마스터</span></td>
+          <td><strong style="color:var(--gold-light);">강력한 주문</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 키메리스트, 엘리멘탈리스트, 엔트로피스트 또는 스피리티스트 마스터</span></td>
           <td>하나 이상의 생명체에게 피해를 입히는 주문을 시전하면, 해당 주문이 각 생명체에게 5 추가 피해를 입힙니다. <strong>레벨 40 이상</strong>이면 추가 피해가 10으로 증가합니다.</td>
         </tr>
         <tr>
@@ -8690,7 +8751,7 @@
           <td>전투 중 자신의 턴에 <strong>단죄</strong> 또는 <strong>고무</strong> 기술을 사용한 직후, 즉시 같은 기술을 같은 대상이나 다른 대상에게 한 번 더 사용할 수 있습니다. 두 번째 사용 시에도 마력 비용을 지불해야 합니다.</td>
         </tr>
         <tr>
-          <td><strong style="color:var(--gold-light);">계시</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 마술사 마스터</span></td>
+          <td><strong style="color:var(--gold-light);">계시</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 아르카니스트 마스터</span></td>
           <td>알려지지 않은 아르카눔과 접촉하여 영혼에 결속합니다. 이 아르카눔은 그룹 전체와 함께 설계해야 합니다. 당신이 살아있는 한, 이 세계에서 다른 누구도 해당 아르카눔과 결속할 수 없습니다. 또한 아르카눔에 <strong>융합</strong>된 동안, 행동을 사용하고 파뷸라 포인트 2를 소비하여 해당 아르카눔의 <strong>해제</strong> 효과(있는 경우)를 발동할 수 있습니다. 이렇게 해도 아르카눔이 해제되지 않으며, <strong>아르카나 서클</strong> 기술(177페이지)이 발동되지 않습니다.</td>
         </tr>
         <tr>
@@ -8714,8 +8775,8 @@
           <td>공격으로 하나 이상의 생명체를 맞히면, 파뷸라 포인트 1을 소비할 수 있습니다. 그렇게 하면 해당 생명체들은 다음 턴 시작까지 당신을 볼 수 있어야 하는 행동을 수행할 수 없습니다.</td>
         </tr>
         <tr>
-          <td><strong style="color:var(--gold-light);">화산</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 원소술사 마스터</span></td>
-          <td>궁극 원소술사 주문 <strong>화산</strong>을 배웁니다.
+          <td><strong style="color:var(--gold-light);">화산</strong><br><span style="font-size:12px;color:var(--text-muted);">요건: 엘리멘탈리스트 마스터</span></td>
+          <td>궁극 엘리멘탈리스트 주문 <strong>화산</strong>을 배웁니다.
           <table class="stat-table" style="margin:10px 0 4px;">
             <thead><tr><th>주문</th><th>MP</th><th>대상</th><th>지속</th></tr></thead>
             <tbody>
@@ -8837,11 +8898,11 @@
     <p>아래에서 그룹이 캐릭터 직업을 최대한 활용하도록 돕는 방법과, 그들의 능력을 중심으로 씬을 구성하는 방법에 대한 유용한 조언을 찾을 수 있습니다. 캐릭터 생성 중에 어떤 직업이 선택되는지 특히 주의를 기울이세요. 이것이 꽤 오랫동안 캐릭터의 역할과 능력을 결정할 것이기 때문입니다.</p>
 
     <div class="box arcane">
-      <div class="box-title">🔮 마술사</div>
+      <div class="box-title">🔮 아르카니스트</div>
       <p>· 아르카나는 세계관에서 중요한 역할을 해야 합니다. 아마도 신앙 집단이나 종교적 제국이 아르카나를 숭배하거나, 고귀한 혈통의 증거로 여겨질 수 있습니다.</p>
       <p>· 각 아르카눔을 결속하는 데 필요한 퀘스트나 시련의 종류를 구상하는 데 시간을 투자하세요. 이는 아르카눔의 힘과 개념과 연결되어야 합니다 — 예를 들어 <strong>탑</strong>을 결속하려면 다른 이들을 보호하기 위해 소중한 것을 희생해야 할 수 있습니다.</p>
-      <p>· 이 책에 있는 것에 더해 새로운 아르카나를 만드세요. 이를 위한 지침으로 기존 것들을 참고하세요. 마술사가 로어마스터이기도 하거나 오랜 소환사 가문 출신이라면, 플레이어와 함께 이 새로운 아르카나를 만들어야 합니다.</p>
-      <p>· 마술사의 성장은 새로운 아르카나를 만나는 것에 기반합니다. 이를 염두에 두고 그들이 그럴 기회를 가질 수 있도록 하세요.</p>
+      <p>· 이 책에 있는 것에 더해 새로운 아르카나를 만드세요. 이를 위한 지침으로 기존 것들을 참고하세요. 아르카니스트가 로어마스터이기도 하거나 오랜 소환사 가문 출신이라면, 플레이어와 함께 이 새로운 아르카나를 만들어야 합니다.</p>
+      <p>· 아르카니스트의 성장은 새로운 아르카나를 만나는 것에 기반합니다. 이를 염두에 두고 그들이 그럴 기회를 가질 수 있도록 하세요.</p>
     </div>
 
     <div class="box arcane">
@@ -8858,9 +8919,9 @@
     </div>
 
     <div class="box arcane">
-      <div class="box-title">⚡ 원소술사</div>
-      <p>· 원소 마법은 주로 여러 유형의 피해를 입히는 것에 집중되어 있습니다. 전투를 설계할 때, 이 능력이 빛날 수 있도록 하세요. 일부 원소에는 흡수하고 다른 원소에는 취약한 적대자를 만들어 원소술사의 기여가 승리의 열쇠가 될 수 있도록 하세요.</p>
-      <p>· 원소 마법은 강력하기 때문에 세계관에서 전투에 자주 사용됩니다. 이 유형의 마법사가 세계에 있다면, 아마도 전쟁의 역사를 형성하는 데 기여했을 것입니다. 원소술사 플레이어와 이에 대해 이야기해 보세요.</p>
+      <div class="box-title">⚡ 엘리멘탈리스트</div>
+      <p>· 원소 마법은 주로 여러 유형의 피해를 입히는 것에 집중되어 있습니다. 전투를 설계할 때, 이 능력이 빛날 수 있도록 하세요. 일부 원소에는 흡수하고 다른 원소에는 취약한 적대자를 만들어 엘리멘탈리스트의 기여가 승리의 열쇠가 될 수 있도록 하세요.</p>
+      <p>· 원소 마법은 강력하기 때문에 세계관에서 전투에 자주 사용됩니다. 이 유형의 마법사가 세계에 있다면, 아마도 전쟁의 역사를 형성하는 데 기여했을 것입니다. 엘리멘탈리스트 플레이어와 이에 대해 이야기해 보세요.</p>
     </div>
 
     <div class="box arcane">
@@ -9411,6 +9472,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 시전하는 주문이 5 추가 피해를 입힙니다.</td></tr>
         <tr><td><strong>라플레시아 스태프</strong></td><td class="mono">2200 z</td><td class="mono">【의지력 + 의지력】</td><td class="mono">【HR + 10】 독</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하나 이상의 생명체를 맞히면, 맞은 각 생명체가 <strong>중독</strong>됩니다.</td></tr>
+        <tr><td><strong>봉인된 성전</strong></td><td class="mono">900 z</td><td class="mono">【통찰 + 통찰】</td><td class="mono">【HR + 6】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>언데드</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>현자의 지팡이</strong></td><td class="mono">1100 z</td><td class="mono">【통찰 + 의지력】</td><td class="mono">【HR + 6】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 마법 방어에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>수정 오브</strong></td><td class="mono">1300 z</td><td class="mono">【의지력 + 의지력】</td><td class="mono">【HR + 6】 얼음</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기로 하는 공격이 마법 방어를 대상으로 합니다.</td></tr>
+        <tr><td><strong>저주받은 고서</strong></td><td class="mono">1700 z</td><td class="mono">【통찰 + 통찰】</td><td class="mono">【HR + 6】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>약화</strong>됩니다.</td></tr>
+        <tr><td><strong>예언자의 홀</strong></td><td class="mono">1900 z</td><td class="mono">【통찰 + 의지력】+1</td><td class="mono">【HR + 6】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 마법 판정에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>천계의 보주</strong></td><td class="mono">2300 z</td><td class="mono">【의지력 + 의지력】</td><td class="mono">【HR + 6】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 시전하는 주문의 효과가 생명점을 회복시키면 5 추가 생명점을 회복합니다.</td></tr>
       </tbody>
     </table>
 
@@ -9443,6 +9516,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>느림</strong>됩니다.</td></tr>
         <tr><td><strong>아르테미스 ♦</strong></td><td class="mono">2100 z</td><td class="mono">【민첩 + 민첩】+1</td><td class="mono">【HR + 12】 빛</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ <strong>어둠</strong> 피해에 면역입니다.</td></tr>
+        <tr><td><strong>사냥꾼의 장궁</strong></td><td class="mono">550 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 8】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ <strong>야수</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>독사궁</strong></td><td class="mono">800 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 8】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ <strong>중독</strong>에 면역입니다.</td></tr>
+        <tr><td><strong>화염 석궁</strong></td><td class="mono">1100 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 8】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ <strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>저격수의 활 ♦</strong></td><td class="mono">1550 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 12】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 명중 판정에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>월광궁 ♦</strong></td><td class="mono">1800 z</td><td class="mono">【민첩 + 민첩】</td><td class="mono">【HR + 12】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>현혹</strong>됩니다.</td></tr>
+        <tr><td><strong>심판의 화살 ♦</strong></td><td class="mono">2400 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 12】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기가 입히는 피해는 면역을 무시합니다.</td></tr>
       </tbody>
     </table>
 
@@ -9477,6 +9562,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>중독</strong>됩니다.</td></tr>
         <tr><td><strong>신의 손 ♦</strong></td><td class="mono">2550 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 빛</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기가 입히는 피해는 면역을 무시합니다.</td></tr>
+        <tr><td><strong>강철 너클</strong></td><td class="mono">450 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 6】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>구조물</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>맹독 발톱</strong></td><td class="mono">700 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 6】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>독</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>천둥 장갑</strong></td><td class="mono">1050 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 6】 번개</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>동요</strong>됩니다.</td></tr>
+        <tr><td><strong>대지의 주먹 ♦</strong></td><td class="mono">1450 z</td><td class="mono">【근력 + 근력】+1</td><td class="mono">【HR + 10】 대지</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 방어에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>업화의 권갑 ♦</strong></td><td class="mono">1950 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
+        <tr><td><strong>용투의 건틀릿 ♦</strong></td><td class="mono">2300 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 모든 상태 이상에 면역입니다.</td></tr>
       </tbody>
     </table>
 
@@ -9518,6 +9615,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(3)</strong> 속성을 얻습니다.</td></tr>
         <tr><td><strong>광폭 못</strong></td><td class="mono">2450 z</td><td class="mono">【통찰 + 통찰】+1</td><td class="mono">【HR + 8】 화염</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>격분</strong>됩니다.</td></tr>
+        <tr><td><strong>도둑의 단검</strong></td><td class="mono">400 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>인간형</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>얼음 송곳</strong></td><td class="mono">700 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 4】 얼음</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>느림</strong>에 면역입니다.</td></tr>
+        <tr><td><strong>그림자 비수</strong></td><td class="mono">1100 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 4】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기로 하는 공격이 마법 방어를 대상으로 합니다.</td></tr>
+        <tr><td><strong>쌍둥이 송곳니</strong></td><td class="mono">1500 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
+        <tr><td><strong>처형인의 단도</strong></td><td class="mono">1900 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>위기</strong> 상태인 대상에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>심연의 가시 ♦</strong></td><td class="mono">2400 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 4】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>중독</strong>됩니다.</td></tr>
       </tbody>
     </table>
 
@@ -9547,6 +9656,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>느림</strong>됩니다.</td></tr>
         <tr><td><strong>콰터메인 ♦</strong></td><td class="mono">2600 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 12】 공중</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 현재 인벤토리 포인트와 최대 인벤토리 포인트의 차이만큼 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>차륜식 권총 ♦</strong></td><td class="mono">400 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 8】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ <strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>은총탄 권총 ♦</strong></td><td class="mono">650 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 8】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ <strong>언데드</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>독가스 총 ♦</strong></td><td class="mono">950 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 8】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ <strong>중독</strong>에 면역입니다.</td></tr>
+        <tr><td><strong>뇌격 산탄총 ♦</strong></td><td class="mono">1350 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 12】 번개</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>동요</strong>됩니다.</td></tr>
+        <tr><td><strong>대물 저격총 ♦</strong></td><td class="mono">1800 z</td><td class="mono">【민첩 + 통찰】+1</td><td class="mono">【HR + 12】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기가 입히는 피해는 저항을 무시합니다.</td></tr>
+        <tr><td><strong>천벌의 대포 ♦</strong></td><td class="mono">2400 z</td><td class="mono">【근력 + 통찰】</td><td class="mono">【HR + 12】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>격분</strong>됩니다.</td></tr>
       </tbody>
     </table>
 
@@ -9576,6 +9697,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(3)</strong> 속성을 얻습니다.</td></tr>
         <tr><td><strong>잉어 수염 ♦</strong></td><td class="mono">2800 z</td><td class="mono">【민첩 + 의지력】</td><td class="mono">【HR + 12】 물리</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>어둠</strong>과 <strong>빛</strong> 피해에 면역입니다.</td></tr>
+        <tr><td><strong>가시 채찍</strong></td><td class="mono">450 z</td><td class="mono">【민첩 + 민첩】</td><td class="mono">【HR + 8】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>식물</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>사슬 모닝스타</strong></td><td class="mono">800 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 8】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 방어에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>빙결 사슬</strong></td><td class="mono">1100 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 8】 얼음</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>느림</strong>됩니다.</td></tr>
+        <tr><td><strong>업화의 편 ♦</strong></td><td class="mono">1500 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 12】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>혼령 사슬낫 ♦</strong></td><td class="mono">1950 z</td><td class="mono">【민첩 + 민첩】</td><td class="mono">【HR + 12】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하나 이상의 생명체를 맞히면 마력 10을 회복할 수 있습니다.</td></tr>
+        <tr><td><strong>천공의 성편 ♦</strong></td><td class="mono">2500 z</td><td class="mono">【민첩 + 민첩】+1</td><td class="mono">【HR + 12】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
       </tbody>
     </table>
 
@@ -9607,6 +9740,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>격분</strong>됩니다.</td></tr>
         <tr><td><strong>겨울 거상 ♦</strong></td><td class="mono">2550 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 18】 얼음</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 방어와 마법 방어 모두에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>전쟁 대망치</strong></td><td class="mono">550 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 14】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>구조물</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>화산 도끼 ♦</strong></td><td class="mono">850 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 14】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>지진 망치 ♦</strong></td><td class="mono">1250 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 14】 대지</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>느림</strong>됩니다.</td></tr>
+        <tr><td><strong>처형의 대부 ♦</strong></td><td class="mono">1650 z</td><td class="mono">【근력 + 근력】+1</td><td class="mono">【HR + 14】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 명중 판정에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>폭풍의 도끼 ♦</strong></td><td class="mono">2050 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 18】 번개</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>번개</strong> 피해에 면역입니다.</td></tr>
+        <tr><td><strong>종말의 대검 ♦</strong></td><td class="mono">2700 z</td><td class="mono">【근력 + 근력】</td><td class="mono">【HR + 18】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
       </tbody>
     </table>
 
@@ -9636,6 +9781,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>독</strong> 피해를 흡수합니다.</td></tr>
         <tr><td><strong>궁니르 ♦</strong></td><td class="mono">3000 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 16】 빛</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>화염</strong>과 <strong>얼음</strong> 피해에 면역입니다.</td></tr>
+        <tr><td><strong>사냥꾼의 투창 ♦</strong></td><td class="mono">800 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 12】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>야수</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>맹독 삼지창 ♦</strong></td><td class="mono">1000 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 12】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>독</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>수호의 장창 ♦</strong></td><td class="mono">1200 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 12】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 방어와 마법 방어 모두에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>전격의 미늘창 ♦</strong></td><td class="mono">1500 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 12】 번개</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 명중 판정에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>관통의 창 ♦</strong></td><td class="mono">1900 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 16】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기가 입히는 피해는 저항을 무시합니다.</td></tr>
+        <tr><td><strong>여명의 성창 ♦</strong></td><td class="mono">2600 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 16】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>언데드</strong>에게 5 추가 피해를 입히고, 이 무기에 맞은 각 대상이 <strong>현혹</strong>됩니다.</td></tr>
       </tbody>
     </table>
 
@@ -9667,6 +9824,20 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
         <tr><td><strong>엑스칼리버 ♦</strong></td><td class="mono">2300 z</td><td class="mono">【근력 + 의지력】+1</td><td class="mono">【HR + 10】 빛</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 모든 상태 이상에 면역입니다.</td></tr>
+        <tr><td><strong>기사의 장검 ♦</strong></td><td class="mono">500 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>인간형</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>서리 검 ♦</strong></td><td class="mono">700 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 얼음</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ <strong>얼음</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>독아의 곡도 ♦</strong></td><td class="mono">1000 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 10】 독</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 근접 ◆ 이 무기에 맞은 각 대상이 <strong>중독</strong>됩니다.</td></tr>
+        <tr><td><strong>수호자의 대검 ♦</strong></td><td class="mono">1300 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 14】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 방어에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>업화의 대검 ♦</strong></td><td class="mono">1700 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 14】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
+        <tr><td><strong>용살의 검 ♦</strong></td><td class="mono">2000 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 14】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ <strong>몬스터</strong>에게 5 추가 피해를 입히고, 이 무기가 입히는 피해는 저항을 무시합니다.</td></tr>
+        <tr><td><strong>심연의 마검 ♦</strong></td><td class="mono">2500 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 14】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">양손 ◆ 근접 ◆ 이 무기로 하나 이상의 생명체를 맞히면, 맞은 각 생명체가 마력 10을 잃습니다.</td></tr>
       </tbody>
     </table>
 
@@ -9710,6 +9881,18 @@
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 방어와 마법 방어 모두에 +1 보너스를 얻습니다.</td></tr>
         <tr><td><strong>독침</strong></td><td class="mono">2300 z</td><td class="mono">【민첩 + 민첩】</td><td class="mono">【HR + 4】 독</td></tr>
         <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>중독</strong>됩니다.</td></tr>
+        <tr><td><strong>사냥 표창</strong></td><td class="mono">450 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ <strong>야수</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>화염병</strong></td><td class="mono">700 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 4】 화염</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ <strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>강철 차크람</strong></td><td class="mono">1050 z</td><td class="mono">【민첩 + 근력】+1</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 이 무기로 하는 공격이 <strong>다중(2)</strong> 속성을 얻습니다.</td></tr>
+        <tr><td><strong>섬광 단검</strong></td><td class="mono">1250 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 4】 빛</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 이 무기에 맞은 각 대상이 <strong>현혹</strong>됩니다.</td></tr>
+        <tr><td><strong>회귀하는 도끼</strong></td><td class="mono">1600 z</td><td class="mono">【민첩 + 근력】</td><td class="mono">【HR + 4】 물리</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 명중 판정에 +1 보너스를 얻고, <strong>구조물</strong>에게 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>운명의 단검</strong></td><td class="mono">2350 z</td><td class="mono">【민첩 + 통찰】</td><td class="mono">【HR + 4】 어둠</td></tr>
+        <tr><td colspan="4" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">한손 ◆ 원거리 ◆ 이 무기로 생명체를 생명점 0으로 만들면, 즉시 인벤토리 포인트 2를 회복합니다.</td></tr>
       </tbody>
     </table>
 
@@ -9767,7 +9950,7 @@
         <tr><td><strong>수정 갑옷 ♦</strong></td><td class="mono">900 z</td><td class="mono">11</td><td>통찰 주사위</td><td class="mono">-3</td></tr>
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>어둠</strong> 피해에 저항을 얻습니다.</td></tr>
         <tr><td><strong>발키리 날개 ♦</strong></td><td class="mono">900 z</td><td class="mono">11</td><td>통찰+1</td><td class="mono">-3</td></tr>
-        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>비상 타격</strong> 주문을 시전할 때 마력 비용이 절반이 됩니다(원소술사 직업 189페이지).</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>비상 타격</strong> 주문을 시전할 때 마력 비용이 절반이 됩니다(엘리멘탈리스트 직업 189페이지).</td></tr>
         <tr><td><strong>영웅의 갑옷 ♦</strong></td><td class="mono">1000 z</td><td class="mono">12</td><td>통찰 주사위</td><td class="mono">-4</td></tr>
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">공격과 공격형(🔥) 주문 대상에 포함된 경우, 명중 판정과 마법 판정의 <strong>대성공</strong>이 <strong>기회</strong>를 생성하지 않습니다.</td></tr>
         <tr><td><strong>검은 띠</strong></td><td class="mono">1000 z</td><td>민첩 주사위</td><td>통찰 주사위</td><td class="mono">-</td></tr>
@@ -9794,6 +9977,28 @@
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">시전하는 주문이 5 추가 피해를 입힙니다.</td></tr>
         <tr><td><strong>빨간 튜닉</strong></td><td class="mono">2500 z</td><td>민첩 주사위</td><td>통찰+2</td><td class="mono">-1</td></tr>
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">기술을 사용하는 데 <strong>비전</strong> 무기가 필요한 경우, 그 무기를 장착한 것으로 취급합니다.</td></tr>
+        <tr><td><strong>여행자 외투</strong></td><td class="mono">500 z</td><td>민첩+1</td><td>통찰+1</td><td class="mono">+4</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">선제권 수정값에 +4 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>광대 의상</strong></td><td class="mono">600 z</td><td>민첩+1</td><td>통찰+1</td><td class="mono">-1</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>현혹</strong>에 면역입니다.</td></tr>
+        <tr><td><strong>화염병 작업복</strong></td><td class="mono">700 z</td><td>민첩+1</td><td>통찰+1</td><td class="mono">-1</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>화염</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>파수꾼 갑주 ♦</strong></td><td class="mono">900 z</td><td class="mono">11</td><td>통찰 주사위</td><td class="mono">-3</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>얼음</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>사냥꾼 가죽옷</strong></td><td class="mono">1000 z</td><td>민첩+1</td><td>통찰+1</td><td class="mono">-1</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>원거리</strong> 무기로 하는 공격이 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>수도자의 도복</strong></td><td class="mono">1000 z</td><td>민첩 주사위</td><td>통찰 주사위</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">생명점을 회복할 때마다 5 추가 생명점을 회복합니다.</td></tr>
+        <tr><td><strong>용기병 흉갑 ♦</strong></td><td class="mono">1300 z</td><td class="mono">12</td><td>통찰 주사위</td><td class="mono">-4</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>근접</strong> 무기로 하는 공격이 5 추가 피해를 입힙니다.</td></tr>
+        <tr><td><strong>성기사 판금갑 ♦</strong></td><td class="mono">1500 z</td><td class="mono">12</td><td>통찰 주사위</td><td class="mono">-4</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>어둠</strong> 피해에 면역이지만, <strong>빛</strong> 피해에 취약합니다.</td></tr>
+        <tr><td><strong>사령술사 로브</strong></td><td class="mono">1800 z</td><td>민첩+1</td><td>통찰+2</td><td class="mono">-2</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">시전하는 주문의 효과가 생명점을 회복시키면 5 추가 생명점을 회복합니다.</td></tr>
+        <tr><td><strong>거인의 갑주 ♦</strong></td><td class="mono">2000 z</td><td class="mono">12</td><td>통찰 주사위</td><td class="mono">-4</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">모든 상태 이상에 면역입니다.</td></tr>
+        <tr><td><strong>현자의 예복</strong></td><td class="mono">2200 z</td><td>민첩+1</td><td>통찰+2</td><td class="mono">-2</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">이 갑옷을 장착한 한, <strong>통찰</strong>을 한 단계 높은 주사위(최대 d12)로 취급합니다.</td></tr>
       </tbody>
     </table>
 
@@ -9827,6 +10032,24 @@
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>위기</strong> 상태인 한, 모든 상태 이상에 면역입니다.</td></tr>
         <tr><td><strong>아다만타워 ♦</strong></td><td class="mono">2500 z</td><td class="mono">+3</td><td class="mono">+3</td><td class="mono">-</td></tr>
         <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">방어와 마법 방어 모두에 +1 보너스를 얻습니다(이미 포함).</td></tr>
+        <tr><td><strong>파수꾼의 방패</strong></td><td class="mono">500 z</td><td class="mono">+2</td><td class="mono">-</td><td class="mono">+4</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">선제권 수정값에 +4 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>버클러</strong></td><td class="mono">700 z</td><td class="mono">+2</td><td class="mono">-</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>동요</strong>에 면역입니다.</td></tr>
+        <tr><td><strong>현자의 방패</strong></td><td class="mono">1000 z</td><td class="mono">+2</td><td class="mono">-</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">마법 판정에 +1 보너스를 얻습니다.</td></tr>
+        <tr><td><strong>강철 카이트 실드 ♦</strong></td><td class="mono">1000 z</td><td class="mono">+2</td><td class="mono">+2</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>물리</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>수호의 방패 ♦</strong></td><td class="mono">1000 z</td><td class="mono">+2</td><td class="mono">+2</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">생명점을 회복할 때마다 5 추가 생명점을 회복합니다.</td></tr>
+        <tr><td><strong>반사의 방패 ♦</strong></td><td class="mono">1500 z</td><td class="mono">+2</td><td class="mono">+2</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>화염</strong> 피해에 면역입니다.</td></tr>
+        <tr><td><strong>용비늘 방패 ♦</strong></td><td class="mono">1700 z</td><td class="mono">+2</td><td class="mono">+2</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;"><strong>화염</strong>과 <strong>얼음</strong> 피해에 저항을 얻습니다.</td></tr>
+        <tr><td><strong>성스러운 방패 ♦</strong></td><td class="mono">2000 z</td><td class="mono">+2</td><td class="mono">+2</td><td class="mono">-</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">모든 상태 이상에 면역입니다.</td></tr>
+        <tr><td><strong>거신의 대방패 ♦</strong></td><td class="mono">2300 z</td><td class="mono">+3</td><td class="mono">+2</td><td class="mono">-1</td></tr>
+        <tr><td colspan="5" style="font-size:13px;color:var(--text-secondary);padding:4px 12px 10px;">생명체가 <strong>근접</strong> 공격으로 당신을 맞히면, 해당 생명체에게 물리 피해 5를 입힙니다(공격이 해결된 후).</td></tr>
       </tbody>
     </table>
 
@@ -10221,73 +10444,159 @@
   })();
 
   /* ═══════════════════════════════════════════════ */
-  /* GLOSSARY TOOLTIPS — auto-annotate key terms       */
-  /* (first occurrence in body paragraphs only)        */
+  /* TOC TOOLTIPS — describe each table-of-contents     */
+  /* entry on hover                                      */
   /* ═══════════════════════════════════════════════ */
-  (function glossary() {
-    const TERMS = {
-      '파뷸라 포인트': '플레이어가 모으는 영웅의 운명력. 주사위를 다시 굴리거나, 유대를 발동하거나, 결정적 순간에 이야기에 개입할 때 소비합니다.',
-      '울티마 포인트': '악당 전용 자원. GM이 강력한 적의 특수 능력을 발동하거나 판도를 뒤집는 데 사용합니다. 영웅의 파뷸라 포인트에 대응합니다.',
-      '위기': '생명점이 최대치의 절반 이하로 떨어진 상태. 많은 기술과 능력이 이때 추가 효과를 발휘합니다.',
-      '유대': '캐릭터가 사람·장소·이상과 맺은 감정적 연결. 발동하면 판정에 보너스를 주고, 영웅적 행동의 원천이 됩니다.',
-      '선제권': '전투에서 행동 순서를 정하는 수치. 통찰과 민첩이 높을수록 빠르게 움직입니다.',
-      '명중 판정': '공격이 적중하는지 결정하는 판정. 보통 두 개의 능력치 주사위를 굴려 적의 방어 수치와 비교합니다.',
-      '마법 판정': '주문의 적중과 위력을 결정하는 판정. 대개 통찰이나 의지력 주사위를 사용합니다.',
-      '대성공': '판정에서 두 주사위가 같은 값(6 이상)이 나온 결과. 추가 효과나 기회를 만들어냅니다.',
-      '아르카눔': '마술사가 결속하는 강대한 존재. 결속하면 변신과 강력한 능력을 빌려주지만, 해제하면 한동안 다시 부를 수 없습니다.',
-      '인벤토리 포인트': '소모품과 즉석 아이템을 표현하는 추상 자원. 물약을 만들거나 도구를 꺼낼 때 소비합니다.',
-      '클락': '진행 상황을 칸으로 나타내는 장치. 칸이 모두 차면 사건이 일어납니다. (이 책에서는 "시계"로 표기)',
-      '시계': '진행 상황이나 긴장을 칸으로 추적하는 장치. 칸이 모두 차면 정해진 결과가 발동합니다.',
-      '비전 무기': '마법 에너지로 작동하는 무기 범주. 일부 직업만 장착할 수 있으며 마법 기술과 연계됩니다.',
-      '전투 무기': '높은 위력을 지닌 숙련 무기(♦ 표시). 다루려면 해당 직업의 숙련이 필요합니다.'
+  (function tocTooltips() {
+    /* short description for every TOC entry, keyed by its visible title */
+    const DESC = {
+      "여덟 기둥": "파뷸라 울티마가 어떤 게임인지 정의하는 여덟 가지 핵심 원칙입니다. 영웅적 액션, 협력적 이야기, 플레이어 주도의 세계 등 게임 전체의 분위기와 방향을 결정하는 토대로, 규칙을 배우기 전에 읽어두면 게임의 정신을 이해할 수 있습니다.",
+      "게임 준비물": "플레이를 시작하기 위해 필요한 것들을 안내합니다. 여러 종류의 주사위(d6~d12), 캐릭터 시트, 메모 도구, 그리고 함께할 친구들 정도면 충분하며, 복잡한 준비 없이 바로 시작할 수 있습니다.",
+      "플레이어": "플레이어가 게임에서 맡는 역할을 설명합니다. 각자 한 명의 영웅(플레이어 캐릭터)을 맡아 그 인물의 행동과 대사를 연기하며, 자신의 캐릭터가 이야기 속에서 어떻게 성장하고 활약할지 주도적으로 결정합니다.",
+      "게임 마스터": "게임 마스터(GM)가 맡는 역할의 개요입니다. GM은 세계와 등장인물, 적을 연기하고 상황을 묘사하며 이야기를 이끄는 진행자로, 플레이어들과 함께 모두가 즐거운 모험을 만들어가는 안내자 역할을 합니다.",
+      "씬": "게임이 영화나 만화처럼 '씬' 단위로 진행되는 방식을 설명합니다. 각 씬은 하나의 장면으로, 대화나 탐험이 이루어지는 평범한 씬과 전투가 벌어지는 갈등 씬으로 나뉘며, 이야기는 이 씬들이 이어지며 전개됩니다.",
+      "막간 씬": "전투나 긴장된 장면 사이에 끼어드는 휴식 같은 막간 씬입니다. 캐릭터들이 서로 교류하거나 정보를 정리하고 다음을 준비하는 시간으로, 이야기에 숨 쉴 틈과 감정적 깊이를 더해줍니다.",
+      "GM 씬": "GM이 직접 연출해 상황이나 정보를 전달하는 씬입니다. 플레이어 캐릭터가 없는 곳에서 벌어지는 악당의 음모나 세계의 변화를 보여주어, 긴장감을 높이고 이야기의 큰 그림을 제시할 때 사용합니다.",
+      "세션과 캠페인": "게임의 시간 단위를 설명합니다. 한 번 모여서 플레이하는 것이 '세션'이고, 여러 세션이 이어져 하나의 큰 이야기를 이루는 것이 '캠페인'으로, 캠페인은 보통 여러 달에 걸쳐 영웅들의 서사시를 완성합니다.",
+      "중요 규칙": "본격적인 판정을 배우기 전에 알아야 할 핵심 원칙들을 모았습니다. 규칙보다 이야기를 우선한다는 점, 애매할 땐 극적인 쪽을 택한다는 점 등 게임 전반에 적용되는 기본 태도를 다룹니다.",
+      "캐릭터 해부학": "캐릭터를 이루는 모든 요소를 한눈에 정리합니다. 네 가지 능력치(민첩·통찰·근력·의지력), 생명점(HP)과 마력(MP), 방어 수치, 직업과 기술 등 캐릭터 시트에 적히는 항목들이 각각 무엇을 의미하는지 설명합니다.",
+      "판정": "행동의 성공 여부를 가리는 핵심 메커니즘입니다. 두 개의 능력치 주사위를 굴려 그 합과 결과를 난이도와 비교하며, 파뷸라 울티마의 거의 모든 불확실한 행동이 이 판정으로 해결됩니다.",
+      "대성공": "판정에서 두 주사위가 똑같은 값(6 이상)으로 나왔을 때의 특별한 성공입니다. 단순한 성공을 넘어 추가 피해나 유리한 '기회'를 만들어내며, 극적인 순간을 연출하는 행운의 결과입니다.",
+      "실패": "판정에서 두 주사위가 모두 1로 나오는 등 최악의 결과를 다룹니다. 단순히 실패하는 데 그치지 않고 예상치 못한 곤란이나 반전이 일어날 수 있어, GM이 이야기를 흥미롭게 비트는 계기가 됩니다.",
+      "기회": "판정에 성공하면서 얻게 되는 추가적인 유리한 효과입니다. 적을 넘어뜨리거나 추가 피해를 입히는 등, 단순 성공 이상의 부가 이득을 만들어내 전투와 행동에 깊이를 더합니다.",
+      "능력치 판정": "가장 기본이 되는 판정 방식의 상세 설명입니다. 상황에 맞는 두 능력치의 주사위를 골라 굴리고 결과를 더하는 과정을, 구체적인 예시와 함께 단계별로 보여줍니다.",
+      "난이도": "판정이 성공하려면 넘어야 할 목표 숫자를 정하는 기준입니다. 쉬운 일부터 거의 불가능한 일까지 난이도 등급이 정해져 있어, GM이 상황의 어려움을 일관되게 판단할 수 있습니다.",
+      "특기 발동": "캐릭터의 '특기'를 활용해 실패한 판정의 주사위를 다시 굴리는 방법입니다. 자신의 정체성과 맞는 특기를 발동하면 결정적인 순간에 운명을 다시 시험할 수 있어, 캐릭터의 개성이 게임에 반영됩니다.",
+      "유대 발동": "캐릭터가 맺은 '유대'의 힘을 빌려 판정을 강화하는 방법입니다. 사랑·존경·증오 같은 감정의 강도만큼 판정에 보너스를 더하며, 영웅이 소중한 것을 위해 평소 이상의 힘을 내는 순간을 표현합니다.",
+      "대립 판정": "두 대상이 서로 맞서 동시에 굴리는 경쟁 판정입니다. 줄다리기나 설득 대결처럼 한쪽의 성공이 다른 쪽의 실패가 되는 상황에서, 더 높은 결과를 낸 쪽이 이깁니다.",
+      "개방 판정": "정해진 목표값 없이 결과의 '크기'만 재는 판정입니다. 얼마나 멀리 뛰는지, 얼마나 잘 만드는지처럼 성패보다 정도가 중요한 상황에서, 주사위 결과 자체가 성과의 척도가 됩니다.",
+      "상황 수정자": "유리하거나 불리한 상황을 판정에 반영하는 보정값입니다. 높은 곳에서 공격하거나 어둠 속에서 행동하는 등 상황에 따라 판정에 숫자를 더하거나 빼서, 환경의 영향을 자연스럽게 표현합니다.",
+      "집단 판정": "여러 캐릭터가 함께 하나의 목표에 도전하는 단체 판정입니다. 대표 한 명이 주도하고 나머지가 돕는 방식으로, 절벽을 다 같이 오르거나 함께 정보를 모으는 등 협력이 필요한 상황을 처리합니다.",
+      "자주 쓰이는 판정": "게임 중 흔히 등장하는 대표적인 판정들을 모아 안내합니다. 무언가를 살피거나, 기억해내거나, 설득하거나, 몰래 움직이는 등 자주 쓰는 행동들을 어떤 능력치로 판정하는지 정리해 둡니다.",
+      "시계": "진행 상황이나 긴장을 칸으로 나누어 추적하는 장치입니다. 사건이 진행될 때마다 칸을 채우고, 모든 칸이 차면 정해진 결과(폭발, 추격자 도착 등)가 발동해 긴박감을 시각적으로 만들어냅니다.",
+      "유대": "캐릭터가 사람·장소·이상과 맺는 감정적 연결입니다. 사랑·존경·신뢰 또는 미움·열등감·분노 같은 감정으로 표현되며, 영웅이 위기에서 더 큰 힘을 내는 원천이자 이야기를 이끄는 동기가 됩니다.",
+      "전투 씬": "전투가 벌어지는 갈등 씬의 기본 흐름을 설명합니다. 선제권으로 순서를 정하고 라운드마다 차례로 행동하는 구조로, 영웅과 적이 맞붙는 긴장된 장면이 어떻게 진행되는지 보여줍니다.",
+      "전투 구조": "전투가 라운드와 턴으로 나뉘어 진행되는 구조를 상세히 다룹니다. 한 라운드 안에서 모든 참가자가 한 번씩 행동하며, 누가 언제 움직이는지 정하는 방식을 설명합니다.",
+      "선제권": "전투에서 누가 먼저 행동하는지 정하는 수치입니다. 통찰과 민첩이 높을수록 빠르게 움직이며, 매 전투의 첫머리에 아군과 적의 행동 순서를 결정하는 중요한 요소입니다.",
+      "라운드와 턴": "전투의 시간 단위를 설명합니다. '라운드'는 모든 참가자가 한 번씩 행동하는 한 바퀴이고, '턴'은 그 안에서 한 캐릭터가 행동하는 차례로, 이 단위로 전투가 질서 있게 진행됩니다.",
+      "공간과 거리": "전장에서 위치와 거리를 다루는 방식입니다. 파뷸라 울티마는 격자나 정밀한 측정 대신 '가까움/멈'처럼 추상적으로 거리를 표현해, 상상력 중심의 빠른 전투를 가능하게 합니다.",
+      "행동": "한 턴에 할 수 있는 행동의 종류를 정리합니다. 공격·주문·이동·아이템 사용 등 캐릭터가 자기 차례에 무엇을 할 수 있는지, 그리고 각 행동이 어떻게 처리되는지 안내합니다.",
+      "팀워크": "동료와 협력해 더 큰 효과를 내는 규칙입니다. 다른 캐릭터를 돕거나 함께 행동하면 판정이 유리해지며, 혼자보다 함께일 때 강해지는 영웅 팀의 진가를 발휘하게 해줍니다.",
+      "목표 시계 예시": "시계를 활용하는 구체적인 예시들을 보여줍니다. 추격, 의식 저지, 탈출처럼 시간이 걸리는 목표를 시계로 표현하는 실제 사례와, 함께 쓸 수 있는 선택적 전투 규칙을 소개합니다.",
+      "선택 전투 규칙": "원하는 그룹만 도입할 수 있는 추가 전투 규칙입니다. 더 전술적이거나 다양한 전투를 원할 때 보태 쓸 수 있는 선택지로, 기본 규칙에 깊이를 더하고 싶을 때 활용합니다.",
+      "HP와 MP": "생명점(HP)과 마력(MP)을 관리하는 방법입니다. HP는 캐릭터의 생명력으로 0이 되면 쓰러지고, MP는 주문과 기술의 연료로, 둘 다 휴식이나 회복 효과로 되돌릴 수 있습니다.",
+      "0 HP": "생명점이 0으로 떨어졌을 때 벌어지는 일을 다룹니다. 캐릭터는 쓰러져 행동할 수 없게 되지만 즉사하지는 않으며, 동료의 도움이나 특정 상황에서 다시 일어날 수 있는 규칙을 설명합니다.",
+      "희생": "동료나 소중한 것을 지키기 위해 자신을 내던지는 규칙입니다. 큰 대가를 치르는 대신 극적인 효과를 만들어내며, 영웅적인 자기희생의 순간을 게임적으로 표현합니다.",
+      "항복": "더 이상 싸우지 않겠다고 선언하는 선택지입니다. 패배가 곧 죽음을 뜻하지 않도록, 캐릭터가 무언가를 내주고 상황에서 벗어나거나 이야기를 다른 방향으로 트는 길을 열어줍니다.",
+      "휴식": "휴식으로 생명점과 마력을 회복하는 방법입니다. 안전한 곳에서 잠시 쉬면 자원을 되찾고 유대를 다지는 막간 씬을 가질 수 있어, 다음 도전을 준비하는 재정비의 시간이 됩니다.",
+      "피해": "피해를 입히고 계산하는 규칙입니다. 공격이나 주문이 적중했을 때 얼마나 큰 피해를 주는지, 피해 유형(물리·화염·얼음 등)과 저항·약점이 어떻게 작용하는지 설명합니다.",
+      "즉흥 피해": "함정·낙하·환경 같은 상황에서 오는 즉석 피해입니다. 정해진 공격이 아닌 위험 요소로부터 받는 피해를 GM이 그 자리에서 판단해 적용하는 방법을 안내합니다.",
+      "상태 이상": "캐릭터를 방해하는 여러 상태를 다룹니다. 현혹·동요·느림·약화·격분·중독 등 각 상태가 능력치나 행동에 어떤 불이익을 주는지, 그리고 어떻게 회복하는지 정리합니다.",
+      "파뷸라 포인트": "플레이어가 모아 쓰는 영웅의 '운명력'입니다. 주사위를 다시 굴리거나, 유대를 발동하거나, 이야기에 직접 개입하는 등 결정적 순간에 소비해 영웅이 운명을 거스르게 해줍니다.",
+      "이야기 변경": "파뷸라 포인트로 이야기 자체에 개입하는 규칙입니다. '마침 이 가게에 내가 찾던 물건이 있다'처럼 플레이어가 세계에 작은 사실을 더하거나 상황을 유리하게 비틀 수 있게 합니다.",
+      "악당": "울티마 포인트를 사용하는 강력한 적을 정의합니다. 단순한 잡몹과 달리 이야기의 중심이 되는 적대자로, 영웅과 대등하게 맞서며 캠페인을 이끄는 위협이 됩니다.",
+      "울티마 포인트": "악당이 사용하는 강력한 자원으로, 영웅의 파뷸라 포인트에 대응합니다. GM이 이를 소비해 악당의 특수 능력을 발동하거나 전세를 뒤집어, 보스전에 긴장감을 불어넣습니다.",
+      "에스컬레이션": "악당이 더 위협적인 단계로 진화하는 것을 다룹니다. 소형 악당이 주요 악당으로, 다시 최고 악당으로 성장하며 목표와 힘이 커지는 과정으로, 이야기의 긴장을 점점 끌어올립니다.",
+      "인벤토리 포인트": "소모품과 즉석 아이템을 표현하는 추상적인 자원입니다. 일일이 물약 개수를 세는 대신 이 포인트를 소비해 회복약을 만들거나 도구를 꺼내, 가벼우면서도 유연한 보급 관리를 가능하게 합니다.",
+      "여정과 여행": "장거리 이동과 여행 중 벌어지는 일을 다룹니다. 목적지로 향하는 동안의 발견·위험·만남을 처리하는 규칙으로, 이동 자체를 지루하지 않은 모험의 일부로 만들어줍니다.",
+      "위험": "여행이나 탐험 도중 마주치는 위협 요소입니다. 험한 지형, 굶주림, 적대적 환경 등 캐릭터를 시험하는 장애물을 다루며, 모험의 긴장감을 유지하는 장치로 쓰입니다.",
+      "발견": "탐험을 통해 새로운 것을 찾아내는 규칙입니다. 숨겨진 보물·통로·정보 같은 보상을 발견하는 방식을 다루며, 호기심을 가지고 세계를 탐험하는 즐거움을 보상해 줍니다.",
+      "던전": "위험과 보상이 가득한 던전을 탐험·운영하는 방법입니다. 던전의 핵심 요소와 탐험 스타일, 함정과 적의 배치를 다루며, GM이 기억에 남는 모험 무대를 만들도록 돕습니다.",
+      "마법": "마법의 기초와 여섯 가지 분과 개념을 소개합니다. 원소·엔트로피·영매술 등 각 분과가 어떤 성격을 지니는지, 주문과 의식이 어떻게 다른지 등 마법 시스템 전반의 토대를 설명합니다.",
+      "주문": "주문을 시전하는 방법과 규칙을 다룹니다. 마력을 소비해 효과를 발동하고 마법 판정으로 적중을 가리는 과정, 대상과 지속 시간 등 주문 사용의 모든 절차를 안내합니다.",
+      "의식": "시간과 노력이 드는 강력한 의식 마법입니다. 즉석 주문으로는 불가능한 거대한 효과를 만들 수 있지만 비용과 위험이 따르며, 창의적으로 문제를 해결하는 강력한 수단이 됩니다.",
+      "전투 중 의식": "전투 도중에 의식을 사용할 때의 특별 규칙입니다. 긴 의식을 급박한 전투 안에서 시도할 때 어떤 제약과 위험이 따르는지를 설명합니다.",
+      "경제와 아이템": "제닛(화폐)·상점·아이템 거래를 다루는 규칙입니다. 장비를 사고팔거나 서비스를 이용하는 방법을 안내하며, 영웅들이 모험으로 얻은 부를 어떻게 활용하는지 보여줍니다.",
+      "서비스와 이동수단": "돈을 주고 이용하는 숙박·운송 등의 서비스를 다룹니다. 여관에서 쉬거나 배·마차로 이동하는 등 일상적인 거래를 처리해, 세계를 더 생생하게 만들어 줍니다.",
+      "장비": "무기·갑옷·방패 등 장비의 기본 개념을 설명합니다. 어떤 종류의 장비가 있고 각각 어떤 역할을 하는지, 캐릭터가 무엇을 장착할 수 있는지에 대한 전반적인 안내입니다.",
+      "전투 장비": "숙련이 필요한 강력한 전투용 장비를 다룹니다. 다루기 위해 특정 직업의 능력이 요구되는 대신 더 높은 위력을 내는 장비로, ♦ 기호로 표시됩니다.",
+      "기본 무기": "게임에 등장하는 기본 무기의 전체 목록과 수치입니다. 단검부터 대형 무기까지 각 무기의 명중·피해·범주를 정리해, 캐릭터에게 맞는 무기를 고를 수 있게 합니다.",
+      "기본 갑옷과 방패": "기본 갑옷과 방패의 목록과 수치를 정리합니다. 각 방어구가 방어·마법 방어·선제권에 어떤 영향을 주는지 비교해, 보호와 민첩성 사이의 균형을 선택하도록 돕습니다.",
+      "프로젝트": "시간·자원·기술을 투자해 무언가를 만들어내는 규칙입니다. 마법 아이템 제작이나 거점 건설처럼 여러 세션에 걸친 장기 목표를 다루며, 캐릭터가 세계에 흔적을 남기게 해줍니다.",
+      "그룹 역학": "그룹 단위의 상호작용과 심화 프로젝트를 다룹니다. 파티가 함께 추진하는 활동이나 그룹 전체에 영향을 주는 요소들을 정리해, 캠페인을 풍성하게 만드는 도구를 제공합니다.",
+      "시작 전에": "캐릭터를 만들기 전에 그룹이 함께 정해둘 것들을 안내합니다. 어떤 분위기의 이야기를 할지, 어떤 주제를 다룰지 등을 미리 합의해, 모두가 같은 방향을 바라보게 합니다.",
+      "세계 창조": "GM과 플레이어가 함께 게임 세계를 만들어가는 과정입니다. 지역·세력·갈등을 같이 구상해, 모두가 애착을 갖는 고유한 무대를 협력적으로 빚어냅니다.",
+      "그룹 창조": "파티의 정체성과 공동의 목표를 정하는 단계입니다. 영웅들이 왜 함께 모였는지, 무엇을 추구하는지를 결정해, 캠페인 내내 일행을 묶어줄 끈을 만듭니다.",
+      "캐릭터 생성": "한 명의 영웅을 단계별로 만들어내는 전체 과정입니다. 정체성·능력치·직업·장비를 차례로 정하며, 게임에서 연기할 나만의 캐릭터를 완성합니다.",
+      "클래식 캐릭터": "바로 가져다 쓸 수 있는 견본 캐릭터들입니다. 캐릭터 생성에 익숙하지 않거나 빠르게 시작하고 싶을 때, 완성된 예시를 골라 즉시 플레이할 수 있게 해줍니다.",
+      "아르카니스트": "'아르카눔'이라 불리는 강대한 존재와 결속해 그 힘을 빌리는 직업입니다. 결속하면 변신하거나 강력한 능력을 발휘할 수 있으며, 새로운 아르카나를 찾아내며 성장하는 신비로운 소환사입니다.",
+      "키메리스트": "야수·몬스터·식물 같은 생명체에게서 직접 주문을 배우는 직업입니다. 자연과 기술의 갈등 속에서 다양한 생명체의 힘을 흡수해, 점점 더 다재다능한 마법사로 성장합니다.",
+      "다크블레이드": "어둠의 힘과 비극적 과거를 짊어진 검사입니다. 자신을 각성시킨 어두운 사건의 메아리 속에서 싸우며, 강력한 어둠 공격과 함께 때로는 그 과거를 극복하는 서사를 그립니다.",
+      "엘리멘탈리스트": "불·얼음·번개 등 여러 원소 마법으로 피해를 입히는 직업입니다. 적의 약점을 찌르는 다양한 속성 공격이 강점으로, 전투에서 폭발적인 화력을 담당하는 정통 마법사입니다.",
+      "엔트로피스트": "죽음·혼돈·망각의 마법을 다루는 직업입니다. 속성 없는 직접 피해를 입히고 적의 행동을 제약하거나 아군에게 추가 턴을 주는 등, 판을 통제하는 독특한 능력을 지녔습니다.",
+      "퓨리": "분노와 열정을 무기 삼아 강력한 근접 피해를 쏟아내는 전사입니다. 위기에 몰릴수록 더 강해지고 회복력도 뛰어나, 본능적으로 적진에 뛰어드는 맹렬한 돌격형 직업입니다.",
+      "가디언": "동료를 보호하고 적의 공격을 대신 받아내는 수호 직업입니다. 한 번에 한 명을 지켜내는 보호 능력으로 위험에 처한 아군을 감싸며, 파티의 든든한 방패가 되어줍니다.",
+      "로어마스터": "세상 모든 것에 대해 조금씩 알고 있는 지식의 직업입니다. 정보를 끌어내고 적의 약점을 간파하며 동료의 판정을 돕는, 호기심과 탐구심으로 무장한 만능 조언자입니다.",
+      "오레이터": "말과 설득의 힘으로 적과 아군을 움직이는 직업입니다. 위협·격려·단죄 같은 언변으로 전장의 흐름을 바꾸고, 때로는 적조차 잠시 아군으로 끌어들이는 카리스마형 직업입니다.",
+      "로그": "기민함으로 적을 교란하고 귀중한 아이템을 훔쳐내는 직업입니다. 적의 본질이 담긴 보물을 빼앗는 '영혼 도둑' 능력이 특징으로, 자유분방하고 영리한 책략가입니다.",
+      "샤프슈터": "원거리 사격에 특화된 전투 직업입니다. 날아다니는 적이나 멀리 있는 표적을 정확히 노리는 데 뛰어나, 안전한 거리에서 꾸준히 피해를 누적시키는 명사수입니다.",
+      "스피리티스트": "영혼 에너지를 다뤄 치유하고 감정을 조작하는 영매 직업입니다. 빛 속성으로 언데드에 강하고 동료를 빠르게 회복시키며, 생명과 죽음의 경계를 다루는 신비로운 존재입니다.",
+      "팅커러": "발명품과 연금술로 무엇이든 만들어내는 다재다능한 직업입니다. 모든 피해 유형에 대응하고 치유 아이템으로 지원하며, 창의적인 플레이어에게 무한한 가능성을 열어줍니다.",
+      "웨이페어러": "여행과 발견에 능하며 충실한 동반자를 거느리는 직업입니다. 위기에서 유용한 발견을 해내고 함께 설계한 생명체를 동료로 데려와, 어떤 환경에서도 길을 찾는 모험가입니다.",
+      "웨폰마스터": "모든 무기를 능숙하게 다루는 전투 숙련의 직업입니다. 다양한 무기와 전투 기술을 자유자재로 구사하며, 어떤 상황에도 적응하는 전장의 베테랑 전사입니다.",
+      "프롤로그": "캠페인의 시작을 장식하는 도입부를 설정합니다. 영웅들이 어떤 계기로 모험에 나섰는지를 정하는 출발점으로, 무작위 표를 활용해 흥미로운 시작 상황을 만들어낼 수 있습니다.",
+      "경험과 레벨": "경험치를 얻고 레벨을 올리는 성장 규칙입니다. 모험과 유대를 통해 경험치를 모아 새로운 직업 레벨과 기술을 익히며, 캐릭터가 점점 강해지는 과정을 다룹니다.",
+      "고레벨 PC 생성": "처음부터 높은 레벨로 캐릭터를 만드는 방법입니다. 이미 숙련된 영웅으로 캠페인을 시작하고 싶을 때, 추가 능력치와 기술을 어떻게 배분하는지 안내합니다.",
+      "선택 성장 규칙": "원하는 그룹만 도입하는 추가 성장 규칙입니다. 능력치 상승이나 특별한 발전 경로 등 기본 규칙을 넘어선 성장 방식을 제공해, 캐릭터를 더 다양하게 키울 수 있게 합니다.",
+      "영웅 기술": "고레벨에 도달한 영웅만이 익히는 강력한 기술들입니다. 직업의 한계를 뛰어넘는 결정적 능력으로, 캐릭터를 진정한 전설적 영웅으로 완성하는 화려한 비장의 수입니다.",
+      "GM의 역할": "게임 마스터가 맡는 역할과 책임을 깊이 있게 안내합니다. 공정한 심판이자 매력적인 이야기꾼으로서, 플레이어와 함께 즐거운 경험을 만드는 구체적인 자세와 요령을 다룹니다.",
+      "직업 클래스": "각 직업을 다룰 때 GM이 참고할 조언입니다. 직업별로 어떤 씬과 적을 준비하면 그 캐릭터가 빛나는지 알려주어, 모든 플레이어가 활약할 기회를 마련하도록 돕습니다.",
+      "악당의 기술": "기억에 남는 매력적인 악당을 만드는 방법입니다. 목표·동기·약점·등장 연출까지, 단순한 적이 아닌 영웅과 대비되는 입체적 적대자를 빚어내는 비결을 다룹니다.",
+      "보상": "영웅들에게 적절한 보상을 나눠주는 기준입니다. 레벨과 인원에 맞는 보상의 양, 이야기를 담은 아이템 배치, 흥미를 더하는 분배 요령 등을 안내해 균형을 잡아줍니다.",
+      "희귀 아이템 설계": "특별한 희귀 아이템을 직접 만드는 규칙입니다. 기존 아이템을 변형하거나 새 능력을 부여하는 방법을 안내해, 발견 장소와 사연이 담긴 고유한 보물을 창조할 수 있게 합니다.",
+      "희귀 무기 설계": "희귀 무기를 설계하는 절차와 품질 목록입니다. 피해 유형과 특수 능력을 조합해 비용을 계산하는 방법을 단계별로 안내하고, 다양한 무기 품질을 표로 제공합니다.",
+      "희귀 갑옷과 방패": "희귀 갑옷·방패의 설계법과 견본을 다룹니다. 방어구에 부여할 수 있는 특수 품질과 그 비용을 정리하고, 바로 쓸 수 있는 다양한 예시 방어구를 제공합니다.",
+      "악세서리 설계": "반지·부적 같은 액세서리를 설계하는 규칙입니다. 작지만 강력한 보너스를 주는 장신구를 만드는 방법을 다루며, 캐릭터에게 개성 있는 마법 효과를 더해 줍니다.",
+      "유물": "캠페인의 향방을 좌우하는 강대한 유물을 다룹니다. 평범한 장비를 뛰어넘는 전설적 보물로, 이야기의 핵심이 되거나 거대한 위협에 맞설 열쇠가 되기도 합니다.",
+      "전투 설계": "균형 잡히고 흥미로운 전투를 설계하는 방법입니다. 적의 수와 강함을 조절하고 도전적인 조우를 구성하는 요령을 다뤄, 너무 쉽지도 어렵지도 않은 전투를 만들도록 돕습니다.",
+      "엘리트와 챔피언": "일반 적을 강화한 엘리트·챔피언 등급을 다룹니다. 여러 명 몫의 행동과 생명력을 가진 강한 적으로, 영웅 파티에게 제대로 된 도전을 제공하는 방법을 설명합니다.",
+      "보스 전투": "여러 단계에 걸쳐 싸우는 보스전을 설계하는 규칙입니다. 캠페인의 절정을 장식하는 강력한 적과의 대결을, 긴장감 있고 기억에 남는 명장면으로 만드는 법을 안내합니다.",
+      "NPC 설계": "적과 조연 등 비플레이어 캐릭터를 만드는 방법입니다. 플레이어 캐릭터와는 다른 규칙으로 빠르게 적을 설계하는 법을 다뤄, GM이 필요한 등장인물을 손쉽게 준비하게 합니다.",
+      "NPC 종족": "NPC를 분류하는 종족 계열과 그 특성을 다룹니다. 야수·언데드·악마 등 각 종족이 지니는 공통된 성향과 능력을 정리해, 일관성 있는 적을 만들도록 돕습니다.",
+      "NPC 기술": "NPC가 사용하는 기술을 설계하는 방법입니다. 적에게 개성과 위협을 더하는 특수 능력을 자유롭게 만드는 요령을 다뤄, 단조롭지 않은 전투를 연출하게 해줍니다.",
+      "NPC 주문": "NPC가 사용하는 주문을 설계하는 규칙입니다. 적 마법사에게 어울리는 주문을 만드는 방법을 안내해, 마법을 쓰는 위협적인 적을 손쉽게 준비할 수 있게 합니다.",
+      "보스 설계 예시": "완성된 보스 NPC의 설계 예시를 보여줍니다. 실제로 능력과 기술을 갖춘 강력한 적이 어떻게 구성되는지 구체적 사례로 제시해, 직접 만들 때 참고할 본보기가 됩니다.",
+      "NPC 연구": "로어마스터 등이 NPC의 정보를 알아내는 규칙입니다. 적의 약점·저항·특성을 조사해 밝혀내는 방법을 다뤄, 정보가 곧 승리로 이어지는 전략적 재미를 더합니다.",
+      "야수": "자연에 서식하는 짐승 계열 몬스터입니다. 늑대·곰·거대 생물처럼 본능에 따라 움직이는 적들로, 야생의 위협을 대표하는 가장 기본적인 적 분류입니다.",
+      "구조물": "골렘·기계 같은 구조물 계열 몬스터입니다. 생명이 없이 만들어진 존재로 정신 계열 효과에 강한 경우가 많으며, 고대 유적이나 마법공학 세계의 수호자로 등장합니다.",
+      "악마": "지옥과 어둠에서 온 악마 계열 몬스터입니다. 사악한 의지를 지닌 강력한 적으로, 어둠 마법과 결합하거나 최고 악당의 수하로 등장하는 무서운 위협입니다.",
+      "정령": "원소와 자연의 힘이 깃든 정령 계열 몬스터입니다. 불·물·바람 같은 원소의 화신으로, 특정 속성에 강하거나 약한 특성을 지녀 전술적인 전투를 만들어냅니다.",
+      "인간형": "인간을 닮은 종족 계열 몬스터입니다. 도적·병사·마법사처럼 지능을 갖춘 적들로, 대화와 협상이 가능하기도 해 가장 다채로운 이야기를 만들어내는 분류입니다.",
+      "몬스터": "어느 분류에도 속하지 않는 기괴한 괴물 계열입니다. 키메라나 미지의 생물처럼 독특하고 예측 불가능한 적들로, 세계에 신비로움과 경외감을 더해 줍니다.",
+      "식물": "식물·균류 계열의 생명체입니다. 식인 꽃이나 움직이는 나무처럼 천천히 그러나 끈질기게 위협하는 적들로, 독이나 속박 같은 능력을 자주 사용합니다.",
+      "언데드": "죽음에서 되살아난 언데드 계열 몬스터입니다. 좀비·해골·유령처럼 생명의 법칙을 거스른 존재로, 빛 속성에 약하고 어둠과 결합하는 음산한 적들입니다.",
     };
-    const used = new Set();
-    const skip = new Set(['SCRIPT','STYLE','A','BUTTON','H1','H2','H3','H4']);
-    /* only annotate inside main paragraphs, first hit per term */
-    const main = document.querySelector('main');
-    if (!main) return;
-    const keys = Object.keys(TERMS).sort((a,b) => b.length - a.length);
+    /* part titles */
+    const PART_DESC = {
+      '소개': '게임의 개념과 세계관을 소개하는 도입부.',
+      '게임 규칙': '판정·전투·마법 등 핵심 규칙을 다루는 장.',
+      '시작하기': '캐릭터·세계 생성과 모든 직업을 다루는 장.',
+      'GM 가이드': '게임 마스터를 위한 운영 가이드.',
+      '몬스터 도감': '적과 생명체 데이터 (추후 수록 예정).'
+    };
 
-    const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
-        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        let p = node.parentNode;
-        while (p && p !== document.body) {
-          if (skip.has(p.nodeName)) return NodeFilter.FILTER_REJECT;
-          if (p.classList && (p.classList.contains('glossary') || p.classList.contains('pageref-link') || p.classList.contains('mono') || p.classList.contains('box-title') || p.classList.contains('class-name'))) return NodeFilter.FILTER_REJECT;
-          p = p.parentNode;
-        }
-        return NodeFilter.FILTER_ACCEPT;
-      }
+    function attachTip(el, text) {
+      el.classList.add('toc-has-tip');
+      const tip = document.createElement('span');
+      tip.className = 'toc-tip';
+      tip.textContent = text;
+      el.appendChild(tip);
+    }
+
+    document.querySelectorAll('#toc .toc-entry').forEach(entry => {
+      const titleSpan = entry.querySelector('span:first-child');
+      if (!titleSpan) return;
+      const key = titleSpan.textContent.trim();
+      if (DESC[key]) attachTip(entry, DESC[key]);
     });
-    const nodes = [];
-    let n; while ((n = walker.nextNode())) nodes.push(n);
 
-    nodes.forEach(node => {
-      for (const term of keys) {
-        if (used.has(term)) continue;
-        const idx = node.nodeValue.indexOf(term);
-        if (idx === -1) continue;
-        /* split text node and wrap the term */
-        const before = node.nodeValue.slice(0, idx);
-        const after = node.nodeValue.slice(idx + term.length);
-        const span = document.createElement('span');
-        span.className = 'glossary';
-        span.setAttribute('tabindex', '0');
-        span.textContent = term;
-        const tip = document.createElement('span');
-        tip.className = 'tip';
-        tip.innerHTML = '<strong>' + term + '</strong>' + TERMS[term];
-        span.appendChild(tip);
-        const frag = document.createDocumentFragment();
-        if (before) frag.appendChild(document.createTextNode(before));
-        frag.appendChild(span);
-        if (after) frag.appendChild(document.createTextNode(after));
-        const parent = node.parentNode;
-        parent.replaceChild(frag, node);
-        used.add(term);
-        break; /* one term per node pass */
-      }
+    document.querySelectorAll('#toc .toc-part-title').forEach(title => {
+      /* part title text is after the number span */
+      const full = title.textContent.replace(/^[^A-Za-z가-힣]*\d*\.?\s*/, '').trim();
+      // try direct match on the trailing words
+      let matched = null;
+      for (const k in PART_DESC) { if (full.endsWith(k)) { matched = k; break; } }
+      if (matched) attachTip(title, PART_DESC[matched]);
     });
   })();
 
