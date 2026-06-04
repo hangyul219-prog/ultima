@@ -11146,7 +11146,7 @@
       <div class="box-title">5. 기본 공격 정하기</div>
       <p>NPC는 원하는 수만큼 <strong>기본 공격</strong>을 가질 수 있습니다. 기본 공격은 <strong>근접</strong> 또는 <strong>원거리</strong> 공격일 수 있습니다. 각 공격은 다음 양식으로 시작합니다.</p>
       <p><strong>(공격 이름)</strong> + <strong>[능력치 + 능력치]</strong> + <strong>[HR + 5]</strong> <em>(피해 유형)</em> 피해.</p>
-      <p>이 공격들의 명중 체크는 원하는 능력치에 의존하도록 정할 수 있습니다. 예를 들어 <strong>[통찰 + 의지]</strong>나 <strong>[힘 + 힘]</strong> 같은 식입니다. 피해 유형도 가장 적절해 보이는 것으로 자유롭게 고르세요.</p>
+      <p>이 공격들의 명중 체크는 원하는 능력치에 의존하도록 정할 수 있습니다. 예를 들어 <strong>[통찰 + 의지력]</strong>나 <strong>[근력 + 근력]</strong> 같은 식입니다. 피해 유형도 가장 적절해 보이는 것으로 자유롭게 고르세요.</p>
       <p>기본 공격은 아래의 스킬로 수정할 수도 있습니다. NPC가 무기를 장비할 수 있다면, 해당 무기들도 그 생명체의 기본 공격에 포함됩니다.</p>
       <span class="box-corner-bl"></span><span class="box-corner-br"></span>
     </div>
@@ -11163,9 +11163,9 @@
     <div class="box gold">
       <div class="box-title">7. 보조 수치 계산</div>
       <p><strong>• 이니셔티브:</strong> <strong>[기본 민첩 주사위 크기 + 기본 통찰 주사위 크기]</strong>를 2로 나눕니다. 방어구로 인한 페널티 적용을 잊지 마세요.</p>
-      <p><strong>• 최대 HP:</strong> <strong>[NPC 레벨의 두 배] + [NPC의 기본 힘 주사위 크기의 5배]</strong>입니다.</p>
+      <p><strong>• 최대 HP:</strong> <strong>[NPC 레벨의 두 배] + [NPC의 기본 근력 주사위 크기의 5배]</strong>입니다.</p>
       <p><strong>• 위기 수치:</strong> NPC의 최대 HP의 절반입니다.</p>
-      <p><strong>• 최대 MP:</strong> <strong>[NPC 레벨] + [NPC의 기본 의지 주사위 크기의 5배]</strong>입니다.</p>
+      <p><strong>• 최대 MP:</strong> <strong>[NPC 레벨] + [NPC의 기본 의지력 주사위 크기의 5배]</strong>입니다.</p>
       <p><strong>• 방어력:</strong> NPC의 현재 <strong>민첩</strong> 주사위 크기와 같습니다.</p>
       <p><strong>• 마법 방어력:</strong> NPC의 현재 <strong>통찰</strong> 주사위 크기와 같습니다.</p>
       <span class="box-corner-bl"></span><span class="box-corner-br"></span>
@@ -11233,7 +11233,7 @@
           <td class="mono">식물</td>
           <td>3</td>
           <td>전형적인 식물과는 거리가 멀게, 이 <strong>식물</strong>들은 돌연변이나 마법의 영향으로 위험한 포식자로 진화했습니다.<br><strong>예:</strong> 알라우네, 드래곤트롯, 트리엔트.</td>
-          <td>식물은 <strong>혼미</strong>, <strong>동요</strong>, <strong>격분</strong> 상태에 면역이며, <strong>(하나 선택: 기류, 볼트, 화염, 빙결)</strong> 피해에 취약합니다.</td>
+          <td>식물은 <strong>멍함</strong>, <strong>동요</strong>, <strong>격분</strong> 상태에 면역이며, <strong>(하나 선택: 기류, 볼트, 화염, 빙결)</strong> 피해에 취약합니다.</td>
         </tr>
         <tr>
           <td class="mono">언데드</td>
@@ -11338,7 +11338,7 @@
       <p>· 대상이 포획, 삼켜짐, 또는 사로잡힘 상태가 됩니다. 탈출하려면 보통 4구간에서 6구간 정도의 시계를 채워야 합니다.</p>
       <p>· 해당 공격은 상태 이상을 겪고 있는 대상에게 추가 피해를 줍니다.</p>
       <p>· 해당 공격은 NPC가 가한 HP 손실의 절반만큼 HP를 회복시킵니다.</p>
-      <p>· 대상이 <strong>혼미</strong> 또는 <strong>동요</strong> 상태라면, NPC가 대상의 다음 행동을 지배합니다.</p>
+      <p>· 대상이 <strong>멍함</strong> 또는 <strong>동요</strong> 상태라면, NPC가 대상의 다음 행동을 지배합니다.</p>
       <p>· 해당 공격이 대상의 다음 턴 행동을 봉쇄합니다.</p>
       <p>· 해당 공격이 NPC에게 라운드 종료 시까지 지속되는 어떤 보너스를 부여합니다.</p>
     </div>
@@ -11361,7 +11361,7 @@
       <p>· NPC가 주문 하나를 배우고 최대 MP가 10 증가합니다.</p>
       <p>· NPC가 주문 두 개를 배웁니다.</p>
     </div>
-    <p>NPC는 직업 또는 다음 페이지의 <strong>NPC 주문</strong> 목록에서 주문을 배울 수 있습니다. 공격(🗡) 주문을 시전할 때, NPC는 마법 체크로 <strong>[통찰 + 의지]</strong> 또는 <strong>[지능 + 의지]</strong>를 사용할 수 있습니다.</p>
+    <p>NPC는 직업 또는 다음 페이지의 <strong>NPC 주문</strong> 목록에서 주문을 배울 수 있습니다. 공격(🗡) 주문을 시전할 때, NPC는 마법 체크로 <strong>[통찰 + 의지력]</strong> 또는 <strong>[통찰 + 의지력]</strong>를 사용할 수 있습니다.</p>
 
     <h3 class="section-title">상태 이상 면역</h3>
 
@@ -11408,7 +11408,7 @@
           <td>즉시</td>
         </tr>
         <tr>
-          <td colspan="4">볼 수 있는 생명체 중 원하는 수만큼을 선택합니다. 선택된 생명체들은 각각 <strong>(하나 선택: 혼미, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
+          <td colspan="4">볼 수 있는 생명체 중 원하는 수만큼을 선택합니다. 선택된 생명체들은 각각 <strong>(하나 선택: 멍함, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
         </tr>
         <tr>
           <td class="mono">숨결 🗡</td>
@@ -11426,7 +11426,7 @@
           <td>즉시</td>
         </tr>
         <tr>
-          <td colspan="4">대상은 <strong>(하나 선택: 혼미, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
+          <td colspan="4">대상은 <strong>(하나 선택: 멍함, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
         </tr>
         <tr>
           <td class="mono">강화 저주 🗡</td>
@@ -11435,7 +11435,7 @@
           <td>즉시</td>
         </tr>
         <tr>
-          <td colspan="4">대상은 <strong>(둘 선택: 혼미, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
+          <td colspan="4">대상은 <strong>(둘 선택: 멍함, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
         </tr>
         <tr>
           <td class="mono">저주의 숨결 🗡</td>
@@ -11444,7 +11444,7 @@
           <td>즉시</td>
         </tr>
         <tr>
-          <td colspan="4">대상은 <strong>【HR + 15】(유형 선택)</strong> 피해를 입고 <strong>(하나 선택: 혼미, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
+          <td colspan="4">대상은 <strong>【HR + 15】(유형 선택)</strong> 피해를 입고 <strong>(하나 선택: 멍함, 동요, 느림, 약화)</strong> 상태에 걸립니다.</td>
         </tr>
         <tr>
           <td class="mono">파멸</td>
@@ -11562,7 +11562,7 @@
       <p>GM은 그녀를 <strong>정예</strong> 또는 <strong>챔피언</strong>으로 만들 계획도 있지만, 일단 지금은 <strong>졸개</strong>로 제작합니다.</p>
       <p>· 안젤라는 강한 개성을 가진 유능한 마법사이므로, 다음과 같은 <strong>특성</strong>이 부여됩니다: 야망적, 오만, 박식, 무자비. 그녀는 쉽게 도발되며, 조직의 이익을 보호하기 위해서라면 — 은신처에 있는 모든 증거를 파괴하는 것까지 포함해 — 무슨 짓이든 할 것입니다.</p>
       <p>· 능력치 배분은 간단합니다. <strong>의지</strong>에 d10을 배분하고, 나머지 능력치 중 하나는 d6이어야 하지만, 안젤라는 레벨 20이므로 능력치를 한 단계 올릴 수 있습니다.</p>
-      <p>· 근접 전투는 안젤라의 특기가 아니지만, GM은 그녀의 <strong>헤룰라(270페이지)</strong>를 고려합니다. 이것은 마법 체크를 강화하는 희귀한 무기입니다. GM은 불 마법을 자주 사용한다는 것을 보여주기 위해 <strong>[지능 + 의지]</strong>에 의존하고 5점의 <strong>화염</strong> 피해를 주는 원거리 기본 공격을 추가하기로 합니다. 이 공격은 <strong>'화염 표창'</strong>이라고 이름 붙입니다.</p>
+      <p>· 근접 전투는 안젤라의 특기가 아니지만, GM은 그녀의 <strong>헤룰라(270페이지)</strong>를 고려합니다. 이것은 마법 체크를 강화하는 희귀한 무기입니다. GM은 불 마법을 자주 사용한다는 것을 보여주기 위해 <strong>[통찰 + 의지력]</strong>에 의존하고 5점의 <strong>화염</strong> 피해를 주는 원거리 기본 공격을 추가하기로 합니다. 이 공격은 <strong>'화염 표창'</strong>이라고 이름 붙입니다.</p>
       <p>레벨 20 이상의 적대자는 공격과 주문으로 5점의 추가 피해를 주므로, 안젤라의 지팡이는 총 <strong>【HR + 7】</strong> 피해를, 화염 표창은 총 <strong>【HR + 10】</strong> 피해를 주어 그녀를 조금 더 위협적으로 만듭니다.</p>
     </div>
 
@@ -11608,8 +11608,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">160</span><span class="npc-hp-crisis">▸ 80</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">80</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -11627,32 +11627,32 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>헤룰라</strong> ◆ [지능 + 의지] +2 ◆ <strong>【HR + 7】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>헤룰라</strong> ◆ [통찰 + 의지력] +2 ◆ <strong>【HR + 7】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>화염 표창</strong> ◆ [지능 + 의지] +2 ◆ <strong>【HR + 10】화염</strong> 피해를 주고, 대상은 <strong>약화</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>화염 표창</strong> ◆ [통찰 + 의지력] +2 ◆ <strong>【HR + 10】화염</strong> 피해를 주고, 대상은 <strong>약화</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
 
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>기력 흡수 🗡</strong> ◆ [지능 + 의지] +3 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>기력 흡수 🗡</strong> ◆ [통찰 + 의지력] +3 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】어둠</strong> 피해를 입고, 안젤라는 이 주문으로 인한 HP 손실의 절반만큼 HP를 회복합니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>플레어 🗡</strong> ◆ [지능 + 의지] +3 ◆ MP 20 ◆ 생명체 하나 ◆ 즉시.
+          <strong>플레어 🗡</strong> ◆ [통찰 + 의지력] +3 ◆ MP 20 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 30】화염</strong> 피해를 입습니다. 이 피해는 저항을 무시합니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>이그니스 🗡</strong> ◆ [지능 + 의지] +3 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>이그니스 🗡</strong> ◆ [통찰 + 의지력] +3 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 20】화염</strong> 피해를 입습니다.</span>
           <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>동요</strong> 상태에 걸립니다.</span>
         </div>
@@ -11669,8 +11669,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -11734,8 +11734,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">150</span><span class="npc-hp-crisis">▸ 75</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">80</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">17</span></div>
@@ -11795,7 +11795,7 @@
 
     <h3 class="section-title">비플레이어 캐릭터 조사하기</h3>
 
-    <p>NPC의 프로필에 대해 더 알고 싶다면, <strong>【지능 + 지능】 공개 판정</strong>을 수행하세요 — 갈등 장면 중이라면 <strong>조사</strong> 행동이 이에 해당합니다.</p>
+    <p>NPC의 프로필에 대해 더 알고 싶다면, <strong>【통찰 + 통찰】 공개 판정</strong>을 수행하세요 — 갈등 장면 중이라면 <strong>조사</strong> 행동이 이에 해당합니다.</p>
     <p>GM은 결과에 따라 다음과 같은 정보를 공개합니다:</p>
 
     <table class="stat-table">
@@ -11953,8 +11953,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -11972,11 +11972,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>턱 베기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】독소</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>턱 베기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】독소</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>커터볼</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해. 커터필러가 이전 턴에 <strong>방어</strong> 행동을 수행했다면, 이 공격은 5점의 추가 피해를 줍니다.</div>
+        <div class="npc-attack-body"><strong>커터볼</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해. 커터필러가 이전 턴에 <strong>방어</strong> 행동을 수행했다면, 이 공격은 5점의 추가 피해를 줍니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>몸 말기 ◆</strong> 커터필러가 <strong>방어</strong> 행동을 수행할 때, 다음 턴 시작 전까지 <strong>물리</strong> 피해에 면역이 됩니다.</div>
@@ -11993,8 +11993,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d12</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">35</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">14</span></div>
@@ -12011,7 +12011,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>독 물기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>중독</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>독 물기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>중독</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>궁지의 쥐 ◆</strong> 위기 상태인 한, 거대 쥐는 모든 체크에 +3 보너스를 얻습니다.</div>
@@ -12029,8 +12029,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">35</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12045,7 +12045,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>사나운 물기</strong> ◆ [민첩 + 힘] +3 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>사나운 물기</strong> ◆ [민첩 + 근력] +3 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>보호 ◆</strong> 다른 캐릭터가 위험에 처했을 때, 회색 하울러는 그 자리를 대신 맡을 수 있습니다(197페이지의 <strong>보호</strong> 스킬 참조).</div>
@@ -12062,8 +12062,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12083,7 +12083,7 @@
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>날카로운 울음</strong> ◆ [민첩 + 의지] ◆ <strong>【HR + 5】기류</strong> 피해를 주고 대상은 <strong>혼미</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>날카로운 울음</strong> ◆ [민첩 + 의지력] ◆ <strong>【HR + 5】기류</strong> 피해를 주고 대상은 <strong>멍함</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>비행 ◆</strong> 307페이지에서 이 스킬의 자세한 효과를 확인하세요.</div>
@@ -12100,8 +12100,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">12</span></div>
@@ -12118,15 +12118,15 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>개미 강타</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>개미 강타</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>개미 포격</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>혼미</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>개미 포격</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>멍함</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>굴파기 ◆</strong> 폭격 개미가 <strong>방어</strong> 행동을 수행할 때 흙, 모래, 또는 바위 위에 서 있다면, 방어력에 +2 보너스를 얻고 다음 턴 시작 전까지 <strong>대지</strong> 피해에 취약해집니다.</div>
-      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 폭격 개미는 <strong>혼미</strong>와 <strong>격분</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 폭격 개미는 <strong>멍함</strong>와 <strong>격분</strong> 상태에 면역입니다.</div>
     </div>
 
     <!-- THORNFISH -->
@@ -12140,8 +12140,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">14</span></div>
@@ -12181,8 +12181,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -12202,7 +12202,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>곰 포옹</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>곰 포옹</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>강인함 ◆</strong> 태양곰은 <strong>느림</strong>과 <strong>약화</strong> 상태에 면역입니다.</div>
@@ -12220,8 +12220,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">90</span><span class="npc-hp-crisis">▸ 45</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -12238,13 +12238,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>백색 아귀</strong> ◆ [민첩 + 힘] +5 ◆ <strong>【HR + 15】물리</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>백색 아귀</strong> ◆ [민첩 + 근력] +5 ◆ <strong>【HR + 15】물리</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>아이스버그 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 20 ◆ 생명체 하나 ◆ 즉시.
+          <strong>아이스버그 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 20 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 30】빙결</strong> 피해를 입습니다. 이 피해는 저항을 무시합니다.</span>
         </div>
       </div>
@@ -12282,8 +12282,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -12323,8 +12323,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">50</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">13</span></div>
@@ -12341,7 +12341,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>광대 발차기</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 5】물리</strong> 피해. <strong>혼미</strong> 또는 <strong>동요</strong> 상태의 대상에게는 5점의 추가 피해를 줍니다.</div>
+        <div class="npc-attack-body"><strong>광대 발차기</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 5】물리</strong> 피해. <strong>멍함</strong> 또는 <strong>동요</strong> 상태의 대상에게는 5점의 추가 피해를 줍니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
@@ -12366,8 +12366,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">50</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12385,14 +12385,14 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>석재 발톱</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】물리</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>석재 발톱</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】물리</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>석재 포격 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
-          <span class="npc-spell-sub">대상은 <strong>【HR + 15】대지</strong> 피해를 입고 <strong>혼미</strong> 상태에 걸립니다.</span>
+          <strong>석재 포격 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <span class="npc-spell-sub">대상은 <strong>【HR + 15】대지</strong> 피해를 입고 <strong>멍함</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
@@ -12411,8 +12411,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">5</span></div>
@@ -12432,7 +12432,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>도끼 강타</strong> ◆ [힘 + 힘] +1 ◆ <strong>【HR + 14】물리</strong> 피해를 주고 대상은 <strong>느림</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>도끼 강타</strong> ◆ [근력 + 근력] +1 ◆ <strong>【HR + 14】물리</strong> 피해를 주고 대상은 <strong>느림</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>구조체 ◆</strong> 이 병사는 <strong>중독</strong> 상태에 면역입니다.</div>
@@ -12450,8 +12450,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">100</span><span class="npc-hp-crisis">▸ 50</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -12468,11 +12468,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>강타</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>혼미</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>강타</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>멍함</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>회오리바람</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】기류</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
+        <div class="npc-attack-body"><strong>회오리바람</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】기류</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>구조체 ◆</strong> 이 골렘은 <strong>중독</strong> 상태에 면역입니다.</div>
@@ -12489,8 +12489,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12536,8 +12536,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">110</span><span class="npc-hp-crisis">▸ 55</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">80</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">6</span></div>
@@ -12556,11 +12556,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>껍질 발톱</strong> ◆ [힘 + 힘] +2 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
+        <div class="npc-attack-body"><strong>껍질 발톱</strong> ◆ [근력 + 근력] +2 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>생명 폭발</strong> ◆ [민첩 + 힘] +2 ◆ <strong>【HR + 15】빛</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>생명 폭발</strong> ◆ [민첩 + 근력] +2 ◆ <strong>【HR + 15】빛</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
@@ -12573,7 +12573,7 @@
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>포자 숨결 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>포자 숨결 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】독소</strong> 피해를 입고 <strong>약화</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -12616,8 +12616,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -12635,13 +12635,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>냉기 발톱</strong> ◆ [민첩 + 의지] ◆ <strong>【HR + 5】빙결</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>냉기 발톱</strong> ◆ [민첩 + 의지력] ◆ <strong>【HR + 5】빙결</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>격분 🗡</strong> ◆ [통찰 + 의지] ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>격분 🗡</strong> ◆ [통찰 + 의지력] ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>격분</strong> 상태에 걸려 다음 턴에 <strong>방어</strong> 또는 <strong>주문</strong> 행동을 수행할 수 없습니다.</span>
         </div>
       </div>
@@ -12667,8 +12667,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d12</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12685,15 +12685,15 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>급선회</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>급선회</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>풀구르 🗡</strong> ◆ [통찰 + 의지] +1 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>풀구르 🗡</strong> ◆ [통찰 + 의지력] +1 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 15】볼트</strong> 피해를 입습니다.</span>
-          <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>혼미</strong> 상태에 걸립니다.</span>
+          <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>멍함</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
@@ -12723,8 +12723,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -12741,20 +12741,20 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>유령 물기</strong> ◆ [민첩 + 힘] +4 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>유령 물기</strong> ◆ [민첩 + 근력] +4 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>잿빛 숨결 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>잿빛 숨결 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】화염</strong> 피해를 입고 <strong>약화</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>비극의 울부짖음 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
+          <strong>비극의 울부짖음 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>동요</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -12771,8 +12771,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">80</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12795,13 +12795,13 @@
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>냉기 응시</strong> ◆ [민첩 + 의지] +5 ◆ <strong>【HR + 10】빙결</strong> 피해를 주고, 대상은 다음 턴에 <strong>목표</strong> 행동을 수행할 수 없습니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>냉기 응시</strong> ◆ [민첩 + 의지력] +5 ◆ <strong>【HR + 10】빙결</strong> 피해를 주고, 대상은 다음 턴에 <strong>목표</strong> 행동을 수행할 수 없습니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>뇌 용해 🗡</strong> ◆ [통찰 + 의지] +2 ◆ MP 5 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>뇌 용해 🗡</strong> ◆ [통찰 + 의지력] +2 ◆ MP 5 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 10】</strong> MP를 잃습니다.</span>
         </div>
       </div>
@@ -12831,8 +12831,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -12856,7 +12856,7 @@
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>얽힘 🗡</strong> ◆ [통찰 + 의지] ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
+          <strong>얽힘 🗡</strong> ◆ [통찰 + 의지력] ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>느림</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -12883,8 +12883,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">35</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -12907,7 +12907,7 @@
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>정령 ◆</strong> 혼돈의 파편은 <strong>중독</strong> 상태에 면역입니다.</div>
-      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 혼돈의 파편은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 혼돈의 파편은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
 
     <!-- GRENADO -->
@@ -12921,8 +12921,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -12939,7 +12939,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>화염 트림</strong> ◆ [민첩 + 의지] +1 ◆ <strong>【HR + 10】화염</strong> 피해를 주고, 그레나도의 다음 턴 종료 시까지 대상은 <strong>화염</strong> 피해에 대한 저항을 잃습니다.</div>
+        <div class="npc-attack-body"><strong>화염 트림</strong> ◆ [민첩 + 의지력] +1 ◆ <strong>【HR + 10】화염</strong> 피해를 주고, 그레나도의 다음 턴 종료 시까지 대상은 <strong>화염</strong> 피해에 대한 저항을 잃습니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>폭발 ◆</strong> HP가 0이 되면, 그레나도는 폭발하며 장면에 있는 다른 모든 생명체에게 <strong>경미(10) 화염</strong> 피해를 줍니다. <strong>빙결</strong> 피해로 HP가 0이 된 경우에는 폭발하지 않습니다.</div>
@@ -12957,8 +12957,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">70</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">6</span></div>
@@ -12976,13 +12976,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>젤리 강타</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>젤리 강타</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>정전기 파동 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>정전기 파동 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】볼트</strong> 피해를 입고 <strong>느림</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -13001,8 +13001,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13019,7 +13019,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>계절의 손길</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 10】기류</strong> 피해. 이 공격에 맞은 생명체는 현재 계절에 따라 상태 이상에 걸립니다: 봄에는 <strong>혼미</strong>, 겨울에는 <strong>동요</strong>, 가을에는 <strong>느림</strong>, 여름에는 <strong>약화</strong>.</div>
+        <div class="npc-attack-body"><strong>계절의 손길</strong> ◆ [민첩 + 통찰] +1 ◆ <strong>【HR + 10】기류</strong> 피해. 이 공격에 맞은 생명체는 현재 계절에 따라 상태 이상에 걸립니다: 봄에는 <strong>멍함</strong>, 겨울에는 <strong>동요</strong>, 가을에는 <strong>느림</strong>, 여름에는 <strong>약화</strong>.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>정령 ◆</strong> 님프는 <strong>중독</strong> 상태에 면역입니다.</div>
@@ -13036,8 +13036,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">65</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13060,7 +13060,7 @@
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>서리 숨결 🗡</strong> ◆ [통찰 + 의지] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>서리 숨결 🗡</strong> ◆ [통찰 + 의지력] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】빙결</strong> 피해를 입고 <strong>약화</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -13079,8 +13079,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">110</span><span class="npc-hp-crisis">▸ 55</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -13096,24 +13096,24 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>바위 돌진</strong> ◆ [민첩 + 힘] +2 ◆ <strong>【HR + 15】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다. 이 공격이 대상 중 하나라도 빗나가면, 암석 멧돼지는 <strong>경미(20)</strong> HP를 잃습니다.</div>
+        <div class="npc-attack-body"><strong>바위 돌진</strong> ◆ [민첩 + 근력] +2 ◆ <strong>【HR + 15】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다. 이 공격이 대상 중 하나라도 빗나가면, 암석 멧돼지는 <strong>경미(20)</strong> HP를 잃습니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>바위 어금니</strong> ◆ [힘 + 힘] +2 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>바위 어금니</strong> ◆ [근력 + 근력] +2 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>바위 포격 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
-          <span class="npc-spell-sub">대상은 <strong>【HR + 20】대지</strong> 피해를 입고 <strong>혼미</strong> 상태에 걸립니다.</span>
+          <strong>바위 포격 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <span class="npc-spell-sub">대상은 <strong>【HR + 20】대지</strong> 피해를 입고 <strong>멍함</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>테라 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>테라 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 20】대지</strong> 피해를 입습니다. 날고 있거나 떠 있거나 공중에 있는 생명체는 이 주문의 대상이 될 수 없습니다.</span>
           <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 다음 턴에 행동을 하나 적게 수행합니다(최소 0개).</span>
         </div>
@@ -13155,8 +13155,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">10</span></div>
@@ -13173,7 +13173,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>산적의 도끼</strong> ◆ [힘 + 힘] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>산적의 도끼</strong> ◆ [근력 + 근력] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>다혈질 ◆</strong> 위기 상태인 한, 산적은 모든 상태 이상에 면역이 됩니다.</div>
@@ -13190,8 +13190,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">5</span></div>
@@ -13204,7 +13204,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>중형 창</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 12】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>중형 창</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 12】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
@@ -13226,8 +13226,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -13248,7 +13248,7 @@
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>돌팔매</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>혼미</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>돌팔매</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해를 주고 대상은 <strong>멍함</strong> 상태에 걸립니다.</div>
       </div>
     </div>
 
@@ -13263,8 +13263,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">6</span></div>
@@ -13281,7 +13281,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>참나무 지팡이</strong> ◆ [의지 + 의지] ◆ <strong>【HR + 6】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>참나무 지팡이</strong> ◆ [의지력 + 의지력] ◆ <strong>【HR + 6】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
@@ -13294,7 +13294,7 @@
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>악취 숨결 🗡</strong> ◆ [통찰 + 의지] ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
+          <strong>악취 숨결 🗡</strong> ◆ [통찰 + 의지력] ◆ MP 5 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 10】독소</strong> 피해를 입습니다.</span>
         </div>
       </div>
@@ -13311,8 +13311,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">50</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">11</span></div>
@@ -13354,8 +13354,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">50</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">5</span></div>
@@ -13373,7 +13373,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>청동 검</strong> ◆ [민첩 + 힘] +5 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>청동 검</strong> ◆ [민첩 + 근력] +5 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
@@ -13397,8 +13397,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">13</span></div>
@@ -13420,7 +13420,7 @@
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>저격 활</strong> ◆ [민첩 + 민첩] +4 ◆ <strong>【HR + 8】물리</strong> 피해를 주고, 대상은 <strong>혼미</strong> 또는 <strong>느림</strong> 상태에 걸립니다(저격병이 선택).</div>
+        <div class="npc-attack-body"><strong>저격 활</strong> ◆ [민첩 + 민첩] +4 ◆ <strong>【HR + 8】물리</strong> 피해를 주고, 대상은 <strong>멍함</strong> 또는 <strong>느림</strong> 상태에 걸립니다(저격병이 선택).</div>
       </div>
     </div>
 
@@ -13435,8 +13435,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">90</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13454,15 +13454,15 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>장식 지팡이</strong> ◆ [의지 + 의지] +2 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>장식 지팡이</strong> ◆ [의지력 + 의지력] +2 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>풀구르 🗡</strong> ◆ [통찰 + 의지] +5 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>풀구르 🗡</strong> ◆ [통찰 + 의지력] +5 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 20】볼트</strong> 피해를 입습니다.</span>
-          <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>혼미</strong> 상태에 걸립니다.</span>
+          <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>멍함</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
@@ -13496,8 +13496,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">40</span><span class="npc-hp-crisis">▸ 20</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">65</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">12</span></div>
@@ -13516,17 +13516,17 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>할퀴기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>할퀴기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>도깨비불</strong> ◆ [통찰 + 의지] ◆ <strong>【HR + 5】화염 또는 빙결</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>도깨비불</strong> ◆ [통찰 + 의지력] ◆ <strong>【HR + 5】화염 또는 빙결</strong> 피해. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>열 제어 🗡</strong> ◆ [통찰 + 의지] ◆ MP 15 ◆ 생명체 하나 ◆ 장면.
+          <strong>열 제어 🗡</strong> ◆ [통찰 + 의지력] ◆ MP 15 ◆ 생명체 하나 ◆ 장면.
           <span class="npc-spell-sub">케이트 시스는 <strong>화염</strong> 또는 <strong>빙결</strong>을 선택합니다. 이 주문이 지속되는 동안, 대상은 선택한 유형의 피해를 주는 모든 원천으로부터 5점의 추가 피해를 받습니다.</span>
         </div>
       </div>
@@ -13543,8 +13543,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -13561,13 +13561,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>나방 물기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>나방 물기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>독 구름 🗡</strong> ◆ [힘 + 의지] ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>독 구름 🗡</strong> ◆ [근력 + 의지력] ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>중독</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -13598,8 +13598,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -13619,7 +13619,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>멜로우 핥기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>멜로우 핥기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
@@ -13646,8 +13646,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">50</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -13663,13 +13663,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>물기</strong> ◆ [힘 + 힘] +4 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>물기</strong> ◆ [근력 + 근력] +4 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>드래곤 숨결 🗡</strong> ◆ [힘 + 의지] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>드래곤 숨결 🗡</strong> ◆ [근력 + 의지력] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】화염</strong> 피해를 입고 <strong>동요</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -13686,8 +13686,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">12</span></div>
@@ -13703,18 +13703,18 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>발톱</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>발톱</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>혼돈의 시선</strong> ◆ [민첩 + 의지] +1 ◆ <strong>【HR + 5】어둠</strong> 피해. 대상이 <strong>혼미</strong> 상태라면, 다음 턴에 행동을 하나 적게 수행합니다(최소 0개).</div>
+        <div class="npc-attack-body"><strong>혼돈의 시선</strong> ◆ [민첩 + 의지력] +1 ◆ <strong>【HR + 5】어둠</strong> 피해. 대상이 <strong>멍함</strong> 상태라면, 다음 턴에 행동을 하나 적게 수행합니다(최소 0개).</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>둠게이즈 🗡</strong> ◆ [힘 + 의지] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
-          <span class="npc-spell-sub">대상은 <strong>혼미</strong>와 <strong>약화</strong> 상태에 걸립니다.</span>
+          <strong>둠게이즈 🗡</strong> ◆ [근력 + 의지력] +4 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <span class="npc-spell-sub">대상은 <strong>멍함</strong>와 <strong>약화</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
@@ -13732,8 +13732,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -13750,11 +13750,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>산성 접촉</strong> ◆ [힘 + 힘] +1 ◆ <strong>【HR + 10】독소</strong> 피해. 이 공격에 맞은 대상은 인벤토리 포인트를 1점 잃습니다.</div>
+        <div class="npc-attack-body"><strong>산성 접촉</strong> ◆ [근력 + 근력] +1 ◆ <strong>【HR + 10】독소</strong> 피해. 이 공격에 맞은 대상은 인벤토리 포인트를 1점 잃습니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>전기 촉수</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】볼트</strong> 피해를 주고 대상은 <strong>격분</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>전기 촉수</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】볼트</strong> 피해를 주고 대상은 <strong>격분</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>비행 ◆</strong> 307페이지에서 이 스킬의 자세한 효과를 확인하세요.</div>
@@ -13771,8 +13771,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13789,11 +13789,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>석화 쪼기</strong> ◆ [민첩 + 통찰] +4 ◆ 피해 없음. 이 공격은 방어력 대신 마법 방어력을 대상으로 합니다. 맞은 대상은 <strong>느림</strong> 상태에 걸립니다. 대상이 이미 <strong>느림</strong> 상태라면, 반드시 <strong>난이도 10 【힘 + 의지】</strong> 체크를 성공해야 합니다. 실패하면 돌로 변합니다. 석화된 생명체를 원래대로 되돌리는 것은 그 자체로 하나의 모험입니다.</div>
+        <div class="npc-attack-body"><strong>석화 쪼기</strong> ◆ [민첩 + 통찰] +4 ◆ 피해 없음. 이 공격은 방어력 대신 마법 방어력을 대상으로 합니다. 맞은 대상은 <strong>느림</strong> 상태에 걸립니다. 대상이 이미 <strong>느림</strong> 상태라면, 반드시 <strong>난이도 10 【근력 + 의지력】</strong> 체크를 성공해야 합니다. 실패하면 돌로 변합니다. 석화된 생명체를 원래대로 되돌리는 것은 그 자체로 하나의 모험입니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>독 쪼기</strong> ◆ [민첩 + 힘] +4 ◆ <strong>【HR + 10】독소</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>독 쪼기</strong> ◆ [민첩 + 근력] +4 ◆ <strong>【HR + 10】독소</strong> 피해.</div>
       </div>
     </div>
 
@@ -13808,8 +13808,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13830,7 +13830,7 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>미믹 발톱</strong> ◆ [민첩 + 힘] +4 ◆ <strong>【HR + 5】물리</strong> 피해. 미믹이 방심한 대상을 기습했다면, 이 공격은 피해를 두 배로 줍니다.</div>
+        <div class="npc-attack-body"><strong>미믹 발톱</strong> ◆ [민첩 + 근력] +4 ◆ <strong>【HR + 5】물리</strong> 피해. 미믹이 방심한 대상을 기습했다면, 이 공격은 피해를 두 배로 줍니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
@@ -13862,8 +13862,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13880,14 +13880,14 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>덩굴 손바닥</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해. <strong>동요</strong> 상태의 대상에게는 5점의 추가 피해를 줍니다.</div>
+        <div class="npc-attack-body"><strong>덩굴 손바닥</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해. <strong>동요</strong> 상태의 대상에게는 5점의 추가 피해를 줍니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>알라우네 비명</strong> ◆ [의지 + 의지] ◆ 피해 없음. 대상은 <strong>동요</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 하며, 소리를 들을 수 없는 대상에게는 효과가 없습니다.</div>
+        <div class="npc-attack-body"><strong>알라우네 비명</strong> ◆ [의지력 + 의지력] ◆ 피해 없음. 대상은 <strong>동요</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 하며, 소리를 들을 수 없는 대상에게는 효과가 없습니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 알라우네는 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 알라우네는 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
 
     <!-- CURSED PUMPKIN -->
@@ -13901,8 +13901,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -13921,18 +13921,18 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>썩은 물기</strong> ◆ [민첩 + 힘] +3 ◆ <strong>【HR + 5】독소</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>썩은 물기</strong> ◆ [민첩 + 근력] +3 ◆ <strong>【HR + 5】독소</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>호박 구역질 🗡</strong> ◆ [힘 + 의지] ◆ MP 10 ◆ 생명체 하나 ◆ 장면.
+          <strong>호박 구역질 🗡</strong> ◆ [근력 + 의지력] ◆ MP 10 ◆ 생명체 하나 ◆ 장면.
           <span class="npc-spell-sub">이 주문이 지속되는 동안, 대상은 <strong>독소</strong> 피해를 주는 모든 원천으로부터 5점의 추가 피해를 받습니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 저주받은 호박은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 저주받은 호박은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
 
     <!-- PESTERVINE -->
@@ -13946,8 +13946,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">9</span></div>
@@ -13969,10 +13969,10 @@
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>어둠 물기</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】어둠</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>어둠 물기</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】어둠</strong> 피해.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 괴롭힘 덩굴은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 괴롭힘 덩굴은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
 
     <!-- SHROOMKIN -->
@@ -13986,8 +13986,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -14005,18 +14005,18 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>버섯 손바닥</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>버섯 손바닥</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>포자 트림 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
-          <span class="npc-spell-sub">대상은 <strong>【HR + 15】독소</strong> 피해를 입고 <strong>혼미</strong> 상태에 걸립니다.</span>
+          <strong>포자 트림 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <span class="npc-spell-sub">대상은 <strong>【HR + 15】독소</strong> 피해를 입고 <strong>멍함</strong> 상태에 걸립니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 슈룸킨은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 슈룸킨은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
       <div class="npc-rule-row"><strong>넓은 갓 ◆</strong> 슈룸킨이 <strong>방어</strong> 행동을 수행할 때 다른 생명체 하나를 선택할 수 있습니다. 그 생명체는 슈룸킨의 다음 턴 시작 전까지 모든 피해 유형에 저항합니다.</div>
     </div>
 
@@ -14043,8 +14043,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">90</span><span class="npc-hp-crisis">▸ 45</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -14062,17 +14062,17 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>꿰뚫는 포옹</strong> ◆ [힘 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>꿰뚫는 포옹</strong> ◆ [근력 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>가시 연사</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>가시 연사</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>수분 흡수 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>수분 흡수 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】독소</strong> 피해를 입습니다. 그 후 캑트롤은 대상이 입은 HP 손실의 절반만큼 HP를 회복합니다.</span>
         </div>
       </div>
@@ -14082,7 +14082,7 @@
         <div class="npc-other-body"><strong>캑트롤 주스 ◆</strong> 캑트롤은 <strong>느림</strong>과 <strong>약화</strong> 상태에서 회복합니다. 그 후 <strong>가시 연사</strong>를 <strong>자유 공격</strong>으로 수행합니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 캑트롤은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 캑트롤은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
 
     <div class="box arcane">
@@ -14102,8 +14102,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">90</span><span class="npc-hp-crisis">▸ 45</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">60</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -14123,29 +14123,29 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>용 삼키기</strong> ◆ [힘 + 힘] +5 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격에 맞은 대상이 <strong>약화</strong> 상태라면, 드래건트랩이 삼킵니다. 삼켜진 생명체는 드래건트랩의 턴 시작마다 <strong>경미(20) 물리</strong> 피해를 입고, <strong>목표</strong> 행동(자신을 풀어내는 것이 목표) 외에는 어떤 행동도 수행할 수 없습니다. 삼켜진 대상을 해방시키는 것은 <strong>4구간 시계</strong>입니다. <strong>졸개</strong> 드래건트랩은 한 번에 하나의 생명체만 삼킬 수 있지만, <strong>정예</strong>나 <strong>챔피언</strong>은 최대 두 마리까지 삼킬 수 있습니다. 이미 아가리가 모두 차 있는 상태에서 공격이 성공하면, 이전에 삼킨 생명체 중 하나를 반드시 뱉어내야 합니다.</div>
+        <div class="npc-attack-body"><strong>용 삼키기</strong> ◆ [근력 + 근력] +5 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격에 맞은 대상이 <strong>약화</strong> 상태라면, 드래건트랩이 삼킵니다. 삼켜진 생명체는 드래건트랩의 턴 시작마다 <strong>경미(20) 물리</strong> 피해를 입고, <strong>목표</strong> 행동(자신을 풀어내는 것이 목표) 외에는 어떤 행동도 수행할 수 없습니다. 삼켜진 대상을 해방시키는 것은 <strong>4구간 시계</strong>입니다. <strong>졸개</strong> 드래건트랩은 한 번에 하나의 생명체만 삼킬 수 있지만, <strong>정예</strong>나 <strong>챔피언</strong>은 최대 두 마리까지 삼킬 수 있습니다. 이미 아가리가 모두 차 있는 상태에서 공격이 성공하면, 이전에 삼킨 생명체 중 하나를 반드시 뱉어내야 합니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>채찍 덩굴</strong> ◆ [민첩 + 힘] +5 ◆ <strong>【HR + 15】기류</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>채찍 덩굴</strong> ◆ [민첩 + 근력] +5 ◆ <strong>【HR + 15】기류</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>마비 가스 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>마비 가스 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 현재 MP의 절반을 잃습니다.</span>
         </div>
       </div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>사전 소화 🗡</strong> ◆ [힘 + 의지] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 장면.
+          <strong>사전 소화 🗡</strong> ◆ [근력 + 의지력] +2 ◆ MP 10 ◆ 생명체 하나 ◆ 장면.
           <span class="npc-spell-sub">이 주문이 지속되는 동안, 대상은 <strong>물리</strong> 피해를 주는 모든 원천으로부터 10점의 추가 피해를 받습니다.</span>
         </div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>식물 ◆</strong> 드래건트랩은 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>식물 ◆</strong> 드래건트랩은 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
     </div>
   </section>
 
@@ -14170,8 +14170,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">50</span><span class="npc-hp-crisis">▸ 25</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -14190,11 +14190,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>항아리 찌르기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>항아리 찌르기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🏹</span>
-        <div class="npc-attack-body"><strong>혼돈의 깔깔거림</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】어둠</strong> 피해를 주고 대상은 <strong>동요</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
+        <div class="npc-attack-body"><strong>혼돈의 깔깔거림</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】어둠</strong> 피해를 주고 대상은 <strong>동요</strong> 상태에 걸립니다. 이 공격은 마법 방어력을 대상으로 합니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>언데드 ◆</strong> 공포의 항아리는 <strong>중독</strong> 상태에 면역이며, HP 회복 효과가 오히려 피해를 줄 수 있습니다(305페이지).</div>
@@ -14211,8 +14211,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">6</span></div>
@@ -14231,14 +14231,14 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>탐욕스러운 물기</strong> ◆ [민첩 + 힘] ◆ <strong>【HR + 5】어둠</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>탐욕스러운 물기</strong> ◆ [민첩 + 근력] ◆ <strong>【HR + 5】어둠</strong> 피해를 주고 대상은 <strong>약화</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>좀비 할퀴기</strong> ◆ [힘 + 힘] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>좀비 할퀴기</strong> ◆ [근력 + 근력] ◆ <strong>【HR + 5】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 좀비는 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 좀비는 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
       <div class="npc-rule-row"><strong>언데드 ◆</strong> 좀비는 <strong>중독</strong> 상태에 면역이며, HP 회복 효과가 오히려 피해를 줄 수 있습니다(305페이지).</div>
     </div>
 
@@ -14253,8 +14253,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">60</span><span class="npc-hp-crisis">▸ 30</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">70</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">5</span></div>
@@ -14274,13 +14274,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>지팡이</strong> ◆ [의지 + 의지] +1 ◆ <strong>【HR + 6】물리</strong> 피해. 이 공격이 성공하면 마법사는 MP를 5점 회복합니다.</div>
+        <div class="npc-attack-body"><strong>지팡이</strong> ◆ [의지력 + 의지력] +1 ◆ <strong>【HR + 6】물리</strong> 피해. 이 공격이 성공하면 마법사는 MP를 5점 회복합니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>움브라 🗡</strong> ◆ [통찰 + 의지] +1 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
+          <strong>움브라 🗡</strong> ◆ [통찰 + 의지력] +1 ◆ MP 10 × T ◆ 생명체 최대 셋 ◆ 즉시.
           <span class="npc-spell-sub">맞은 대상들은 각각 <strong>【HR + 15】어둠</strong> 피해를 입습니다.</span>
           <span class="npc-spell-sub"><strong>기회:</strong> 맞은 대상들은 각각 <strong>동요</strong> 상태에 걸립니다.</span>
         </div>
@@ -14300,8 +14300,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">40</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">6</span></div>
@@ -14321,10 +14321,10 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>청동 검</strong> ◆ [민첩 + 힘] +5 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
+        <div class="npc-attack-body"><strong>청동 검</strong> ◆ [민첩 + 근력] +5 ◆ <strong>【HR + 11】물리</strong> 피해.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
-      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 해골 병사는 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 해골 병사는 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
       <div class="npc-rule-row"><strong>언데드 ◆</strong> 해골 병사는 <strong>중독</strong> 상태에 면역이며, HP 회복 효과가 오히려 피해를 줄 수 있습니다(305페이지).</div>
     </div>
 
@@ -14351,8 +14351,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">80</span><span class="npc-hp-crisis">▸ 40</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">55</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">8</span></div>
@@ -14371,13 +14371,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>톱니 아귀</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>느림</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>톱니 아귀</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해를 주고 대상은 <strong>느림</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>부패 숨결 🗡</strong> ◆ [힘 + 의지] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>부패 숨결 🗡</strong> ◆ [근력 + 의지력] +1 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 15】어둠</strong> 피해를 입고 <strong>약화</strong> 상태에 걸립니다.</span>
         </div>
       </div>
@@ -14396,8 +14396,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d12</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d12</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">90</span><span class="npc-hp-crisis">▸ 45</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">45</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -14414,11 +14414,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>맹렬한 발톱</strong> ◆ [힘 + 힘] +1 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
+        <div class="npc-attack-body"><strong>맹렬한 발톱</strong> ◆ [근력 + 근력] +1 ◆ <strong>【HR + 10】물리</strong> 피해. 이 공격은 <strong>다중(2)</strong>입니다.</div>
       </div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>독성 숨결</strong> ◆ [민첩 + 힘] +1 ◆ <strong>【HR + 5】독소</strong> 피해를 주고 대상은 <strong>중독</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>독성 숨결</strong> ◆ [민첩 + 근력] +1 ◆ <strong>【HR + 5】독소</strong> 피해를 주고 대상은 <strong>중독</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>언데드 ◆</strong> 구울은 <strong>중독</strong> 상태에 면역이며, HP 회복 효과가 오히려 피해를 줄 수 있습니다(305페이지).</div>
@@ -14435,8 +14435,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d6</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d10</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d10</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d10</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">90</span><span class="npc-hp-crisis">▸ 45</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">70</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">7</span></div>
@@ -14455,11 +14455,11 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>무덤 발톱</strong> ◆ [힘 + 의지] +5 ◆ <strong>【HR + 10】대지</strong> 피해. 이 공격에 맞은 모든 대상은 <strong>느림</strong> 상태에 걸립니다. 대상이 이미 <strong>느림</strong> 상태라면, <strong>느림</strong> 상태에서 회복될 때까지 모든 피해 유형에 취약해집니다.</div>
+        <div class="npc-attack-body"><strong>무덤 발톱</strong> ◆ [근력 + 의지력] +5 ◆ <strong>【HR + 10】대지</strong> 피해. 이 공격에 맞은 모든 대상은 <strong>느림</strong> 상태에 걸립니다. 대상이 이미 <strong>느림</strong> 상태라면, <strong>느림</strong> 상태에서 회복될 때까지 모든 피해 유형에 취약해집니다.</div>
       </div>
       <div class="npc-section-title">특수 규칙</div>
       <div class="npc-rule-row"><strong>고대의 저주 ◆</strong> HP가 0이 되면, 미라는 먼지로 산산이 부서지며 강렬한 저주를 내뱉습니다. 장면에 있는 모든 살아있는 생명체는 <strong>동요</strong>와 <strong>약화</strong> 상태에 걸립니다.</div>
-      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 미라는 <strong>혼미, 격분, 동요</strong> 상태에 면역입니다.</div>
+      <div class="npc-rule-row"><strong>텅 빈 정신 ◆</strong> 미라는 <strong>멍함, 격분, 동요</strong> 상태에 면역입니다.</div>
       <div class="npc-rule-row"><strong>언데드 ◆</strong> 미라는 <strong>중독</strong> 상태에 면역이며, HP 회복 효과가 오히려 피해를 줄 수 있습니다(305페이지).</div>
     </div>
 
@@ -14474,8 +14474,8 @@
       <div class="npc-stat-row">
         <div class="npc-stat-cell"><span class="npc-stat-label">민첩</span><span class="npc-stat-value">d12</span></div>
         <div class="npc-stat-cell"><span class="npc-stat-label">통찰</span><span class="npc-stat-value">d8</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">힘</span><span class="npc-stat-value">d6</span></div>
-        <div class="npc-stat-cell"><span class="npc-stat-label">의지</span><span class="npc-stat-value">d8</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">근력</span><span class="npc-stat-value">d6</span></div>
+        <div class="npc-stat-cell"><span class="npc-stat-label">의지력</span><span class="npc-stat-value">d8</span></div>
         <div class="npc-hp-block"><span class="npc-hp-label">HP</span><span class="npc-hp-value">70</span><span class="npc-hp-crisis">▸ 35</span></div>
         <div class="npc-mp-block"><span class="npc-mp-label">MP</span><span class="npc-mp-value">70</span></div>
         <div class="npc-init-block"><span class="npc-init-label">선제</span><span class="npc-init-value">10</span></div>
@@ -14494,13 +14494,13 @@
       <div class="npc-section-title">기본 공격</div>
       <div class="npc-attack-row">
         <span class="npc-attack-icon">🗡</span>
-        <div class="npc-attack-body"><strong>분노의 발톱</strong> ◆ [민첩 + 의지] +5 ◆ <strong>【HR + 10】어둠</strong> 피해를 주고 대상은 <strong>격분</strong> 상태에 걸립니다.</div>
+        <div class="npc-attack-body"><strong>분노의 발톱</strong> ◆ [민첩 + 의지력] +5 ◆ <strong>【HR + 10】어둠</strong> 피해를 주고 대상은 <strong>격분</strong> 상태에 걸립니다.</div>
       </div>
       <div class="npc-section-title">주문</div>
       <div class="npc-spell-row">
         <span class="npc-spell-icon">✦</span>
         <div class="npc-spell-body">
-          <strong>처절한 울부짖음 🗡</strong> ◆ [통찰 + 의지] +5 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
+          <strong>처절한 울부짖음 🗡</strong> ◆ [통찰 + 의지력] +5 ◆ MP 10 ◆ 생명체 하나 ◆ 즉시.
           <span class="npc-spell-sub">대상은 <strong>【HR + 20】빙결</strong> 피해를 입고 <strong>동요</strong> 상태에 걸립니다.</span>
         </div>
       </div>
